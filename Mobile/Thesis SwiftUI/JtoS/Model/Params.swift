@@ -15,7 +15,7 @@ struct Params: Decodable, Equatable, Hashable {
     // MARK: Common
 
     var size: Size?                 = nil
-    var color: String?              = nil
+    var colorHex: String?              = nil
     var cornerRadius: String?      = nil
 
     // MARK: Text

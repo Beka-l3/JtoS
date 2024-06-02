@@ -17,8 +17,10 @@ extension JtoSView {
 
             case .text: textView(for: element)
             case .image: imageView(for: element)
+            case .color: colorView(for: element)
             case .vStack: vStackView(for: element)
             case .hStack: hStackView(for: element)
+            case .zStack: zStackView(for: element)
 
             default: empty
         }
@@ -43,6 +45,13 @@ extension JtoSView {
     }
 
     @ViewBuilder
+    private func colorView(for element: JtoS) -> some View {
+        let params = ParamsColor(params: element.params)
+        Color.fromHex(params.colorHex)
+            .apply(params: params)
+    }
+
+    @ViewBuilder
     private func vStackView(for element: JtoS) -> some View {
         let params = ParamsVStack(params: element.params)
         VStack(alignment: params.alignment, spacing: params.spacing) {
@@ -61,6 +70,21 @@ extension JtoSView {
     private func hStackView(for element: JtoS) -> some View {
         let params = ParamsHStack(params: element.params)
         HStack(alignment: params.alignment, spacing: params.spacing) {
+            if let ui = element.ui {
+                ForEach(ui, id: \.self) { childElement in
+                    JtoSView(model: childElement)
+                }
+            } else {
+                empty
+            }
+        }
+        .apply(params: params)
+    }
+
+    @ViewBuilder
+    private func zStackView(for element: JtoS) -> some View {
+        let params = ParamsZStack(params: element.params)
+        ZStack(alignment: params.alignment) {
             if let ui = element.ui {
                 ForEach(ui, id: \.self) { childElement in
                     JtoSView(model: childElement)

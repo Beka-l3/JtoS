@@ -6,8 +6,8 @@ struct JtoS: Decodable, Equatable, Hashable {
 
     enum JtoSType: String {
 
-        case text, image, button
-        case vStack, hStack
+        case text, image, button, color
+        case vStack, hStack, zStack
 
         case unknown
     }
@@ -22,7 +22,6 @@ struct JtoS: Decodable, Equatable, Hashable {
         JtoSType(rawValue: type) ??  .unknown
     }
 }
-
 
 extension JtoS {
 
