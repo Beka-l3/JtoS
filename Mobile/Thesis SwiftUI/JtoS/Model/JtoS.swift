@@ -2,7 +2,7 @@ import Foundation
 
 struct JtoS: Decodable, Equatable, Hashable {
 
-    // MARK: - Nested Types
+    // MARK: Nested Types
 
     enum JtoSType: String {
 

@@ -1,9 +1,8 @@
 import SwiftUI
 
-
 extension View {
     func apply<T: JtoSParams>(params: T) -> some View {
-        
+
         switch params {
 
         case let textParams as ParamsText:
@@ -24,8 +23,6 @@ extension View {
     }
 }
 
-
-
 struct ApplyTextParams: ViewModifier {
 
     var params: ParamsText
@@ -36,7 +33,6 @@ struct ApplyTextParams: ViewModifier {
             .foregroundStyle(params.foregroundColor)
     }
 }
-
 
 struct ApplyImageParams: ViewModifier {
 
@@ -51,7 +47,6 @@ struct ApplyImageParams: ViewModifier {
     }
 }
 
-
 struct ApplyVStackParams: ViewModifier {
 
     var params: ParamsVStack
@@ -60,8 +55,6 @@ struct ApplyVStackParams: ViewModifier {
         content
     }
 }
-
-
 
 struct ApplyHStackParams: ViewModifier {
 

@@ -10,7 +10,7 @@ struct Params: Decodable, Equatable, Hashable {
         let h: Int
     }
 
-    // MARK: - Internal Properties
+    // MARK: Internal Properties
 
     // MARK: Common
 
