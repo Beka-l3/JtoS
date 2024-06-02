@@ -113,3 +113,14 @@ struct ParamsZStack: JtoSParams {
         }
     }
 }
+
+struct ParamsScrollView: JtoSParams {
+
+    let spacing: CGFloat
+
+    // MARK: Init
+
+    init(params: Params) {
+        self.spacing = CGFloat(params.spacing ?? 0)
+    }
+}
