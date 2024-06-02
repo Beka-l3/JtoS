@@ -20,8 +20,6 @@ struct ParamsCommon: JtoSParams {
 
 struct ParamsText: JtoSParams {
 
-    let common: ParamsCommon
-
     let value: String
     let font: Font
     let foregroundColor: Color
@@ -29,7 +27,6 @@ struct ParamsText: JtoSParams {
     // MARK: Init
 
     init(params: Params) {
-        self.common = ParamsCommon(params: params)
         self.value = params.value ?? ""
         self.font = .system(size: CGFloat(params.fontSize ?? 16))
         self.foregroundColor = Color.fromHex(params.colorHex ?? "")
@@ -38,15 +35,12 @@ struct ParamsText: JtoSParams {
 
 struct ParamsImage: JtoSParams {
 
-    let common: ParamsCommon
-
     let url: String
     let contentMode: ContentMode
 
     // MARK: Init
 
     init(params: Params) {
-        self.common = ParamsCommon(params: params)
         self.url = params.value ?? ""
         self.contentMode = params.contentMode == "fill" ? .fill : .fit
     }
@@ -54,21 +48,16 @@ struct ParamsImage: JtoSParams {
 
 struct ParamsColor: JtoSParams {
 
-    let common: ParamsCommon
-
     let colorHex: String
 
     // MARK: Init
 
     init(params: Params) {
-        self.common = ParamsCommon(params: params)
         self.colorHex = params.colorHex ?? ""
     }
 }
 
 struct ParamsVStack: JtoSParams {
-
-    let common: ParamsCommon
 
     let alignment: HorizontalAlignment
     let spacing: CGFloat
@@ -76,7 +65,6 @@ struct ParamsVStack: JtoSParams {
     // MARK: Init
 
     init(params: Params) {
-        self.common = ParamsCommon(params: params)
         self.alignment = switch params.alignment ?? "" {
 
             case "leading": .leading
@@ -90,15 +78,12 @@ struct ParamsVStack: JtoSParams {
 
 struct ParamsHStack: JtoSParams {
 
-    let common: ParamsCommon
-
     let alignment: VerticalAlignment
     let spacing: CGFloat
 
     // MARK: Init
 
     init(params: Params) {
-        self.common = ParamsCommon(params: params)
         self.alignment = switch params.alignment ?? "" {
 
             case "top": .top
@@ -112,14 +97,11 @@ struct ParamsHStack: JtoSParams {
 
 struct ParamsZStack: JtoSParams {
 
-    let common: ParamsCommon
-
     let alignment: Alignment
 
     // MARK: Init
 
     init(params: Params) {
-        self.common = ParamsCommon(params: params)
         self.alignment = switch params.alignment ?? "" {
 
             case "leading": .leading

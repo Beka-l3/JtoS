@@ -1,35 +1,39 @@
 import SwiftUI
 
 extension View {
-    func apply<T: JtoSParams>(params: T) -> some View {
-        switch params {
+    func apply(type: JtoS.JtoSType, params: Params) -> some View {
 
-        case let textParams as ParamsText:
-            let view = AnyView(self.modifier(ApplyCommonParams(params: textParams.common)))
-            return AnyView(view.modifier(ApplyTextParams(params: textParams)))
+        let commonParams = ParamsCommon(params: params)
+        let view = AnyView(self.modifier(ApplyCommonParams(params: commonParams)))
 
-        case let imageParams as ParamsImage:
-            let view = AnyView(self.modifier(ApplyCommonParams(params: imageParams.common)))
-            return AnyView(view.modifier(ApplyImageParams(params: imageParams)))
+        switch type {
 
-        case let colorParams as ParamsColor:
-            let view = AnyView(self.modifier(ApplyCommonParams(params: colorParams.common)))
-            return AnyView(view.modifier(ApplyColorParams(params: colorParams)))
+        case .text:
+            return AnyView(view.modifier(ApplyTextParams(params: ParamsText(params: params))))
 
-        case let vStackParams as ParamsVStack:
-            let view = AnyView(self.modifier(ApplyCommonParams(params: vStackParams.common)))
-            return AnyView(view.modifier(ApplyVStackParams(params: vStackParams)))
+        case .image:
+            return AnyView(view.modifier(ApplyImageParams(params: ParamsImage(params: params))))
 
-        case let hStackParams as ParamsHStack:
-            let view = AnyView(self.modifier(ApplyCommonParams(params: hStackParams.common)))
-            return AnyView(view.modifier(ApplyHStackParams(params: hStackParams)))
+        case .button:
+            return view
 
-        case let zStackParams as ParamsZStack:
-            let view = AnyView(self.modifier(ApplyCommonParams(params: zStackParams.common)))
-            return AnyView(view.modifier(ApplyZStackParams(params: zStackParams)))
+        case .color:
+            return view
 
-        default:
-            fatalError("Unsupported parameter type")
+        case .vStack:
+            return AnyView(view.modifier(ApplyVStackParams(params: ParamsVStack(params: params))))
+
+        case .hStack:
+            return AnyView(view.modifier(ApplyHStackParams(params: ParamsHStack(params: params))))
+
+        case .zStack:
+            return AnyView(view.modifier(ApplyZStackParams(params: ParamsZStack(params: params))))
+
+        case .scrollView:
+            return view
+
+        case .unknown:
+            return view
         }
     }
 }

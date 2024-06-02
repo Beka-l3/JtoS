@@ -21,6 +21,7 @@ extension JtoSView {
             case .vStack: vStackView(for: element)
             case .hStack: hStackView(for: element)
             case .zStack: zStackView(for: element)
+//            case .scrollView:
 
             default: empty
         }
@@ -30,7 +31,7 @@ extension JtoSView {
     private func textView(for element: JtoS) -> some View {
         let params = ParamsText(params: element.params)
         Text(params.value)
-            .apply(params: params)
+            .apply(type: .text, params: element.params)
     }
 
     @ViewBuilder
@@ -41,14 +42,14 @@ extension JtoSView {
                 .resizable()
                 .aspectRatio(contentMode: params.contentMode)
         }
-        .apply(params: params)
+        .apply(type: .image, params: element.params)
     }
 
     @ViewBuilder
     private func colorView(for element: JtoS) -> some View {
         let params = ParamsColor(params: element.params)
         Color.fromHex(params.colorHex)
-            .apply(params: params)
+            .apply(type: .color, params: element.params)
     }
 
     @ViewBuilder
@@ -63,7 +64,7 @@ extension JtoSView {
                 empty
             }
         }
-        .apply(params: params)
+        .apply(type: .vStack, params: element.params)
     }
 
     @ViewBuilder
@@ -78,7 +79,7 @@ extension JtoSView {
                 empty
             }
         }
-        .apply(params: params)
+        .apply(type: .hStack, params: element.params)
     }
 
     @ViewBuilder
@@ -93,7 +94,7 @@ extension JtoSView {
                 empty
             }
         }
-        .apply(params: params)
+        .apply(type: .zStack, params: element.params)
     }
 }
 
