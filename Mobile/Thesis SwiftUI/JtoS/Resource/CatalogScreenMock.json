@@ -9,67 +9,75 @@
             }
         },
         {
-            "type": "vStack",
+            "type": "scrollView",
             "params": {
-                "alignment": "leading",
-                "spacing": 10
+                "axes": "vertical"
             },
             "ui": [
                 {
-                    "type": "text",
-                    "params": {
-                        "color_hex": "390281",
-                        "value": "Hello World 1",
-                        "font": "system",
-                        "font_size": 10
-                    }
-                },
-                {
-                    "type": "text",
-                    "params": {
-                        "color_hex": "ca86ba",
-                        "value": "Hello World 2",
-                        "font": "system",
-                        "font_size": 20
-                    }
-                },
-                {
-                    "type": "hStack",
+                    "type": "vStack",
                     "params": {
                         "alignment": "center",
-                        "spacing": 16
+                        "spacing": 10
                     },
                     "ui": [
                         {
                             "type": "text",
                             "params": {
-                                "color_hex": "0f18ae",
-                                "value": "Hello World 3",
+                                "color_hex": "390281",
+                                "value": "Hello World 1",
                                 "font": "system",
-                                "font_size": 30
+                                "font_size": 10
                             }
                         },
                         {
                             "type": "text",
                             "params": {
-                                "color_hex": "0719283",
-                                "value": "Hello World 4",
+                                "color_hex": "ca86ba",
+                                "value": "Hello World 2",
                                 "font": "system",
-                                "font_size": 40
+                                "font_size": 20
+                            }
+                        },
+                        {
+                            "type": "hStack",
+                            "params": {
+                                "alignment": "center",
+                                "spacing": 32
+                            },
+                            "ui": [
+                                {
+                                    "type": "text",
+                                    "params": {
+                                        "color_hex": "0f18ae",
+                                        "value": "Hello World 3",
+                                        "font": "system",
+                                        "font_size": 30
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "params": {
+                                        "color_hex": "0719283",
+                                        "value": "Hello World 4",
+                                        "font": "system",
+                                        "font_size": 40
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "params": {
+                                "url": "https://images.unsplash.com/photo-1629043916430-feca2aed4eea?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                                "size": {
+                                    "w": 100,
+                                    "h": 120
+                                },
+                                "content_mode": "fill"
                             }
                         }
                     ]
-                },
-                {
-                    "type": "image",
-                    "params": {
-                        "url": "https://images.unsplash.com/photo-1629043916430-feca2aed4eea?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                        "size": {
-                            "w": 260,
-                            "h": 120
-                        },
-                        "content_mode": "fill"
-                    }
                 }
             ]
         }

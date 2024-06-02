@@ -15,22 +15,18 @@ struct Params: Decodable, Equatable, Hashable {
     // MARK: Common
 
     var size: Size?                 = nil
-    var colorHex: String?              = nil
-    var cornerRadius: String?      = nil
-
-    // MARK: Text
+    var colorHex: String?           = nil
+    var cornerRadius: String?       = nil
 
     var value: String?              = nil
     var font: String?               = nil
-    var fontSize: Int?             = nil
-
-    // MARK: Image
+    var fontSize: Int?              = nil
 
     var url: String?                = nil
-    var contentMode: String?       = nil
-
-    // MARK: VStack
+    var contentMode: String?        = nil
 
     var alignment: String?          = nil
     var spacing: Int?               = nil
+
+    var axes: String?               = nil
 }

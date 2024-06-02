@@ -18,7 +18,7 @@ extension View {
             return view
 
         case .color:
-            return view
+            return AnyView(view.modifier(ApplyColorParams(params: ParamsColor(params: params))))
 
         case .vStack:
             return AnyView(view.modifier(ApplyVStackParams(params: ParamsVStack(params: params))))
@@ -30,9 +30,9 @@ extension View {
             return AnyView(view.modifier(ApplyZStackParams(params: ParamsZStack(params: params))))
 
         case .scrollView:
-            return view
+            return AnyView(view.modifier(ApplyScrollViewParams(params: ParamsScrollView(params: params))))
 
-        case .unknown:
+        default:
             return view
         }
     }
@@ -98,6 +98,15 @@ struct ApplyHStackParams: ViewModifier {
 struct ApplyZStackParams: ViewModifier {
 
     var params: ParamsZStack
+
+    func body(content: Content) -> some View {
+        content
+    }
+}
+
+struct ApplyScrollViewParams: ViewModifier {
+
+    var params: ParamsScrollView
 
     func body(content: Content) -> some View {
         content

@@ -21,7 +21,7 @@ extension JtoSView {
             case .vStack: vStackView(for: element)
             case .hStack: hStackView(for: element)
             case .zStack: zStackView(for: element)
-//            case .scrollView:
+            case .scrollView: scrollViewView(for: element)
 
             default: empty
         }
@@ -95,6 +95,21 @@ extension JtoSView {
             }
         }
         .apply(type: .zStack, params: element.params)
+    }
+
+    @ViewBuilder
+    private func scrollViewView(for element: JtoS) -> some View {
+        let params = ParamsScrollView(params: element.params)
+        ScrollView(params.axes) {
+            if let ui = element.ui {
+                ForEach(ui, id: \.self) { childElement in
+                    JtoSView(model: childElement)
+                }
+            } else {
+                empty
+            }
+        }
+        .apply(type: .scrollView, params: element.params)
     }
 }
 
