@@ -8,9 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		C62B8C6D2C137E6500AF6D20 /* LandingScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */; };
+		C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C702C138FF100AF6D20 /* JtoSParams.swift */; };
+		C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */; };
+		C62B8C752C13902000AF6D20 /* ParamsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C742C13902000AF6D20 /* ParamsText.swift */; };
+		C62B8C772C13903700AF6D20 /* ParamsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C762C13903700AF6D20 /* ParamsImage.swift */; };
+		C62B8C792C13904E00AF6D20 /* ParamsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C782C13904E00AF6D20 /* ParamsColor.swift */; };
+		C62B8C7B2C13906000AF6D20 /* ParamsVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C7A2C13906000AF6D20 /* ParamsVStack.swift */; };
+		C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C7C2C13907000AF6D20 /* ParamsHStack.swift */; };
+		C62B8C7F2C13908A00AF6D20 /* ParamsZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C7E2C13908A00AF6D20 /* ParamsZStack.swift */; };
+		C62B8C862C13918400AF6D20 /* ApplyCommonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C852C13918400AF6D20 /* ApplyCommonParams.swift */; };
+		C62B8C882C1391D500AF6D20 /* ApplyTextParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C872C1391D500AF6D20 /* ApplyTextParams.swift */; };
+		C62B8C8A2C1391FA00AF6D20 /* ApplyImageParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C892C1391FA00AF6D20 /* ApplyImageParams.swift */; };
+		C62B8C8C2C13920A00AF6D20 /* ApplyColorParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C8B2C13920A00AF6D20 /* ApplyColorParams.swift */; };
+		C62B8C8E2C13921D00AF6D20 /* ApplyVStackParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C8D2C13921D00AF6D20 /* ApplyVStackParams.swift */; };
+		C62B8C902C13923800AF6D20 /* ApplyHStackParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C8F2C13923800AF6D20 /* ApplyHStackParams.swift */; };
+		C62B8C922C13926000AF6D20 /* ApplyZStackParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C912C13926000AF6D20 /* ApplyZStackParams.swift */; };
+		C62B8C942C13927700AF6D20 /* ApplyScrollViewParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C932C13927700AF6D20 /* ApplyScrollViewParams.swift */; };
 		C63D72852BF3F49D00818450 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72842BF3F49D00818450 /* Params.swift */; };
 		C63D72892BF3F4D200818450 /* JtoS+traverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72882BF3F4D200818450 /* JtoS+traverse.swift */; };
-		C63D728B2BF3F4F700818450 /* Params+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D728A2BF3F4F700818450 /* Params+Types.swift */; };
+		C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */; };
 		C6E489732BF286F500427675 /* Thesis_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */; };
 		C6E489752BF286F500427675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489742BF286F500427675 /* ContentView.swift */; };
 		C6E489772BF286F600427675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E489762BF286F600427675 /* Assets.xcassets */; };
@@ -25,10 +41,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LandingScreenMock.json; sourceTree = "<group>"; };
+		C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LandingScreenMock.json; sourceTree = "<group>"; wrapsLines = 0; };
+		C62B8C702C138FF100AF6D20 /* JtoSParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSParams.swift; sourceTree = "<group>"; };
+		C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsCommon.swift; sourceTree = "<group>"; };
+		C62B8C742C13902000AF6D20 /* ParamsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsText.swift; sourceTree = "<group>"; };
+		C62B8C762C13903700AF6D20 /* ParamsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImage.swift; sourceTree = "<group>"; };
+		C62B8C782C13904E00AF6D20 /* ParamsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsColor.swift; sourceTree = "<group>"; };
+		C62B8C7A2C13906000AF6D20 /* ParamsVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsVStack.swift; sourceTree = "<group>"; };
+		C62B8C7C2C13907000AF6D20 /* ParamsHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsHStack.swift; sourceTree = "<group>"; };
+		C62B8C7E2C13908A00AF6D20 /* ParamsZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsZStack.swift; sourceTree = "<group>"; };
+		C62B8C852C13918400AF6D20 /* ApplyCommonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyCommonParams.swift; sourceTree = "<group>"; };
+		C62B8C872C1391D500AF6D20 /* ApplyTextParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyTextParams.swift; sourceTree = "<group>"; };
+		C62B8C892C1391FA00AF6D20 /* ApplyImageParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyImageParams.swift; sourceTree = "<group>"; };
+		C62B8C8B2C13920A00AF6D20 /* ApplyColorParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyColorParams.swift; sourceTree = "<group>"; };
+		C62B8C8D2C13921D00AF6D20 /* ApplyVStackParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyVStackParams.swift; sourceTree = "<group>"; };
+		C62B8C8F2C13923800AF6D20 /* ApplyHStackParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyHStackParams.swift; sourceTree = "<group>"; };
+		C62B8C912C13926000AF6D20 /* ApplyZStackParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyZStackParams.swift; sourceTree = "<group>"; };
+		C62B8C932C13927700AF6D20 /* ApplyScrollViewParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyScrollViewParams.swift; sourceTree = "<group>"; };
 		C63D72842BF3F49D00818450 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		C63D72882BF3F4D200818450 /* JtoS+traverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoS+traverse.swift"; sourceTree = "<group>"; };
-		C63D728A2BF3F4F700818450 /* Params+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Params+Types.swift"; sourceTree = "<group>"; };
+		C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsScrollView.swift; sourceTree = "<group>"; };
 		C6E4896F2BF286F500427675 /* Thesis SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thesis SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thesis_SwiftUIApp.swift; sourceTree = "<group>"; };
 		C6E489742BF286F500427675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,11 +86,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C62B8C6E2C138FA900AF6D20 /* Params */ = {
+			isa = PBXGroup;
+			children = (
+				C63D72842BF3F49D00818450 /* Params.swift */,
+				C62B8C702C138FF100AF6D20 /* JtoSParams.swift */,
+				C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */,
+				C62B8C742C13902000AF6D20 /* ParamsText.swift */,
+				C62B8C762C13903700AF6D20 /* ParamsImage.swift */,
+				C62B8C782C13904E00AF6D20 /* ParamsColor.swift */,
+				C62B8C7A2C13906000AF6D20 /* ParamsVStack.swift */,
+				C62B8C7C2C13907000AF6D20 /* ParamsHStack.swift */,
+				C62B8C7E2C13908A00AF6D20 /* ParamsZStack.swift */,
+				C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */,
+			);
+			path = Params;
+			sourceTree = "<group>";
+		};
+		C62B8C802C1390DC00AF6D20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6F1CB142BF50C5A00CF9317 /* View+Apply.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C62B8C812C1390EA00AF6D20 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C6F1CB162BF50C9300CF9317 /* Color+hex.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C62B8C822C1390F600AF6D20 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C62B8C842C13917A00AF6D20 /* ViewModifier */,
+				C62B8C802C1390DC00AF6D20 /* View */,
+				C62B8C812C1390EA00AF6D20 /* Extension */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		C62B8C832C13913700AF6D20 /* JtoS */ = {
+			isa = PBXGroup;
+			children = (
+				C63D72832BF3F47400818450 /* Extension */,
+				C6E4898C2BF28FD900427675 /* JtoS.swift */,
+			);
+			path = JtoS;
+			sourceTree = "<group>";
+		};
+		C62B8C842C13917A00AF6D20 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				C62B8C852C13918400AF6D20 /* ApplyCommonParams.swift */,
+				C62B8C872C1391D500AF6D20 /* ApplyTextParams.swift */,
+				C62B8C892C1391FA00AF6D20 /* ApplyImageParams.swift */,
+				C62B8C8B2C13920A00AF6D20 /* ApplyColorParams.swift */,
+				C62B8C8D2C13921D00AF6D20 /* ApplyVStackParams.swift */,
+				C62B8C8F2C13923800AF6D20 /* ApplyHStackParams.swift */,
+				C62B8C912C13926000AF6D20 /* ApplyZStackParams.swift */,
+				C62B8C932C13927700AF6D20 /* ApplyScrollViewParams.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
 		C63D72832BF3F47400818450 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				C63D72882BF3F4D200818450 /* JtoS+traverse.swift */,
-				C63D728A2BF3F4F700818450 /* Params+Types.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -113,8 +211,8 @@
 		C6E489832BF28DF200427675 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C6E489812BF28DEE00427675 /* JtoSConverter.swift */,
 				C6E489872BF28EE300427675 /* JtoSView.swift */,
+				C6E489812BF28DEE00427675 /* JtoSConverter.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -131,10 +229,9 @@
 		C6E489892BF28F1100427675 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C63D72832BF3F47400818450 /* Extension */,
-				C6E4898C2BF28FD900427675 /* JtoS.swift */,
+				C62B8C832C13913700AF6D20 /* JtoS */,
+				C62B8C6E2C138FA900AF6D20 /* Params */,
 				C6E4898A2BF28F2300427675 /* JtoSMockType.swift */,
-				C63D72842BF3F49D00818450 /* Params.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,8 +239,7 @@
 		C6F1CB132BF50C4700CF9317 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C6F1CB142BF50C5A00CF9317 /* View+Apply.swift */,
-				C6F1CB162BF50C9300CF9317 /* Color+hex.swift */,
+				C62B8C822C1390F600AF6D20 /* SwiftUI */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -220,17 +316,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62B8C8E2C13921D00AF6D20 /* ApplyVStackParams.swift in Sources */,
 				C6E4898B2BF28F2300427675 /* JtoSMockType.swift in Sources */,
+				C62B8C862C13918400AF6D20 /* ApplyCommonParams.swift in Sources */,
 				C63D72852BF3F49D00818450 /* Params.swift in Sources */,
+				C62B8C772C13903700AF6D20 /* ParamsImage.swift in Sources */,
 				C6E4898D2BF28FD900427675 /* JtoS.swift in Sources */,
 				C6E489882BF28EE300427675 /* JtoSView.swift in Sources */,
 				C6E489752BF286F500427675 /* ContentView.swift in Sources */,
 				C6F1CB152BF50C5A00CF9317 /* View+Apply.swift in Sources */,
-				C63D728B2BF3F4F700818450 /* Params+Types.swift in Sources */,
+				C62B8C902C13923800AF6D20 /* ApplyHStackParams.swift in Sources */,
+				C62B8C7F2C13908A00AF6D20 /* ParamsZStack.swift in Sources */,
+				C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */,
+				C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */,
 				C6E489822BF28DEE00427675 /* JtoSConverter.swift in Sources */,
+				C62B8C8C2C13920A00AF6D20 /* ApplyColorParams.swift in Sources */,
 				C6F1CB172BF50C9300CF9317 /* Color+hex.swift in Sources */,
+				C62B8C7B2C13906000AF6D20 /* ParamsVStack.swift in Sources */,
 				C63D72892BF3F4D200818450 /* JtoS+traverse.swift in Sources */,
+				C62B8C922C13926000AF6D20 /* ApplyZStackParams.swift in Sources */,
 				C6E489732BF286F500427675 /* Thesis_SwiftUIApp.swift in Sources */,
+				C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */,
+				C62B8C942C13927700AF6D20 /* ApplyScrollViewParams.swift in Sources */,
+				C62B8C752C13902000AF6D20 /* ParamsText.swift in Sources */,
+				C62B8C8A2C1391FA00AF6D20 /* ApplyImageParams.swift in Sources */,
+				C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */,
+				C62B8C792C13904E00AF6D20 /* ParamsColor.swift in Sources */,
+				C62B8C882C1391D500AF6D20 /* ApplyTextParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

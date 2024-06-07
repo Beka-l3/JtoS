@@ -15,17 +15,26 @@ extension JtoSView {
     private func buildView(for element: JtoS) -> some View {
         switch element.jToSType {
 
-            case .text: textView(for: element)
-            case .image: imageView(for: element)
-            case .color: colorView(for: element)
-            case .vStack: vStackView(for: element)
-            case .hStack: hStackView(for: element)
-            case .zStack: zStackView(for: element)
-            case .scrollView: scrollViewView(for: element)
+        case .text: textView(for: element)
+        case .image: imageView(for: element)
+        case .color: colorView(for: element)
+        case .vStack: vStackView(for: element)
+        case .hStack: hStackView(for: element)
+        case .zStack: zStackView(for: element)
+        case .scrollView: scrollViewView(for: element)
 
-            default: empty
+        default: empty
         }
     }
+}
+
+extension JtoSView {
+    var empty: some View {
+        Color(.clear)
+    }
+}
+
+extension JtoSView {
 
     @ViewBuilder
     private func textView(for element: JtoS) -> some View {
@@ -113,8 +122,3 @@ extension JtoSView {
     }
 }
 
-extension JtoSView {
-    var empty: some View {
-        Color(.clear)
-    }
-}
