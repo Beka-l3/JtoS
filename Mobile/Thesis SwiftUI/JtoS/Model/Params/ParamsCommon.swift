@@ -4,7 +4,7 @@ struct ParamsCommon: JtoSParams {
 
     // MARK: Nested Types
 
-    struct ParamsFrame {
+    struct Frame {
 
         // MARK: Nested Types
 
@@ -31,9 +31,27 @@ struct ParamsCommon: JtoSParams {
         let height: HeightParamType
     }
 
+    struct Padding {
+
+        // MARK: Nested Types
+
+        enum JtoSEdge {
+
+            case none
+            case set(Edge.Set)
+        }
+
+        // MARK: Internal Properties
+
+        let length: CGFloat
+        let edge: JtoSEdge
+    }
+
     // MARK: Internal Properties
 
-    let frame: ParamsFrame
+    let frame: Frame
+    let padding: Padding
+
     let cornerRadius: CGFloat
     let ignoresSafeArea: Bool
 
@@ -55,13 +73,13 @@ struct ParamsCommon: JtoSParams {
         }
         else { alignment = .center }
 
-        var width: ParamsFrame.WidthParamType
+        var width: Frame.WidthParamType
         if let w = params.width { width = .width(value: w.value) }
         else if let w = params.maxWidth { width = .maxWidth(value: w.value) }
         else if let w = params.minWidth { width = .minWidth(value: w.value) }
         else { width = .none }
 
-        var height: ParamsFrame.HeightParamType
+        var height: Frame.HeightParamType
         if let h = params.width { height = .height(value: h.value) }
         else if let h = params.maxWidth { height = .maxHeight(value: h.value) }
         else if let h = params.minWidth { height = .minHeight(value: h.value) }
@@ -71,6 +89,38 @@ struct ParamsCommon: JtoSParams {
             alignment: alignment,
             width: width,
             height: height
+        )
+
+        let jToSEdge: Padding.JtoSEdge
+        if let es = params.paddingEdges {
+            var edgesSet: Edge.Set = []
+
+            for e in es {
+
+                let edge: Edge.Set = switch e {
+
+                case "leading": .leading
+                case "trailing": .trailing
+                case "horizontal": .horizontal
+                case "vertical": .vertical
+                case "top": .top
+                case "bottom": .bottom
+
+                default: .all
+
+                }
+
+                edgesSet.insert(edge)
+            }
+
+            jToSEdge = .set(edgesSet)
+        } else {
+            jToSEdge = .none
+        }
+
+        self.padding = .init(
+            length: params.paddingLength ?? 0,
+            edge: jToSEdge
         )
 
         self.ignoresSafeArea = params.ignoresSafeArea ?? false

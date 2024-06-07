@@ -9,14 +9,14 @@ struct ApplyCommonParams: ViewModifier {
             .applyFrame(params.frame)
             .applyIgnoreSafeArea(params.ignoresSafeArea)
             .applyCornerRadius(cornerRadius: params.cornerRadius)
-
+            .applyPadding(params.padding)
     }
 }
 
 private extension View {
 
     @ViewBuilder
-    func applyFrame(_ frameParams: ParamsCommon.ParamsFrame) -> some View {
+    func applyFrame(_ frameParams: ParamsCommon.Frame) -> some View {
         self
             .applyWidth(frameParams.width)
             .applyHeight(frameParams.height)
@@ -24,7 +24,7 @@ private extension View {
     }
 
     @ViewBuilder
-    func applyWidth(_ width: ParamsCommon.ParamsFrame.WidthParamType) -> some View {
+    func applyWidth(_ width: ParamsCommon.Frame.WidthParamType) -> some View {
         switch width {
         case let .width(value) : self.frame(width: value)
         case let .maxWidth(value): self.frame(maxWidth: value)
@@ -34,12 +34,20 @@ private extension View {
     }
 
     @ViewBuilder
-    func applyHeight(_ height: ParamsCommon.ParamsFrame.HeightParamType) -> some View {
+    func applyHeight(_ height: ParamsCommon.Frame.HeightParamType) -> some View {
         switch height {
         case let .height(value) : self.frame(height: value)
         case let .maxHeight(value): self.frame(maxHeight: value)
         case let .minHeight(value): self.frame(minHeight: value)
         default: self
+        }
+    }
+
+    @ViewBuilder
+    func applyPadding(_ padding: ParamsCommon.Padding) -> some View {
+        switch padding.edge {
+        case let .set(edgeSet): self.padding(edgeSet, padding.length)
+        case .none: self
         }
     }
 

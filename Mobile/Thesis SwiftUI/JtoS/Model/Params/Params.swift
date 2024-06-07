@@ -37,6 +37,9 @@ struct Params: Decodable, Equatable, Hashable {
 
     var frameAlignment: String?             = nil
 
+    var paddingEdges: [String]?             = nil
+    var paddingLength: CGFloat?             = nil
+
     var colorHex: String?                   = nil
     var cornerRadius: Double?               = nil
 
