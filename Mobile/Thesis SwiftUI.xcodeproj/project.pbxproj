@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C62B8C6D2C137E6500AF6D20 /* LandingScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */; };
 		C63D72852BF3F49D00818450 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72842BF3F49D00818450 /* Params.swift */; };
 		C63D72892BF3F4D200818450 /* JtoS+traverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72882BF3F4D200818450 /* JtoS+traverse.swift */; };
 		C63D728B2BF3F4F700818450 /* Params+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D728A2BF3F4F700818450 /* Params+Types.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LandingScreenMock.json; sourceTree = "<group>"; };
 		C63D72842BF3F49D00818450 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		C63D72882BF3F4D200818450 /* JtoS+traverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoS+traverse.swift"; sourceTree = "<group>"; };
 		C63D728A2BF3F4F700818450 /* Params+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Params+Types.swift"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E489852BF28E1C00427675 /* CatalogScreenMock.json */,
+				C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E4897A2BF286F600427675 /* Preview Assets.xcassets in Resources */,
+				C62B8C6D2C137E6500AF6D20 /* LandingScreenMock.json in Resources */,
 				C6E489772BF286F600427675 /* Assets.xcassets in Resources */,
 				C6E489862BF28E1C00427675 /* CatalogScreenMock.json in Resources */,
 			);

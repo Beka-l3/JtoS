@@ -14,9 +14,11 @@ struct Params: Decodable, Equatable, Hashable {
 
     // MARK: Common
 
+    var ignoresSafeArea: Bool?      = nil
+
     var size: Size?                 = nil
     var colorHex: String?           = nil
-    var cornerRadius: String?       = nil
+    var cornerRadius: Double?       = nil
 
     var value: String?              = nil
     var font: String?               = nil

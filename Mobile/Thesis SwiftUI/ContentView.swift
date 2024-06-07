@@ -18,14 +18,8 @@ struct ContentView: View {
 
 extension ContentView {
 
-    func foo() {
-        if let jtos = JtoSConverter.decodeMockJSON(for: .catalog) {
-            jtos.traverseModel()
-        }
-    }
-
     func getJtoSModel() {
-        if let jtos = JtoSConverter.decodeMockJSON(for: .catalog) {
+        if let jtos = JtoSConverter.decodeMockJSON(for: .landing) {
             jtos.traverseModel()
             self.jtos = jtos
         } else {
