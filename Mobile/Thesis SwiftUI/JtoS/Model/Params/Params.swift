@@ -4,31 +4,59 @@ struct Params: Decodable, Equatable, Hashable {
 
     // MARK: Nested Types
 
-    struct Size: Decodable, Equatable, Hashable {
+    struct CGFloatValueWrapper: Codable, Equatable, Hashable {
+        var value: CGFloat
 
-        let w: Int
-        let h: Int
+        enum CodingKeys: String, CodingKey {
+            case value
+        }
+
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            if let doubleValue = try? container.decode(Double.self, forKey: .value) {
+                value = CGFloat(doubleValue)
+            } else if let stringValue = try? container.decode(String.self, forKey: .value), stringValue == "Infinity" {
+                value = .infinity
+            } else {
+                throw DecodingError.dataCorruptedError(forKey: .value, in: container, debugDescription: "Value cannot be decoded")
+            }
+        }
+
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            if value.isInfinite {
+                try container.encode("Infinity", forKey: .value)
+            } else {
+                try container.encode(Double(value), forKey: .value)
+            }
+        }
     }
 
     // MARK: Internal Properties
 
-    // MARK: Common
+    var ignoresSafeArea: Bool?              = nil
 
-    var ignoresSafeArea: Bool?      = nil
+    var width: CGFloatValueWrapper?         = nil
+    var maxWidth: CGFloatValueWrapper?      = nil
+    var minWidth: CGFloatValueWrapper?      = nil
 
-    var size: Size?                 = nil
-    var colorHex: String?           = nil
-    var cornerRadius: Double?       = nil
+    var height: CGFloatValueWrapper?        = nil
+    var maxHeight: CGFloatValueWrapper?     = nil
+    var minHeight: CGFloatValueWrapper?     = nil
 
-    var value: String?              = nil
-    var font: String?               = nil
-    var fontSize: Int?              = nil
+    var frameAlignment: String?             = nil
 
-    var url: String?                = nil
-    var contentMode: String?        = nil
+    var colorHex: String?                   = nil
+    var cornerRadius: Double?               = nil
 
-    var alignment: String?          = nil
-    var spacing: Int?               = nil
+    var value: String?                      = nil
+    var font: String?                       = nil
+    var fontSize: Int?                      = nil
 
-    var axes: String?               = nil
+    var url: String?                        = nil
+    var contentMode: String?                = nil
+
+    var spacing: Int?                       = nil
+    var alignment: String?                  = nil
+    var axes: String?                       = nil
 }

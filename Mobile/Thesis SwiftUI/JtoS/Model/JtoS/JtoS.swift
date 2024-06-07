@@ -9,6 +9,7 @@ struct JtoS: Decodable, Equatable, Hashable {
         case text, image, button, color
         case vStack, hStack, zStack
         case scrollView
+        case spacer
 
         case unknown
     }
