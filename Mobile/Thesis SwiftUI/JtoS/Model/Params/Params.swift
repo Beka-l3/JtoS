@@ -4,7 +4,7 @@ struct Params: Decodable, Equatable, Hashable {
 
     // MARK: Nested Types
 
-    struct CGFloatValueWrapper: Codable, Equatable, Hashable {
+    struct CGFloatValueWrapper: Decodable, Equatable, Hashable {
         var value: CGFloat
 
         enum CodingKeys: String, CodingKey {
@@ -19,15 +19,6 @@ struct Params: Decodable, Equatable, Hashable {
                 value = .infinity
             } else {
                 throw DecodingError.dataCorruptedError(forKey: .value, in: container, debugDescription: "Value cannot be decoded")
-            }
-        }
-
-        func encode(to encoder: Encoder) throws {
-            var container = encoder.container(keyedBy: CodingKeys.self)
-            if value.isInfinite {
-                try container.encode("Infinity", forKey: .value)
-            } else {
-                try container.encode(Double(value), forKey: .value)
             }
         }
     }
