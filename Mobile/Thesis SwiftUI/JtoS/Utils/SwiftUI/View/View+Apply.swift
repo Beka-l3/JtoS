@@ -2,7 +2,6 @@ import SwiftUI
 
 extension View {
     func apply(type: JtoS.JtoSType, params: Params) -> some View {
-
         let commonParams = ParamsCommon(params: params)
         let view = AnyView(self.modifier(ApplyCommonParams(params: commonParams)))
 

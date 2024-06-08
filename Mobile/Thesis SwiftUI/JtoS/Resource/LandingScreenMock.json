@@ -5,7 +5,7 @@
         {
             "type": "color",
             "params": {
-                "color_hex": "abcaa1",
+                "color_hex": "223232",
                 "ignores_safe_area": true
             }
         },
@@ -16,16 +16,50 @@
             },
             "ui": [
                 {
-                    "type": "image",
+                    "type": "zStack",
                     "params": {
-                        "url": "https://images.unsplash.com/photo-1625926852782-3bef718476dc?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                         "max_width": { "value": "Infinity" },
-                        "height": { "value": 180.0 },
-                        "padding_edges": ["horizontal"],
-                        "padding_length": 12,
-                        "content_mode": "fill",
-                        "corner_radius": 16
-                    }
+                        "max_height": { "value": 180.0 },
+                        "padding_edges": ["top"],
+                        "padding_length": 44
+                    },
+                    "ui": [
+                        {
+                            "type": "image",
+                            "params": {
+                                "url": "https://images.unsplash.com/photo-1625926852782-3bef718476dc?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                                "max_width": { "value": "Infinity" },
+                                "max_height": { "value": 180.0 },
+                                "padding_edges": ["horizontal"],
+                                "padding_length": 12,
+                                "content_mode": "fill",
+                                "corner_radius": 16
+                            }
+                        },
+                        {
+                            "type": "vStack",
+                            "params": {},
+                            "ui": [
+                                {
+                                    "type": "spacer",
+                                    "params": {}
+                                },
+                                {
+                                    "type": "text",
+                                    "params": {
+                                        "color_hex": "dddddd",
+                                        "value": "Innopolis",
+                                        "font": "system",
+                                        "font_size": 24,
+                                        "max_width": {"value": "Infinity"},
+                                        "frame_alignment": "leading",
+                                        "padding_edges": ["horizontal", "bottom"],
+                                        "padding_length": 24,
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "image",
@@ -44,7 +78,7 @@
                     "params": {
                         "url": "https://images.unsplash.com/photo-1717256429311-a03ce77bfb59?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                         "max_width": { "value": "Infinity" },
-                        "height": { "value": 420.0 },
+                        "max_height": { "value": 420.0 },
                         "padding_edges": ["horizontal"],
                         "padding_length": 12,
                         "content_mode": "fill",
@@ -56,7 +90,7 @@
                     "params": {
                         "url": "https://images.unsplash.com/photo-1629043916430-feca2aed4eea?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                         "max_width": { "value": "Infinity" },
-                        "height": { "value": 180.0 },
+                        "max_height": { "value": 180.0 },
                         "padding_edges": ["horizontal"],
                         "padding_length": 12,
                         "content_mode": "fill",
@@ -68,13 +102,13 @@
                     "params": {
                         "url": "https://images.unsplash.com/photo-1625924305476-d8f96c560c21?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                         "max_width": { "value": "Infinity" },
-                        "height": { "value": 420 },
+                        "max_height": { "value": 420 },
                         "padding_edges": ["horizontal"],
                         "padding_length": 12,
                         "content_mode": "fill",
                         "corner_radius": 16
                     }
-                },
+                }
             ]
         }
     ]

@@ -47,10 +47,16 @@ extension JtoSView {
     @ViewBuilder
     private func imageView(for element: JtoS) -> some View {
         let params = ParamsImage(params: element.params)
-        AsyncImage(url: URL(string: element.params.url ?? "")) { result in
-            result.image?
-                .resizable()
-                .aspectRatio(contentMode: params.contentMode)
+        AsyncImage(url: URL(string: element.params.url ?? "")) { phase in
+            if let image = phase.image {
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: params.contentMode)
+            } else if phase.error != nil {
+                Text("Unable to load image")
+            } else {
+                ProgressView()
+            }
         }
         .apply(type: .image, params: element.params)
     }

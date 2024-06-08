@@ -40,6 +40,7 @@ struct Params: Decodable, Equatable, Hashable {
     var paddingEdges: [String]?             = nil
     var paddingLength: CGFloat?             = nil
 
+    var bgColorHex: String?                 = nil
     var colorHex: String?                   = nil
     var cornerRadius: Double?               = nil
 

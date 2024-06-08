@@ -7,39 +7,40 @@ struct ApplyCommonParams: ViewModifier {
     func body(content: Content) -> some View {
         content
             .applyFrame(params.frame)
-            .applyIgnoreSafeArea(params.ignoresSafeArea)
             .applyCornerRadius(cornerRadius: params.cornerRadius)
             .applyPadding(params.padding)
+            .applyBgColor(params.bgColorHex)
+            .applyIgnoreSafeArea(params.ignoresSafeArea)
     }
 }
 
 private extension View {
 
     @ViewBuilder
+    func applyBgColor(_ colorHex: String?) -> some View {
+        if let colorHex { self.background(Color.fromHex(colorHex)) } else { self }
+    }
+
+    @ViewBuilder
     func applyFrame(_ frameParams: ParamsCommon.Frame) -> some View {
-        self
-            .applyWidth(frameParams.width)
-            .applyHeight(frameParams.height)
-            .frame(alignment: frameParams.alignment)
-    }
+        switch (frameParams.width, frameParams.height) {
 
-    @ViewBuilder
-    func applyWidth(_ width: ParamsCommon.Frame.WidthParamType) -> some View {
-        switch width {
-        case let .width(value) : self.frame(width: value)
-        case let .maxWidth(value): self.frame(maxWidth: value)
-        case let .minWidth(value): self.frame(minWidth: value)
-        default: self
-        }
-    }
+        case let (.width(w), .height(h)): self.frame(width: w, height: h, alignment: frameParams.alignment)
+        case let (.width(w), .none): self.frame(width: w, alignment: frameParams.alignment)
+        case let (.none, .height(h)): self.frame(height: h, alignment: frameParams.alignment)
 
-    @ViewBuilder
-    func applyHeight(_ height: ParamsCommon.Frame.HeightParamType) -> some View {
-        switch height {
-        case let .height(value) : self.frame(height: value)
-        case let .maxHeight(value): self.frame(maxHeight: value)
-        case let .minHeight(value): self.frame(minHeight: value)
-        default: self
+        case let (.maxWidth(w), .none): self.frame(maxWidth: w, alignment: frameParams.alignment)
+        case let (.maxWidth(w), .maxHeight(h)): self.frame(maxWidth: w, maxHeight: h, alignment: frameParams.alignment)
+        case let (.maxWidth(w), .minHeight(h)): self.frame(maxWidth: w, minHeight: h, alignment: frameParams.alignment)
+
+        case let (.minWidth(w), .none): self.frame(minWidth: w, alignment: frameParams.alignment)
+        case let (.minWidth(w), .maxHeight(h)): self.frame(minWidth: w, maxHeight: h, alignment: frameParams.alignment)
+        case let (.minWidth(w), .minHeight(h)): self.frame(minWidth: w, minHeight: h, alignment: frameParams.alignment)
+
+        case let (.none, .maxHeight(h)): self.frame(maxHeight: h, alignment: frameParams.alignment)
+        case let (.none, .minHeight(h)): self.frame(minHeight: h, alignment: frameParams.alignment)
+
+        default: self.frame(alignment: frameParams.alignment)
         }
     }
 

@@ -27,6 +27,7 @@
 		C63D72852BF3F49D00818450 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72842BF3F49D00818450 /* Params.swift */; };
 		C63D72892BF3F4D200818450 /* JtoS+traverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72882BF3F4D200818450 /* JtoS+traverse.swift */; };
 		C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */; };
+		C64C326A2C14707300192683 /* ParamsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C32692C14707300192683 /* ParamsButton.swift */; };
 		C6E489732BF286F500427675 /* Thesis_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */; };
 		C6E489752BF286F500427675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489742BF286F500427675 /* ContentView.swift */; };
 		C6E489772BF286F600427675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E489762BF286F600427675 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		C63D72842BF3F49D00818450 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		C63D72882BF3F4D200818450 /* JtoS+traverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoS+traverse.swift"; sourceTree = "<group>"; };
 		C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsScrollView.swift; sourceTree = "<group>"; };
+		C64C32692C14707300192683 /* ParamsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsButton.swift; sourceTree = "<group>"; };
 		C6E4896F2BF286F500427675 /* Thesis SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thesis SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thesis_SwiftUIApp.swift; sourceTree = "<group>"; };
 		C6E489742BF286F500427675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				C62B8C7C2C13907000AF6D20 /* ParamsHStack.swift */,
 				C62B8C7E2C13908A00AF6D20 /* ParamsZStack.swift */,
 				C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */,
+				C64C32692C14707300192683 /* ParamsButton.swift */,
 			);
 			path = Params;
 			sourceTree = "<group>";
@@ -202,19 +205,19 @@
 			children = (
 				C6F1CB132BF50C4700CF9317 /* Utils */,
 				C6E489892BF28F1100427675 /* Model */,
-				C6E489832BF28DF200427675 /* Source */,
+				C6E489832BF28DF200427675 /* Src */,
 				C6E489842BF28DFC00427675 /* Resource */,
 			);
 			path = JtoS;
 			sourceTree = "<group>";
 		};
-		C6E489832BF28DF200427675 /* Source */ = {
+		C6E489832BF28DF200427675 /* Src */ = {
 			isa = PBXGroup;
 			children = (
 				C6E489872BF28EE300427675 /* JtoSView.swift */,
 				C6E489812BF28DEE00427675 /* JtoSConverter.swift */,
 			);
-			path = Source;
+			path = Src;
 			sourceTree = "<group>";
 		};
 		C6E489842BF28DFC00427675 /* Resource */ = {
@@ -325,6 +328,7 @@
 				C6E489882BF28EE300427675 /* JtoSView.swift in Sources */,
 				C6E489752BF286F500427675 /* ContentView.swift in Sources */,
 				C6F1CB152BF50C5A00CF9317 /* View+Apply.swift in Sources */,
+				C64C326A2C14707300192683 /* ParamsButton.swift in Sources */,
 				C62B8C902C13923800AF6D20 /* ApplyHStackParams.swift in Sources */,
 				C62B8C7F2C13908A00AF6D20 /* ParamsZStack.swift in Sources */,
 				C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */,
