@@ -43,10 +43,7 @@ extension JtoSRootView {
     private func getJtoSModelFromMock() {
         if let model = JtoSConverter.decodeMockJSON(for: mockType) {
             model.traverseModel()
-
             jtos = model
-
-            jtos.traverseModel()
         } else {
             jtos = .empty
         }
