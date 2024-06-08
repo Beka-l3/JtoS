@@ -8,7 +8,7 @@ struct ParamsImage: JtoSParams {
     // MARK: Init
 
     init(params: Params) {
-        self.url = params.value ?? ""
+        self.url = params.url ?? ""
         self.contentMode = params.contentMode == "fill" ? .fill : .fit
     }
 }

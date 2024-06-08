@@ -18,7 +18,7 @@ struct JtoS: Decodable, Equatable, Hashable {
 
     let type: String
     let params: Params
-    var ui: [JtoS]?
+    var ui: [JtoS]
 
     var jToSType: JtoSType {
         JtoSType(rawValue: type) ??  .unknown
@@ -29,5 +29,5 @@ extension JtoS {
 
     // MARK: Type Properties
 
-    static let empty: JtoS = .init(type: "", params: .init())
+    static let empty: JtoS = .init(type: "", params: .init(), ui: [])
 }

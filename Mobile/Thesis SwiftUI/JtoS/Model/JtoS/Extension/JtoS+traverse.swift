@@ -6,14 +6,12 @@ extension JtoS {
         spcPrint(idx) { print(type, jToSType) }
         spcPrint(idx) { print(params) }
 
-        if let ui {
-            spcPrint(idx) { print("{") }
-            for elem in ui {
-                elem.traverseModel(idx: idx + 1)
-                print("")
-            }
-            spcPrint(idx) { print("}") }
+        spcPrint(idx) { print("{") }
+        for elem in ui {
+            elem.traverseModel(idx: idx + 1)
+            print("")
         }
+        spcPrint(idx) { print("}") }
     }
     
     func spcPrint(

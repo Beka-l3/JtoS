@@ -44,7 +44,7 @@ struct Params: Decodable, Equatable, Hashable {
     var colorHex: String?                   = nil
     var cornerRadius: Double?               = nil
 
-    var value: String?                      = nil
+    var textValue: String?                      = nil
     var font: String?                       = nil
     var fontSize: Int?                      = nil
 

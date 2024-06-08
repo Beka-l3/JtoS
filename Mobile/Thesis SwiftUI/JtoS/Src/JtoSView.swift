@@ -2,18 +2,18 @@ import SwiftUI
 
 struct JtoSView: View {
 
-    var model: JtoS
+    @Binding var model: JtoS
 
     var body: some View {
-        buildView(for: model)
+        buildView(for: $model)
     }
 }
 
 extension JtoSView {
 
     @ViewBuilder
-    private func buildView(for element: JtoS) -> some View {
-        switch element.jToSType {
+    private func buildView(for element: Binding<JtoS>) -> some View {
+        switch element.wrappedValue.jToSType {
 
         case .text: textView(for: element)
         case .image: imageView(for: element)
@@ -31,23 +31,29 @@ extension JtoSView {
 
 extension JtoSView {
     var empty: some View {
-        Color(.clear)
+        ZStack {
+            Color(.systemBackground).opacity(0.6)
+
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
+                .scaleEffect(2.0, anchor: .center)
+        }
     }
 }
 
 extension JtoSView {
 
     @ViewBuilder
-    private func textView(for element: JtoS) -> some View {
-        let params = ParamsText(params: element.params)
-        Text(params.value)
-            .apply(type: .text, params: element.params)
+    private func textView(for element: Binding<JtoS>) -> some View {
+        let params = ParamsText(params: element.wrappedValue.params)
+        Text(params.textValue)
+            .apply(type: .text, params: element.wrappedValue.params)
     }
 
     @ViewBuilder
-    private func imageView(for element: JtoS) -> some View {
-        let params = ParamsImage(params: element.params)
-        AsyncImage(url: URL(string: element.params.url ?? "")) { phase in
+    private func imageView(for element: Binding<JtoS>) -> some View {
+        let params = ParamsImage(params: element.wrappedValue.params)
+        AsyncImage(url: URL(string: element.wrappedValue.params.url ?? "")) { phase in
             if let image = phase.image {
                 image
                     .resizable()
@@ -58,74 +64,90 @@ extension JtoSView {
                 ProgressView()
             }
         }
-        .apply(type: .image, params: element.params)
+        .apply(type: .image, params: element.wrappedValue.params)
     }
 
     @ViewBuilder
-    private func colorView(for element: JtoS) -> some View {
-        let params = ParamsColor(params: element.params)
+    private func colorView(for element: Binding<JtoS>) -> some View {
+        let params = ParamsColor(params: element.wrappedValue.params)
         Color.fromHex(params.colorHex)
-            .apply(type: .color, params: element.params)
+            .apply(type: .color, params: element.wrappedValue.params)
     }
 
     @ViewBuilder
-    private func vStackView(for element: JtoS) -> some View {
-        let params = ParamsVStack(params: element.params)
+    private func vStackView(for element: Binding<JtoS>) -> some View {
+        let params = ParamsVStack(params: element.wrappedValue.params)
         VStack(alignment: params.alignment, spacing: params.spacing) {
-            if let ui = element.ui {
-                ForEach(ui, id: \.self) { childElement in
-                    JtoSView(model: childElement)
+            if !element.ui.isEmpty {
+                ForEach(element.ui, id: \.self) { uiChild in
+                    JtoSView(model: uiChild)
                 }
-            } else {
-                empty
             }
         }
-        .apply(type: .vStack, params: element.params)
+        .apply(type: .vStack, params: element.wrappedValue.params)
     }
 
     @ViewBuilder
-    private func hStackView(for element: JtoS) -> some View {
-        let params = ParamsHStack(params: element.params)
+    private func hStackView(for element: Binding<JtoS>) -> some View {
+        let params = ParamsHStack(params: element.wrappedValue.params)
         HStack(alignment: params.alignment, spacing: params.spacing) {
-            if let ui = element.ui {
-                ForEach(ui, id: \.self) { childElement in
-                    JtoSView(model: childElement)
+            if !element.ui.isEmpty {
+                ForEach(element.ui, id: \.self) { uiChild in
+                    JtoSView(model: uiChild)
                 }
-            } else {
-                empty
             }
         }
-        .apply(type: .hStack, params: element.params)
+        .apply(type: .hStack, params: element.wrappedValue.params)
     }
 
     @ViewBuilder
-    private func zStackView(for element: JtoS) -> some View {
-        let params = ParamsZStack(params: element.params)
+    private func zStackView(for element: Binding<JtoS>) -> some View {
+        let params = ParamsZStack(params: element.wrappedValue.params)
         ZStack(alignment: params.alignment) {
-            if let ui = element.ui {
-                ForEach(ui, id: \.self) { childElement in
-                    JtoSView(model: childElement)
+            if !element.ui.isEmpty {
+                ForEach(element.ui, id: \.self) { uiChild in
+                    JtoSView(model: uiChild)
                 }
-            } else {
-                empty
             }
         }
-        .apply(type: .zStack, params: element.params)
+        .apply(type: .zStack, params: element.wrappedValue.params)
     }
 
     @ViewBuilder
-    private func scrollViewView(for element: JtoS) -> some View {
-        let params = ParamsScrollView(params: element.params)
+    private func scrollViewView(for element: Binding<JtoS>) -> some View {
+        let params = ParamsScrollView(params: element.wrappedValue.params)
         ScrollView(params.axes) {
-            if let ui = element.ui {
-                ForEach(ui, id: \.self) { childElement in
-                    JtoSView(model: childElement)
+            if !element.ui.isEmpty {
+                ForEach(element.ui, id: \.self) { uiChild in
+                    JtoSView(model: uiChild)
                 }
-            } else {
-                empty
             }
         }
-        .apply(type: .scrollView, params: element.params)
+        .apply(type: .scrollView, params: element.wrappedValue.params)
+    }
+
+    @ViewBuilder
+    private func button(for element: Binding<JtoS>) -> some View {
+        let params = ParamsButton(params: element.wrappedValue.params)
+        Button(params.textValue) {
+            switch params.actionType {
+            case .none:
+                break
+
+            case .openBottomSheet(_):
+                break
+
+            case .openNewView(_):
+                break
+
+            case .goBack:
+                break
+
+            case .update:
+                break
+
+            }
+        }
     }
 }
 

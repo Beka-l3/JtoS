@@ -7,7 +7,8 @@
             "params": {
                 "color_hex": "223232",
                 "ignores_safe_area": true
-            }
+            },
+            "ui": []
         },
         {
             "type": "scrollView",
@@ -34,7 +35,8 @@
                                 "padding_length": 12,
                                 "content_mode": "fill",
                                 "corner_radius": 16
-                            }
+                            },
+                            "ui": []
                         },
                         {
                             "type": "vStack",
@@ -42,20 +44,23 @@
                             "ui": [
                                 {
                                     "type": "spacer",
-                                    "params": {}
+                                    "params": {},
+                                    "ui": []
+
                                 },
                                 {
                                     "type": "text",
                                     "params": {
                                         "color_hex": "dddddd",
-                                        "value": "Innopolis",
+                                        "text_value": "Innopolis",
                                         "font": "system",
                                         "font_size": 24,
                                         "max_width": {"value": "Infinity"},
                                         "frame_alignment": "leading",
                                         "padding_edges": ["horizontal", "bottom"],
                                         "padding_length": 24,
-                                    }
+                                    },
+                                    "ui": []
                                 }
                             ]
                         }
@@ -71,7 +76,8 @@
                         "padding_length": 12,
                         "content_mode": "fill",
                         "corner_radius": 16
-                    }
+                    },
+                    "ui": []
                 },
                 {
                     "type": "image",
@@ -83,7 +89,8 @@
                         "padding_length": 12,
                         "content_mode": "fill",
                         "corner_radius": 16
-                    }
+                    },
+                    "ui": []
                 },
                 {
                     "type": "image",
@@ -95,7 +102,8 @@
                         "padding_length": 12,
                         "content_mode": "fill",
                         "corner_radius": 16
-                    }
+                    },
+                    "ui": []
                 },
                 {
                     "type": "image",
@@ -107,7 +115,8 @@
                         "padding_length": 12,
                         "content_mode": "fill",
                         "corner_radius": 16
-                    }
+                    },
+                    "ui": []
                 }
             ]
         }
