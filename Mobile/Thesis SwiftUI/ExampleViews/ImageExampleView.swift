@@ -1,18 +1,15 @@
 import SwiftUI
-import UIKit
 
-struct ContentView: View {
+struct ImageExampleView: View {
 
     let imageUrl = "https://images.unsplash.com/photo-1615961439949-65582e3c843a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
     var body: some View {
-        JtoSRootView(mock: .landing)
-
-//        zStack()
+        zStack()
     }
 }
 
-extension ContentView {
+extension ImageExampleView {
 
     @ViewBuilder
     private func zStack() -> some View {
@@ -76,4 +73,3 @@ extension ContentView {
     }
 }
 
-#Preview { ContentView() }

@@ -1,8 +1,94 @@
 import SwiftUI
 
-struct JtoSView: View {
+struct CounterExampleModelExampleView: View {
 
-    @Binding var model: JtoS
+    @State private var exampleModel: ExampleModel
+
+    var body: some View {
+        getViewFromModel()
+    }
+
+
+    // MARK: Init
+
+    init() {
+        let color = ExampleModel(type: "color", params: .init(colorHex: "222242"), ui: [])
+
+        let minusBtn = ExampleModel(
+            type: "button",
+            params: .init(
+                textValue: "-"
+            ),
+            ui: []
+        )
+
+        let counterText = ExampleModel(
+            type: "text",
+            params: .init(
+                textValue: "0"
+            ),
+            ui: []
+        )
+
+        let plusBtn = ExampleModel(
+            type: "button",
+            params: .init(
+                textValue: "+"
+            ),
+            ui: []
+        )
+
+        let hStack = ExampleModel(type: "hStack", params: .init(), ui: [minusBtn, counterText, plusBtn])
+
+        self.exampleModel = .init(type: "zStack", params: .init(), ui: [color, hStack])
+    }
+}
+
+
+
+
+
+extension CounterExampleModelExampleView {
+
+    @ViewBuilder
+    func getViewFromModel() -> some View {
+        ExampleView(model: $exampleModel)
+    }
+
+}
+
+
+private struct ExampleModel: Decodable, Equatable, Hashable {
+
+    // MARK: Nested Types
+
+    enum ExampelType: String {
+
+        case text, image, button, color
+        case vStack, hStack, zStack
+        case scrollView
+        case spacer
+
+        case unknown
+    }
+
+    // MARK: Internal Properties
+
+    let type: String
+    let params: Params
+    var ui: [ExampleModel]
+
+    var exampleType: ExampelType {
+        ExampelType(rawValue: type) ??  .unknown
+    }
+
+}
+
+
+
+private struct ExampleView: View {
+
+    @Binding var model: ExampleModel
 
     var body: some View {
         buildView(for: $model)
@@ -10,11 +96,11 @@ struct JtoSView: View {
     }
 }
 
-extension JtoSView {
+extension ExampleView {
 
     @ViewBuilder
-    private func buildView(for element: Binding<JtoS>) -> some View {
-        switch element.wrappedValue.jToSType {
+    private func buildView(for element: Binding<ExampleModel>) -> some View {
+        switch element.wrappedValue.exampleType {
 
         case .text: textView(for: element)
         case .image: imageView(for: element)
@@ -30,7 +116,7 @@ extension JtoSView {
     }
 }
 
-extension JtoSView {
+extension ExampleView {
     var empty: some View {
         ZStack {
             Color(.systemBackground).opacity(0.6)
@@ -42,17 +128,17 @@ extension JtoSView {
     }
 }
 
-extension JtoSView {
+extension ExampleView {
 
     @ViewBuilder
-    private func textView(for element: Binding<JtoS>) -> some View {
+    private func textView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsText(params: element.wrappedValue.params)
         Text(params.textValue)
             .modifier(ApplyTextParams(params: params))
     }
 
     @ViewBuilder
-    private func imageView(for element: Binding<JtoS>) -> some View {
+    private func imageView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsImage(params: element.wrappedValue.params)
         AsyncImage(url: URL(string: element.wrappedValue.params.url ?? "")) { phase in
             if let image = phase.image {
@@ -75,19 +161,19 @@ extension JtoSView {
     }
 
     @ViewBuilder
-    private func colorView(for element: Binding<JtoS>) -> some View {
+    private func colorView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsColor(params: element.wrappedValue.params)
         Color.fromHex(params.colorHex)
             .modifier(ApplyColorParams(params: params))
     }
 
     @ViewBuilder
-    private func vStackView(for element: Binding<JtoS>) -> some View {
+    private func vStackView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsVStack(params: element.wrappedValue.params)
         VStack(alignment: params.alignment, spacing: params.spacing) {
             if !element.ui.isEmpty {
                 ForEach(element.ui, id: \.self) { uiChild in
-                    JtoSView(model: uiChild)
+                    ExampleView(model: uiChild)
                 }
             }
         }
@@ -95,12 +181,12 @@ extension JtoSView {
     }
 
     @ViewBuilder
-    private func hStackView(for element: Binding<JtoS>) -> some View {
+    private func hStackView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsHStack(params: element.wrappedValue.params)
         HStack(alignment: params.alignment, spacing: params.spacing) {
             if !element.ui.isEmpty {
                 ForEach(element.ui, id: \.self) { uiChild in
-                    JtoSView(model: uiChild)
+                    ExampleView(model: uiChild)
                 }
             }
         }
@@ -108,12 +194,12 @@ extension JtoSView {
     }
 
     @ViewBuilder
-    private func zStackView(for element: Binding<JtoS>) -> some View {
+    private func zStackView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsZStack(params: element.wrappedValue.params)
         ZStack(alignment: params.alignment) {
             if !element.ui.isEmpty {
                 ForEach(element.ui, id: \.self) { uiChild in
-                    JtoSView(model: uiChild)
+                    ExampleView(model: uiChild)
                 }
             }
         }
@@ -121,12 +207,12 @@ extension JtoSView {
     }
 
     @ViewBuilder
-    private func scrollViewView(for element: Binding<JtoS>) -> some View {
+    private func scrollViewView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsScrollView(params: element.wrappedValue.params)
         ScrollView(params.axes) {
             if !element.ui.isEmpty {
                 ForEach(element.ui, id: \.self) { uiChild in
-                    JtoSView(model: uiChild)
+                    ExampleView(model: uiChild)
                 }
             }
         }
@@ -134,12 +220,13 @@ extension JtoSView {
     }
 
     @ViewBuilder
-    private func button(for element: Binding<JtoS>) -> some View {
-        let params = ParamsButton(params: element.wrappedValue.params)
+    private func button(for element: Binding<ExampleModel>) -> some View {
+        let buttonParams = ParamsButton(params: element.wrappedValue.params)
+        let textParams = ParamsText(params: element.wrappedValue.params)
 
         Button {
 
-            switch params.actionType {
+            switch buttonParams.actionType {
 
             case .none:
                 break
@@ -158,7 +245,8 @@ extension JtoSView {
             }
 
         } label: {
-            Text("button")
+            Text(buttonParams.textValue)
+                .modifier(ApplyTextParams(params: textParams))
         }
     }
 }

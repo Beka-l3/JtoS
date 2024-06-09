@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C6295EAA2C15DDDD009B3721 /* ApplyImageSkeletonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */; };
 		C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */; };
+		C6295EAE2C161475009B3721 /* ImageExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAD2C161475009B3721 /* ImageExampleView.swift */; };
+		C6295EB12C16154C009B3721 /* CounterExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EB02C16154C009B3721 /* CounterExampleView.swift */; };
+		C6295EB32C1622D2009B3721 /* CounterJtoSExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EB22C1622D2009B3721 /* CounterJtoSExampleView.swift */; };
 		C62B8C6D2C137E6500AF6D20 /* LandingScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */; };
 		C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C702C138FF100AF6D20 /* JtoSParams.swift */; };
 		C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyImageSkeletonParams.swift; sourceTree = "<group>"; };
 		C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImageSkeleton.swift; sourceTree = "<group>"; };
+		C6295EAD2C161475009B3721 /* ImageExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExampleView.swift; sourceTree = "<group>"; };
+		C6295EB02C16154C009B3721 /* CounterExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterExampleView.swift; sourceTree = "<group>"; };
+		C6295EB22C1622D2009B3721 /* CounterJtoSExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterJtoSExampleView.swift; sourceTree = "<group>"; };
 		C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LandingScreenMock.json; sourceTree = "<group>"; wrapsLines = 0; };
 		C62B8C702C138FF100AF6D20 /* JtoSParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSParams.swift; sourceTree = "<group>"; };
 		C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsCommon.swift; sourceTree = "<group>"; };
@@ -92,6 +98,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6295EAF2C16152D009B3721 /* ExampleViews */ = {
+			isa = PBXGroup;
+			children = (
+				C6E489742BF286F500427675 /* ContentView.swift */,
+				C6295EAD2C161475009B3721 /* ImageExampleView.swift */,
+				C6295EB02C16154C009B3721 /* CounterExampleView.swift */,
+				C6295EB22C1622D2009B3721 /* CounterJtoSExampleView.swift */,
+			);
+			path = ExampleViews;
+			sourceTree = "<group>";
+		};
 		C62B8C6E2C138FA900AF6D20 /* Params */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */,
-				C6E489742BF286F500427675 /* ContentView.swift */,
+				C6295EAF2C16152D009B3721 /* ExampleViews */,
 				C6E489762BF286F600427675 /* Assets.xcassets */,
 				C6E489802BF28DAA00427675 /* JtoS */,
 				C6E489782BF286F600427675 /* Preview Content */,
@@ -322,6 +339,7 @@
 				C6E4898B2BF28F2300427675 /* JtoSMockType.swift in Sources */,
 				C62B8C862C13918400AF6D20 /* ApplyCommonParams.swift in Sources */,
 				C63D72852BF3F49D00818450 /* Params.swift in Sources */,
+				C6295EB32C1622D2009B3721 /* CounterJtoSExampleView.swift in Sources */,
 				C62B8C772C13903700AF6D20 /* ParamsImage.swift in Sources */,
 				C64C326C2C14E37300192683 /* JtoSRootView.swift in Sources */,
 				C6E4898D2BF28FD900427675 /* JtoS.swift in Sources */,
@@ -332,6 +350,7 @@
 				C62B8C7F2C13908A00AF6D20 /* ParamsZStack.swift in Sources */,
 				C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */,
 				C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */,
+				C6295EAE2C161475009B3721 /* ImageExampleView.swift in Sources */,
 				C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */,
 				C6E489822BF28DEE00427675 /* JtoSConverter.swift in Sources */,
 				C62B8C8C2C13920A00AF6D20 /* ApplyColorParams.swift in Sources */,
@@ -342,6 +361,7 @@
 				C6E489732BF286F500427675 /* Thesis_SwiftUIApp.swift in Sources */,
 				C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */,
 				C62B8C942C13927700AF6D20 /* ApplyScrollViewParams.swift in Sources */,
+				C6295EB12C16154C009B3721 /* CounterExampleView.swift in Sources */,
 				C62B8C752C13902000AF6D20 /* ParamsText.swift in Sources */,
 				C62B8C8A2C1391FA00AF6D20 /* ApplyImageParams.swift in Sources */,
 				C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */,

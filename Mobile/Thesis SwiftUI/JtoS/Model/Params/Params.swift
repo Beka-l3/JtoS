@@ -36,16 +36,16 @@ struct Params: Decodable, Equatable, Hashable {
     var width: CGFloatValueWrapper?                 = nil
     var maxWidth: CGFloatValueWrapper?              = nil
     var minWidth: CGFloatValueWrapper?              = nil
-    var skeletonWidth: CGFloatValueWrapper?          = nil
-    var skeletonMaxWidth: CGFloatValueWrapper?       = nil
-    var skeletonMinWidth: CGFloatValueWrapper?       = nil
+    var skeletonWidth: CGFloatValueWrapper?         = nil
+    var skeletonMaxWidth: CGFloatValueWrapper?      = nil
+    var skeletonMinWidth: CGFloatValueWrapper?      = nil
 
     var height: CGFloatValueWrapper?                = nil
     var maxHeight: CGFloatValueWrapper?             = nil
     var minHeight: CGFloatValueWrapper?             = nil
-    var skeletonHeight: CGFloatValueWrapper?         = nil
-    var skeletonMaxHeight: CGFloatValueWrapper?      = nil
-    var skeletonMinHeight: CGFloatValueWrapper?      = nil
+    var skeletonHeight: CGFloatValueWrapper?        = nil
+    var skeletonMaxHeight: CGFloatValueWrapper?     = nil
+    var skeletonMinHeight: CGFloatValueWrapper?     = nil
 
     var frameAlignment: String?                     = nil
 

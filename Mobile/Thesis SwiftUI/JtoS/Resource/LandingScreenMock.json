@@ -37,7 +37,7 @@
                                 "skeleton_min_height": { "value": 180.0 },
                                 "padding": {
                                     "edges": ["horizontal", "bottom"],
-                                    "length": 24
+                                    "length": 12
                                 },
                                 "content_mode": "fill",
                                 "corner_radius": 16
