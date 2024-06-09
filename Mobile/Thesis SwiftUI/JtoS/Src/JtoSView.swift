@@ -61,15 +61,14 @@ extension JtoSView {
                     .aspectRatio(contentMode: params.contentMode)
             } else if phase.error != nil {
                 ZStack {
-                    Color.yellow.opacity(0.2)
+                    Color(UIColor.systemBackground).opacity(0.3)
                     Text("Unable to load image")
+                        .foregroundStyle(Color(UIColor.label))
                 }
                 .modifier(ApplyImageSkeletonParams(params: ParamsImageSkeleton(params: element.wrappedValue.params)))
             } else {
-                ZStack {
-                    Color.gray.opacity(0.2)
-                }
-                .modifier(ApplyImageSkeletonParams(params: ParamsImageSkeleton(params: element.wrappedValue.params)))
+                empty
+                    .modifier(ApplyImageSkeletonParams(params: ParamsImageSkeleton(params: element.wrappedValue.params)))
             }
         }
         .modifier(ApplyImageParams(params: params))
