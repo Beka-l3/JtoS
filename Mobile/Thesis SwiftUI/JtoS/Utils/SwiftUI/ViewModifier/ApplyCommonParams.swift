@@ -10,6 +10,7 @@ struct ApplyCommonParams: ViewModifier {
             .applyBgColor(params.bgColorHex)
             .applyCornerRadius(cornerRadius: params.cornerRadius)
             .applyPadding(params.padding)
+            .applyPadding(params.padding2)
             .applyIgnoreSafeArea(params.ignoresSafeArea)
     }
 }

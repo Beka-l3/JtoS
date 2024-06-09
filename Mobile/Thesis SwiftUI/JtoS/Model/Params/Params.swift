@@ -23,6 +23,12 @@ struct Params: Decodable, Equatable, Hashable {
         }
     }
 
+    struct Padding: Decodable, Equatable, Hashable {
+
+        let edges: [String]
+        let length: CGFloat
+    }
+
     // MARK: Internal Properties
 
     var ignoresSafeArea: Bool?                      = nil
@@ -43,8 +49,8 @@ struct Params: Decodable, Equatable, Hashable {
 
     var frameAlignment: String?                     = nil
 
-    var paddingEdges: [String]?                     = nil
-    var paddingLength: CGFloat?                     = nil
+    var padding: Padding?                           = nil
+    var padding2: Padding?                          = nil
 
     var bgColorHex: String?                         = nil
     var colorHex: String?                           = nil

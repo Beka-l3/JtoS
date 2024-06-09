@@ -21,8 +21,10 @@
                     "params": {
                         "max_width": { "value": "Infinity" },
                         "max_height": { "value": 180.0 },
-                        "padding_edges": ["top"],
-                        "padding_length": 44
+                        "padding": {
+                            "edges": ["top"],
+                            "length": 44
+                        }
                     },
                     "ui": [
                         {
@@ -33,8 +35,10 @@
                                 "max_height": { "value": 180.0 },
                                 "skeleton_max_width": { "value": "Infinity" },
                                 "skeleton_min_height": { "value": 180.0 },
-                                "padding_edges": ["horizontal"],
-                                "padding_length": 12,
+                                "padding": {
+                                    "edges": ["horizontal", "bottom"],
+                                    "length": 24
+                                },
                                 "content_mode": "fill",
                                 "corner_radius": 16
                             },
@@ -59,8 +63,14 @@
                                         "font_size": 24,
                                         "max_width": {"value": "Infinity"},
                                         "frame_alignment": "leading",
-                                        "padding_edges": ["horizontal", "bottom"],
-                                        "padding_length": 24,
+                                        "padding": {
+                                            "edges": ["horizontal"],
+                                            "length": 44
+                                        },
+                                        "padding2": {
+                                            "edges": ["bottom"],
+                                            "length": 36
+                                        }
                                     },
                                     "ui": []
                                 }
@@ -76,8 +86,10 @@
                         "height": { "value": 420.0 },
                         "skeleton_max_width": { "value": "Infinity" },
                         "skeleton_min_height": { "value": 420.0 },
-                        "padding_edges": ["horizontal"],
-                        "padding_length": 12,
+                        "padding": {
+                            "edges": ["horizontal"],
+                            "length": 12
+                        },
                         "content_mode": "fill",
                         "corner_radius": 16
                     },
@@ -91,8 +103,10 @@
                         "max_height": { "value": 420.0 },
                         "skeleton_max_width": { "value": "Infinity" },
                         "skeleton_min_height": { "value": 420.0 },
-                        "padding_edges": ["horizontal"],
-                        "padding_length": 12,
+                        "padding": {
+                            "edges": ["horizontal"],
+                            "length": 12
+                        },
                         "content_mode": "fill",
                         "corner_radius": 16
                     },
@@ -106,8 +120,10 @@
                         "max_height": { "value": 180.0 },
                         "skeleton_max_width": { "value": "Infinity" },
                         "skeleton_min_height": { "value": 180.0 },
-                        "padding_edges": ["horizontal"],
-                        "padding_length": 12,
+                        "padding": {
+                            "edges": ["horizontal"],
+                            "length": 12
+                        },
                         "content_mode": "fill",
                         "corner_radius": 16
                     },
@@ -121,8 +137,10 @@
                         "max_height": { "value": 420 },
                         "skeleton_max_width": { "value": "Infinity" },
                         "skeleton_min_height": { "value": 420.0 },
-                        "padding_edges": ["horizontal"],
-                        "padding_length": 12,
+                        "padding": {
+                            "edges": ["horizontal"],
+                            "length": 12
+                        },
                         "content_mode": "fill",
                         "corner_radius": 16
                     },
