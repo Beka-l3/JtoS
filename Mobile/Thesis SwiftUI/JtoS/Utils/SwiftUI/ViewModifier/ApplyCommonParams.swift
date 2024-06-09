@@ -7,9 +7,9 @@ struct ApplyCommonParams: ViewModifier {
     func body(content: Content) -> some View {
         content
             .applyFrame(params.frame)
+            .applyBgColor(params.bgColorHex)
             .applyCornerRadius(cornerRadius: params.cornerRadius)
             .applyPadding(params.padding)
-            .applyBgColor(params.bgColorHex)
             .applyIgnoreSafeArea(params.ignoresSafeArea)
     }
 }

@@ -25,33 +25,39 @@ struct Params: Decodable, Equatable, Hashable {
 
     // MARK: Internal Properties
 
-    var ignoresSafeArea: Bool?              = nil
+    var ignoresSafeArea: Bool?                      = nil
 
-    var width: CGFloatValueWrapper?         = nil
-    var maxWidth: CGFloatValueWrapper?      = nil
-    var minWidth: CGFloatValueWrapper?      = nil
+    var width: CGFloatValueWrapper?                 = nil
+    var maxWidth: CGFloatValueWrapper?              = nil
+    var minWidth: CGFloatValueWrapper?              = nil
+    var skeletonWidth: CGFloatValueWrapper?          = nil
+    var skeletonMaxWidth: CGFloatValueWrapper?       = nil
+    var skeletonMinWidth: CGFloatValueWrapper?       = nil
 
-    var height: CGFloatValueWrapper?        = nil
-    var maxHeight: CGFloatValueWrapper?     = nil
-    var minHeight: CGFloatValueWrapper?     = nil
+    var height: CGFloatValueWrapper?                = nil
+    var maxHeight: CGFloatValueWrapper?             = nil
+    var minHeight: CGFloatValueWrapper?             = nil
+    var skeletonHeight: CGFloatValueWrapper?         = nil
+    var skeletonMaxHeight: CGFloatValueWrapper?      = nil
+    var skeletonMinHeight: CGFloatValueWrapper?      = nil
 
-    var frameAlignment: String?             = nil
+    var frameAlignment: String?                     = nil
 
-    var paddingEdges: [String]?             = nil
-    var paddingLength: CGFloat?             = nil
+    var paddingEdges: [String]?                     = nil
+    var paddingLength: CGFloat?                     = nil
 
-    var bgColorHex: String?                 = nil
-    var colorHex: String?                   = nil
-    var cornerRadius: Double?               = nil
+    var bgColorHex: String?                         = nil
+    var colorHex: String?                           = nil
+    var cornerRadius: Double?                       = nil
 
-    var textValue: String?                      = nil
-    var font: String?                       = nil
-    var fontSize: Int?                      = nil
+    var textValue: String?                          = nil
+    var font: String?                               = nil
+    var fontSize: Int?                              = nil
 
-    var url: String?                        = nil
-    var contentMode: String?                = nil
+    var url: String?                                = nil
+    var contentMode: String?                        = nil
 
-    var spacing: Int?                       = nil
-    var alignment: String?                  = nil
-    var axes: String?                       = nil
+    var spacing: Int?                               = nil
+    var alignment: String?                          = nil
+    var axes: String?                               = nil
 }

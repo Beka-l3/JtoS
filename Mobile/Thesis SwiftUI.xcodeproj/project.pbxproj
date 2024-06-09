@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6295EAA2C15DDDD009B3721 /* ApplyImageSkeletonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */; };
+		C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */; };
 		C62B8C6D2C137E6500AF6D20 /* LandingScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */; };
 		C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C702C138FF100AF6D20 /* JtoSParams.swift */; };
 		C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */; };
@@ -38,11 +40,12 @@
 		C6E489882BF28EE300427675 /* JtoSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489872BF28EE300427675 /* JtoSView.swift */; };
 		C6E4898B2BF28F2300427675 /* JtoSMockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4898A2BF28F2300427675 /* JtoSMockType.swift */; };
 		C6E4898D2BF28FD900427675 /* JtoS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4898C2BF28FD900427675 /* JtoS.swift */; };
-		C6F1CB152BF50C5A00CF9317 /* View+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1CB142BF50C5A00CF9317 /* View+Apply.swift */; };
 		C6F1CB172BF50C9300CF9317 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1CB162BF50C9300CF9317 /* Color+hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyImageSkeletonParams.swift; sourceTree = "<group>"; };
+		C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImageSkeleton.swift; sourceTree = "<group>"; };
 		C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LandingScreenMock.json; sourceTree = "<group>"; wrapsLines = 0; };
 		C62B8C702C138FF100AF6D20 /* JtoSParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSParams.swift; sourceTree = "<group>"; };
 		C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsCommon.swift; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 		C6E489872BF28EE300427675 /* JtoSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSView.swift; sourceTree = "<group>"; };
 		C6E4898A2BF28F2300427675 /* JtoSMockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSMockType.swift; sourceTree = "<group>"; };
 		C6E4898C2BF28FD900427675 /* JtoS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoS.swift; sourceTree = "<group>"; };
-		C6F1CB142BF50C5A00CF9317 /* View+Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Apply.swift"; sourceTree = "<group>"; };
 		C6F1CB162BF50C9300CF9317 /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,16 +106,9 @@
 				C62B8C7E2C13908A00AF6D20 /* ParamsZStack.swift */,
 				C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */,
 				C64C32692C14707300192683 /* ParamsButton.swift */,
+				C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */,
 			);
 			path = Params;
-			sourceTree = "<group>";
-		};
-		C62B8C802C1390DC00AF6D20 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C6F1CB142BF50C5A00CF9317 /* View+Apply.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C62B8C812C1390EA00AF6D20 /* Extension */ = {
@@ -128,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				C62B8C842C13917A00AF6D20 /* ViewModifier */,
-				C62B8C802C1390DC00AF6D20 /* View */,
 				C62B8C812C1390EA00AF6D20 /* Extension */,
 			);
 			path = SwiftUI;
@@ -154,6 +148,7 @@
 				C62B8C8F2C13923800AF6D20 /* ApplyHStackParams.swift */,
 				C62B8C912C13926000AF6D20 /* ApplyZStackParams.swift */,
 				C62B8C932C13927700AF6D20 /* ApplyScrollViewParams.swift */,
+				C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -323,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62B8C8E2C13921D00AF6D20 /* ApplyVStackParams.swift in Sources */,
+				C6295EAA2C15DDDD009B3721 /* ApplyImageSkeletonParams.swift in Sources */,
 				C6E4898B2BF28F2300427675 /* JtoSMockType.swift in Sources */,
 				C62B8C862C13918400AF6D20 /* ApplyCommonParams.swift in Sources */,
 				C63D72852BF3F49D00818450 /* Params.swift in Sources */,
@@ -331,11 +327,11 @@
 				C6E4898D2BF28FD900427675 /* JtoS.swift in Sources */,
 				C6E489882BF28EE300427675 /* JtoSView.swift in Sources */,
 				C6E489752BF286F500427675 /* ContentView.swift in Sources */,
-				C6F1CB152BF50C5A00CF9317 /* View+Apply.swift in Sources */,
 				C64C326A2C14707300192683 /* ParamsButton.swift in Sources */,
 				C62B8C902C13923800AF6D20 /* ApplyHStackParams.swift in Sources */,
 				C62B8C7F2C13908A00AF6D20 /* ParamsZStack.swift in Sources */,
 				C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */,
+				C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */,
 				C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */,
 				C6E489822BF28DEE00427675 /* JtoSConverter.swift in Sources */,
 				C62B8C8C2C13920A00AF6D20 /* ApplyColorParams.swift in Sources */,

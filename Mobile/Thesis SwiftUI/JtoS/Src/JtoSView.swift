@@ -6,6 +6,7 @@ struct JtoSView: View {
 
     var body: some View {
         buildView(for: $model)
+            .modifier(ApplyCommonParams(params: ParamsCommon(params: $model.wrappedValue.params)))
     }
 }
 
@@ -47,7 +48,7 @@ extension JtoSView {
     private func textView(for element: Binding<JtoS>) -> some View {
         let params = ParamsText(params: element.wrappedValue.params)
         Text(params.textValue)
-            .apply(type: .text, params: element.wrappedValue.params)
+            .modifier(ApplyTextParams(params: params))
     }
 
     @ViewBuilder
@@ -59,19 +60,26 @@ extension JtoSView {
                     .resizable()
                     .aspectRatio(contentMode: params.contentMode)
             } else if phase.error != nil {
-                Text("Unable to load image")
+                ZStack {
+                    Color.yellow.opacity(0.2)
+                    Text("Unable to load image")
+                }
+                .modifier(ApplyImageSkeletonParams(params: ParamsImageSkeleton(params: element.wrappedValue.params)))
             } else {
-                ProgressView()
+                ZStack {
+                    Color.gray.opacity(0.2)
+                }
+                .modifier(ApplyImageSkeletonParams(params: ParamsImageSkeleton(params: element.wrappedValue.params)))
             }
         }
-        .apply(type: .image, params: element.wrappedValue.params)
+        .modifier(ApplyImageParams(params: params))
     }
 
     @ViewBuilder
     private func colorView(for element: Binding<JtoS>) -> some View {
         let params = ParamsColor(params: element.wrappedValue.params)
         Color.fromHex(params.colorHex)
-            .apply(type: .color, params: element.wrappedValue.params)
+            .modifier(ApplyColorParams(params: params))
     }
 
     @ViewBuilder
@@ -84,7 +92,7 @@ extension JtoSView {
                 }
             }
         }
-        .apply(type: .vStack, params: element.wrappedValue.params)
+        .modifier(ApplyVStackParams(params: params))
     }
 
     @ViewBuilder
@@ -97,7 +105,7 @@ extension JtoSView {
                 }
             }
         }
-        .apply(type: .hStack, params: element.wrappedValue.params)
+        .modifier(ApplyHStackParams(params: params))
     }
 
     @ViewBuilder
@@ -110,7 +118,7 @@ extension JtoSView {
                 }
             }
         }
-        .apply(type: .zStack, params: element.wrappedValue.params)
+        .modifier(ApplyZStackParams(params: params))
     }
 
     @ViewBuilder
@@ -123,7 +131,7 @@ extension JtoSView {
                 }
             }
         }
-        .apply(type: .scrollView, params: element.wrappedValue.params)
+        .modifier(ApplyScrollViewParams(params: params))
     }
 
     @ViewBuilder
