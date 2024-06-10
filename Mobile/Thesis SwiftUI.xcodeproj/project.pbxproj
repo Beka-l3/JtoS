@@ -139,7 +139,6 @@
 		C62B8C822C1390F600AF6D20 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				C62B8C842C13917A00AF6D20 /* ViewModifier */,
 				C62B8C812C1390EA00AF6D20 /* Extension */,
 			);
 			path = SwiftUI;
@@ -228,6 +227,7 @@
 		C6E489832BF28DF200427675 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				C62B8C842C13917A00AF6D20 /* ViewModifier */,
 				C6E489872BF28EE300427675 /* JtoSView.swift */,
 				C6E489812BF28DEE00427675 /* JtoSConverter.swift */,
 				C64C326B2C14E37300192683 /* JtoSRootView.swift */,
