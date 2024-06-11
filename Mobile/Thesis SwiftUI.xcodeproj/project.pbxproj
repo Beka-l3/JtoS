@@ -11,7 +11,7 @@
 		C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */; };
 		C6295EAE2C161475009B3721 /* ImageExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAD2C161475009B3721 /* ImageExampleView.swift */; };
 		C6295EB12C16154C009B3721 /* CounterExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EB02C16154C009B3721 /* CounterExampleView.swift */; };
-		C6295EB32C1622D2009B3721 /* CounterJtoSExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EB22C1622D2009B3721 /* CounterJtoSExampleView.swift */; };
+		C6295EB32C1622D2009B3721 /* CounterWithModelExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EB22C1622D2009B3721 /* CounterWithModelExampleView.swift */; };
 		C62B8C6D2C137E6500AF6D20 /* LandingScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */; };
 		C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C702C138FF100AF6D20 /* JtoSParams.swift */; };
 		C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */; };
@@ -53,7 +53,7 @@
 		C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImageSkeleton.swift; sourceTree = "<group>"; };
 		C6295EAD2C161475009B3721 /* ImageExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExampleView.swift; sourceTree = "<group>"; };
 		C6295EB02C16154C009B3721 /* CounterExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterExampleView.swift; sourceTree = "<group>"; };
-		C6295EB22C1622D2009B3721 /* CounterJtoSExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterJtoSExampleView.swift; sourceTree = "<group>"; };
+		C6295EB22C1622D2009B3721 /* CounterWithModelExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterWithModelExampleView.swift; sourceTree = "<group>"; };
 		C62B8C6C2C137E6500AF6D20 /* LandingScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LandingScreenMock.json; sourceTree = "<group>"; wrapsLines = 0; };
 		C62B8C702C138FF100AF6D20 /* JtoSParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSParams.swift; sourceTree = "<group>"; };
 		C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsCommon.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				C6E489742BF286F500427675 /* ContentView.swift */,
 				C6295EAD2C161475009B3721 /* ImageExampleView.swift */,
 				C6295EB02C16154C009B3721 /* CounterExampleView.swift */,
-				C6295EB22C1622D2009B3721 /* CounterJtoSExampleView.swift */,
+				C6295EB22C1622D2009B3721 /* CounterWithModelExampleView.swift */,
 			);
 			path = ExampleViews;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 				C6E4898B2BF28F2300427675 /* JtoSMockType.swift in Sources */,
 				C62B8C862C13918400AF6D20 /* ApplyCommonParams.swift in Sources */,
 				C63D72852BF3F49D00818450 /* Params.swift in Sources */,
-				C6295EB32C1622D2009B3721 /* CounterJtoSExampleView.swift in Sources */,
+				C6295EB32C1622D2009B3721 /* CounterWithModelExampleView.swift in Sources */,
 				C62B8C772C13903700AF6D20 /* ParamsImage.swift in Sources */,
 				C64C326C2C14E37300192683 /* JtoSRootView.swift in Sources */,
 				C6E4898D2BF28FD900427675 /* JtoS.swift in Sources */,

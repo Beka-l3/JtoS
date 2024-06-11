@@ -4,13 +4,13 @@ import UIKit
 struct ContentView: View {
 
     var body: some View {
-//        JtoSRootView(mock: .landing)
+        JtoSRootView(mock: .landing)
 
 //        ImageExampleView()
 
 //        CounterExampleView()
 
-        CounterExampleModelExampleView()
+//        CounterWithModelExampleView()
     }
 }
 

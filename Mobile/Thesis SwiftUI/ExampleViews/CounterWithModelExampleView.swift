@@ -1,23 +1,14 @@
 import SwiftUI
 
-struct CounterExampleModelExampleView: View {
+/// All in one example file
+struct CounterWithModelExampleView: View {
 
     var body: some View {
         ExampleRootView(mock: .filename, "ExampleCounterScreenMock")
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-struct ExampleRootView: View {
+private struct ExampleRootView: View {
 
     // MARK: Private Properties
 
