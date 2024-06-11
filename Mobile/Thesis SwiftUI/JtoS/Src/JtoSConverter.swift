@@ -6,13 +6,16 @@ extension JtoSConverter {
 
     static func decodeMockJSON(for screenType: JtoSMockScreenType) -> JtoS? {
         let mockFileName = screenType.rawValue + Constants.mockFileSuffix
+        return decodeMockJSON(from: mockFileName)
+    }
 
-        if let url = Bundle.main.url(forResource: mockFileName, withExtension: "json") {
+    static func decodeMockJSON(from filename: String) -> JtoS? {
+        if let url = Bundle.main.url(forResource: filename, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
+
                 let jsonData = try decoder.decode(JtoS.self, from: data)
 
                 return jsonData

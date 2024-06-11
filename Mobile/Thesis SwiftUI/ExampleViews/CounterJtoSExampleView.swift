@@ -2,63 +2,158 @@ import SwiftUI
 
 struct CounterExampleModelExampleView: View {
 
-    @State private var exampleModel: ExampleModel
+    var body: some View {
+        ExampleRootView(mock: .filename, "ExampleCounterScreenMock")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+struct ExampleRootView: View {
+
+    // MARK: Private Properties
+
+    @State private var model: ExampleModel = .empty
+    @State private var store: ExampleStore = .init(
+        variables: [
+            :
+//            "counter_123": 31
+        ]
+    )
+
+    private let url: String
+    private let filename: String
+    private let mockType: JtoSMockScreenType
+
+    // MARK: Body
 
     var body: some View {
-        getViewFromModel()
-    }
+        ExampleView(model: $model)
+            .environment(store)
+            .onAppear {
+                if mockType != .none {
+                    getJtoSModelFromMock()
 
+                    if mockType == .filename {
+                        getJtoSModelFromMockFilename()
+                    }
+                } else {
+                    getDataFromUrl()
+                }
+            }
+    }
 
     // MARK: Init
 
-    init() {
-        let color = ExampleModel(type: "color", params: .init(colorHex: "222242"), ui: [])
+    init(mock: JtoSMockScreenType, _ filename: String = "") {
+        self.mockType = mock
+        self.url = ""
+        self.filename = filename
+    }
 
-        let minusBtn = ExampleModel(
-            type: "button",
-            params: .init(
-                textValue: "-"
-            ),
-            ui: []
-        )
+    init(url: String) {
+        self.mockType = .none
+        self.filename = ""
+        self.url = url
+    }
+}
 
-        let counterText = ExampleModel(
-            type: "text",
-            params: .init(
-                textValue: "0"
-            ),
-            ui: []
-        )
+extension ExampleRootView {
 
-        let plusBtn = ExampleModel(
-            type: "button",
-            params: .init(
-                textValue: "+"
-            ),
-            ui: []
-        )
+    private func getDataFromUrl() {
+        model = .empty
+    }
 
-        let hStack = ExampleModel(type: "hStack", params: .init(), ui: [minusBtn, counterText, plusBtn])
+    private func getJtoSModelFromMock() {
+        if let model = ExampleConverter.decodeMockJSON(for: mockType) {
+            //            model.traverseModel()
+            self.model = model
+        } else {
+            self.model = .empty
+        }
+    }
 
-        self.exampleModel = .init(type: "zStack", params: .init(), ui: [color, hStack])
+    private func getJtoSModelFromMockFilename() {
+        if let model = ExampleConverter.decodeMockJSON(from: filename) {
+            //            model.traverseModel()
+            self.model = model
+        } else {
+            model = .empty
+        }
+    }
+}
+
+
+@Observable
+private final class ExampleStore {
+
+    // MARK: Nested Types
+
+    enum UpdateAction {
+
+        case set(value: Int)
+        case add(value: Int)
+        case sub(value: Int)
+        case mult(value: Int)
+        case div(value: Int)
+    }
+
+    // MARK: Private Properties
+
+    private var variables: [String: Int]
+
+    // MARK: Init
+
+    init(variables: [String: Int] = [:]) {
+        self.variables = variables
+    }
+}
+
+
+private extension ExampleStore {
+
+    // MARK: Get
+
+    func get(for id: String) -> Int {
+        variables[id] ?? 0
+    }
+
+    // MARK: Update
+
+    func update(for id: String, action: UpdateAction) {
+        switch action {
+        case let .set(value): set(for: id, value: value)
+        case let .add(value): set(for: id, value: get(for: id) + value)
+        case let .sub(value): set(for: id, value: get(for: id) - value)
+        case let .mult(value): set(for: id, value: get(for: id) * value)
+        case let .div(value): set(for: id, value: get(for: id) * value)
+        }
+    }
+
+    // MARK: Set
+
+    func set(for id: String, value: Int) {
+        variables[id] = value
     }
 }
 
 
 
-
-
-extension CounterExampleModelExampleView {
-
-    @ViewBuilder
-    func getViewFromModel() -> some View {
-        ExampleView(model: $exampleModel)
-    }
-
-}
 
 
 private struct ExampleModel: Decodable, Equatable, Hashable {
+
+    // MARK: Type Properties
+
+    static let empty: ExampleModel = .init(type: "", params: .init(), ui: [])
 
     // MARK: Nested Types
 
@@ -81,7 +176,6 @@ private struct ExampleModel: Decodable, Equatable, Hashable {
     var exampleType: ExampelType {
         ExampelType(rawValue: type) ??  .unknown
     }
-
 }
 
 
@@ -89,10 +183,15 @@ private struct ExampleModel: Decodable, Equatable, Hashable {
 private struct ExampleView: View {
 
     @Binding var model: ExampleModel
+    @Environment(ExampleStore.self) private var store
 
     var body: some View {
         buildView(for: $model)
             .modifier(ApplyCommonParams(params: ParamsCommon(params: $model.wrappedValue.params)))
+    }
+
+    init(model: Binding<ExampleModel>) {
+        self._model = model
     }
 }
 
@@ -109,6 +208,7 @@ extension ExampleView {
         case .hStack: hStackView(for: element)
         case .zStack: zStackView(for: element)
         case .scrollView: scrollViewView(for: element)
+        case .button: button(for: element)
         case .spacer: Spacer()
 
         default: empty
@@ -133,8 +233,14 @@ extension ExampleView {
     @ViewBuilder
     private func textView(for element: Binding<ExampleModel>) -> some View {
         let params = ParamsText(params: element.wrappedValue.params)
-        Text(params.textValue)
-            .modifier(ApplyTextParams(params: params))
+
+        if let varName = params.textFromVar {
+            Text("\(store.get(for: varName))")
+                .modifier(ApplyTextParams(params: params))
+        } else {
+            Text(params.textValue)
+                .modifier(ApplyTextParams(params: params))
+        }
     }
 
     @ViewBuilder
@@ -228,9 +334,6 @@ extension ExampleView {
 
             switch buttonParams.actionType {
 
-            case .none:
-                break
-
             case .openBottomSheet(_):
                 break
 
@@ -242,11 +345,81 @@ extension ExampleView {
 
             case .update:
                 break
+
+            case let .varAction(.set(varId, value)):
+                store.update(for: varId, action: .set(value: value))
+
+            case let .varAction(.add(varId, value)):
+                store.update(for: varId, action: .add(value: value))
+
+            case let .varAction(.sub(varId, value)):
+                store.update(for: varId, action: .sub(value: value))
+
+            case let .varAction(.mult(varId, value)):
+                store.update(for: varId, action: .mult(value: value))
+
+            case let .varAction(.div(varId, value)):
+                store.update(for: varId, action: .div(value: value))
+
+            default: break
             }
 
         } label: {
             Text(buttonParams.textValue)
                 .modifier(ApplyTextParams(params: textParams))
         }
+    }
+}
+
+
+
+
+
+private struct ExampleConverter { }
+
+extension ExampleConverter {
+
+    static func decodeMockJSON(for screenType: JtoSMockScreenType) -> ExampleModel? {
+        let mockFileName = screenType.rawValue + Constants.mockFileSuffix
+        return decodeMockJSON(from: mockFileName)
+    }
+
+    static func decodeMockJSON(from filename: String) -> ExampleModel? {
+        if let url = Bundle.main.url(forResource: filename, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                let jsonData = try decoder.decode(ExampleModel.self, from: data)
+
+                return jsonData
+            } catch {
+                print("error:\(error)")
+            }
+        }
+
+        return nil
+    }
+}
+
+extension ExampleConverter {
+
+    static var empty: some View {
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .padding()
+    }
+}
+
+extension ExampleConverter {
+
+    private enum Constants {
+
+        static let mockFileSuffix = "ScreenMock"
     }
 }

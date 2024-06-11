@@ -1,0 +1,71 @@
+{
+    "type": "zStack",
+    "params": {},
+    "ui": [
+        {
+            "type": "color",
+            "params": {
+                "color_hex": "222242",
+                "ignores_safe_area": true
+            },
+            "ui": []
+        },
+        {
+            "type": "hStack",
+            "params": {
+                "min_width": { "value": 180 },
+                "min_height": { "value": 50 },
+                "bg_color_hex": "44ffffff",
+                "corner_radius": 16
+            },
+            "ui": [
+                {
+                    "type": "button",
+                    "params": {
+                        "text_value": "-",
+                        "font": "system",
+                        "font_size": 24,
+                        "button_action": {
+                            "var_action": {
+                                "action": "sub",
+                                "varId": "counter_123",
+                                "value": 1
+                            }
+                        }
+                    },
+                    "ui": []
+                },
+                {
+                    "type": "text",
+                    "params": {
+                        "text_from_var": "counter_123",
+                        "padding": {
+                            "edges": ["horizontal"],
+                            "length": 24
+                        },
+                        "font": "system",
+                        "font_size": 24,
+                        "color_hex": "efefef"
+                    },
+                    "ui": []
+                },
+                {
+                    "type": "button",
+                    "params": {
+                        "text_value": "+",
+                        "font": "system",
+                        "font_size": 24,
+                        "button_action": {
+                            "var_action": {
+                                "action": "add",
+                                "varId": "counter_123",
+                                "value": 1
+                            }
+                        }
+                    },
+                    "ui": []
+                }
+            ]
+        }
+    ]
+}

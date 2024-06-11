@@ -8,7 +8,9 @@ struct ContentView: View {
 
 //        ImageExampleView()
 
-        CounterExampleView()
+//        CounterExampleView()
+
+        CounterExampleModelExampleView()
     }
 }
 

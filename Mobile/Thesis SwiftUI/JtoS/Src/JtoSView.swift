@@ -155,6 +155,8 @@ extension JtoSView {
 
             case .update:
                 break
+
+            default: break
             }
 
         } label: {

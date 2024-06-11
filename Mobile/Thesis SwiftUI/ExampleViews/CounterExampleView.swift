@@ -12,19 +12,19 @@ struct CounterExampleView: View {
             HStack {
                 if store.get(for: "button_123") > 0 {
                     Button {
-                        store.update(for: "button_123", action: .decrease(value: 1))
+                        store.update(for: "button_123", action: .sub(value: 1))
                     } label: {
                         Text("-").font(.system(size: 24))
                     }
 
-                    Text("\(store.get(for: "button_123", printType: true) as Int)") // TODO: get rid of hard-coded casting
+                    Text("\(store.get(for: "button_123"))")
                         .padding(.horizontal, 24)
                         .font(.system(size: 24))
                         .foregroundStyle(Color.white)
                 }
 
                 Button {
-                    store.update(for: "button_123", action: .increase(value: 1))
+                    store.update(for: "button_123", action: .add(value: 1))
                 } label: {
                     Text("+").font(.system(size: 24))
                 }
@@ -36,7 +36,7 @@ struct CounterExampleView: View {
     }
 
     init() {
-        self.store = .init(store: ["button_123": 0])
+        self.store = .init(variables: ["button_123": 0])
     }
 }
 
@@ -44,71 +44,45 @@ struct CounterExampleView: View {
 
 
 
-
-
-
-private protocol ExampleStoreable {
-    static var defaultValue: Self { get }
-}
-
-extension Int: ExampleStoreable {
-    static var defaultValue: Int { 0 }
-}
-
-extension String: ExampleStoreable {
-    static var defaultValue: String { "" }
-}
-
-extension Bool: ExampleStoreable {
-    static var defaultValue: Bool { false }
-}
 
 private struct ExampleStore {
 
-    var store: [String: any ExampleStoreable]
+    enum UpdateAction {
+
+        case set(value: Int)
+        case add(value: Int)
+        case sub(value: Int)
+        case mult(value: Int)
+        case div(value: Int)
+    }
+
+    var variables: [String: Int]
 }
+
 
 private extension ExampleStore {
 
-    enum StoreAction {
+    // MARK: Get
 
-        case increase(value: Int)
-        case decrease(value: Int)
-        case update(value: any ExampleStoreable)
+    func get(for id: String) -> Int {
+        variables[id] ?? 0
     }
 
-    func get<T: ExampleStoreable>(for id: String, printType: Bool = false) -> T {
-        if printType { print(T.self, "default: \(T.defaultValue)") }
+    // MARK: Update
 
-
-//        if let value = store[id] {
-//            switch T.self {
-//            case let integer as Int: return integer
-//            case let string as String: return string
-//            case let bool as Bool: return bool
-//
-//            default: return .defaultValue
-//            }
-//        }
-
-        return store[id] as? T ?? T.defaultValue
-    }
-
-    mutating func update(for id: String, action: StoreAction) {
+    mutating func update(for id: String, action: UpdateAction) {
         switch action {
-
-        case let .increase(value):
-            set(for: id, value: (get(for: id) as Int) + value)
-
-        case let .decrease(value):
-            set(for: id, value: (get(for: id) as Int) - value)
-
-        case let .update(value):
-            set(for: id, value: value)
+            case let .set(value): set(for: id, value: value)
+            case let .add(value): set(for: id, value: get(for: id) + value)
+            case let .sub(value): set(for: id, value: get(for: id) - value)
+            case let .mult(value): set(for: id, value: get(for: id) * value)
+            case let .div(value): set(for: id, value: get(for: id) * value)
         }
     }
 
-    mutating func set<T: ExampleStoreable>(for id: String, value: T) {
-        store[id] = value
+    // MARK: Set
+
+    mutating func set(for id: String, value: Int) {
+        variables[id] = value
     }
 }

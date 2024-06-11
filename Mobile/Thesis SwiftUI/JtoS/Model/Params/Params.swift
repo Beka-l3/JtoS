@@ -5,11 +5,18 @@ struct Params: Decodable, Equatable, Hashable {
     // MARK: Nested Types
 
     struct CGFloatValueWrapper: Decodable, Equatable, Hashable {
-        var value: CGFloat
 
+        // MARK: Nested Types
+        
         enum CodingKeys: String, CodingKey {
             case value
         }
+
+        // MARK: Internal Properties
+
+        var value: CGFloat
+
+        // MARK: Init
 
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -27,6 +34,22 @@ struct Params: Decodable, Equatable, Hashable {
 
         let edges: [String]
         let length: CGFloat
+    }
+
+    struct ButtonAction: Decodable, Equatable, Hashable {
+
+        // MARK: Nested Types
+
+        struct VarAction: Decodable, Equatable, Hashable {
+
+            var action: String
+            var varId: String
+            var value: Int
+        }
+
+        // MARK: Internal Properties
+
+        var varAction: VarAction?
     }
 
     // MARK: Internal Properties
@@ -66,4 +89,8 @@ struct Params: Decodable, Equatable, Hashable {
     var spacing: Int?                               = nil
     var alignment: String?                          = nil
     var axes: String?                               = nil
+
+    var textFromVar: String?                        = nil
+
+    var buttonAction: ButtonAction?                 = nil
 }
