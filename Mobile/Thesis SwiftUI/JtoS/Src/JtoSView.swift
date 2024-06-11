@@ -3,6 +3,7 @@ import SwiftUI
 struct JtoSView: View {
 
     @Binding var model: JtoS
+    @Environment(JtoSStore.self) private var store
 
     var body: some View {
         buildView(for: $model)
@@ -47,8 +48,14 @@ extension JtoSView {
     @ViewBuilder
     private func textView(for element: Binding<JtoS>) -> some View {
         let params = ParamsText(params: element.wrappedValue.params)
-        Text(params.textValue)
-            .modifier(ApplyTextParams(params: params))
+        
+        if let varName = params.textFromVar {
+            Text("\(store.get(for: varName))")
+                .modifier(ApplyTextParams(params: params))
+        } else {
+            Text(params.textValue)
+                .modifier(ApplyTextParams(params: params))
+        }
     }
 
     @ViewBuilder
@@ -135,14 +142,11 @@ extension JtoSView {
 
     @ViewBuilder
     private func button(for element: Binding<JtoS>) -> some View {
-        let params = ParamsButton(params: element.wrappedValue.params)
+        let buttonParams = ParamsButton(params: element.wrappedValue.params)
+        let textParams = ParamsText(params: element.wrappedValue.params)
 
         Button {
-
-            switch params.actionType {
-
-            case .none:
-                break
+            switch buttonParams.actionType {
 
             case .openBottomSheet(_):
                 break
@@ -156,11 +160,27 @@ extension JtoSView {
             case .update:
                 break
 
+            case let .varAction(.set(varId, value)):
+                store.update(for: varId, action: .set(value: value))
+
+            case let .varAction(.add(varId, value)):
+                store.update(for: varId, action: .add(value: value))
+
+            case let .varAction(.sub(varId, value)):
+                store.update(for: varId, action: .sub(value: value))
+
+            case let .varAction(.mult(varId, value)):
+                store.update(for: varId, action: .mult(value: value))
+
+            case let .varAction(.div(varId, value)):
+                store.update(for: varId, action: .div(value: value))
+
             default: break
             }
 
         } label: {
-            Text("button")
+            Text(buttonParams.textValue)
+                .modifier(ApplyTextParams(params: textParams))
         }
     }
 }

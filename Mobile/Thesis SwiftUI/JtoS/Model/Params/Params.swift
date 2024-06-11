@@ -52,6 +52,16 @@ struct Params: Decodable, Equatable, Hashable {
         var varAction: VarAction?
     }
 
+    struct FrameSize: Decodable, Equatable, Hashable {
+        var width: CGFloatValueWrapper?             = nil
+        var maxWidth: CGFloatValueWrapper?          = nil
+        var minWidth: CGFloatValueWrapper?          = nil
+
+        var height: CGFloatValueWrapper?            = nil
+        var maxHeight: CGFloatValueWrapper?         = nil
+        var minHeight: CGFloatValueWrapper?         = nil
+    }
+
     // MARK: Internal Properties
 
     var ignoresSafeArea: Bool?                      = nil
@@ -69,6 +79,9 @@ struct Params: Decodable, Equatable, Hashable {
     var skeletonHeight: CGFloatValueWrapper?        = nil
     var skeletonMaxHeight: CGFloatValueWrapper?     = nil
     var skeletonMinHeight: CGFloatValueWrapper?     = nil
+
+    var frame: FrameSize?                           = nil
+    var skeletonFrame: FrameSize?                   = nil
 
     var frameAlignment: String?                     = nil
 

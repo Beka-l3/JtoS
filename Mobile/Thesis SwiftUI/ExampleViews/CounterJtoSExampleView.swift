@@ -23,10 +23,7 @@ struct ExampleRootView: View {
 
     @State private var model: ExampleModel = .empty
     @State private var store: ExampleStore = .init(
-        variables: [
-            :
-//            "counter_123": 31
-        ]
+        variables: [:]
     )
 
     private let url: String

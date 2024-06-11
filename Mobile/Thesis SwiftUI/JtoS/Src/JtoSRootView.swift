@@ -5,6 +5,7 @@ struct JtoSRootView: View {
     // MARK: Private Properties
 
     @State private var jtos: JtoS = .empty
+    @State private var store: JtoSStore = .init()
 
     private let url: String
     private let mockType: JtoSMockScreenType

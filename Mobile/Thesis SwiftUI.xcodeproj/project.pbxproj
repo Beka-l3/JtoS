@@ -35,6 +35,7 @@
 		C64C326A2C14707300192683 /* ParamsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C32692C14707300192683 /* ParamsButton.swift */; };
 		C64C326C2C14E37300192683 /* JtoSRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C326B2C14E37300192683 /* JtoSRootView.swift */; };
 		C6B09DCD2C186F2400C1F285 /* ExampleCounterScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C6B09DCC2C186F2400C1F285 /* ExampleCounterScreenMock.json */; };
+		C6B09DD02C18CF3B00C1F285 /* JtoSStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B09DCF2C18CF3B00C1F285 /* JtoSStore.swift */; };
 		C6E489732BF286F500427675 /* Thesis_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */; };
 		C6E489752BF286F500427675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489742BF286F500427675 /* ContentView.swift */; };
 		C6E489772BF286F600427675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E489762BF286F600427675 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		C64C32692C14707300192683 /* ParamsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsButton.swift; sourceTree = "<group>"; };
 		C64C326B2C14E37300192683 /* JtoSRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSRootView.swift; sourceTree = "<group>"; };
 		C6B09DCC2C186F2400C1F285 /* ExampleCounterScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleCounterScreenMock.json; sourceTree = "<group>"; };
+		C6B09DCF2C18CF3B00C1F285 /* JtoSStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSStore.swift; sourceTree = "<group>"; };
 		C6E4896F2BF286F500427675 /* Thesis SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thesis SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thesis_SwiftUIApp.swift; sourceTree = "<group>"; };
 		C6E489742BF286F500427675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				C6E489872BF28EE300427675 /* JtoSView.swift */,
 				C6E489812BF28DEE00427675 /* JtoSConverter.swift */,
 				C64C326B2C14E37300192683 /* JtoSRootView.swift */,
+				C6B09DCF2C18CF3B00C1F285 /* JtoSStore.swift */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */,
 				C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */,
 				C6295EAE2C161475009B3721 /* ImageExampleView.swift in Sources */,
+				C6B09DD02C18CF3B00C1F285 /* JtoSStore.swift in Sources */,
 				C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */,
 				C6E489822BF28DEE00427675 /* JtoSConverter.swift in Sources */,
 				C62B8C8C2C13920A00AF6D20 /* ApplyColorParams.swift in Sources */,
