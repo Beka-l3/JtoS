@@ -24,6 +24,7 @@ extension JtoSView {
         case .hStack: hStackView(for: element)
         case .zStack: zStackView(for: element)
         case .scrollView: scrollViewView(for: element)
+        case .button: button(for: element)
         case .spacer: Spacer()
 
         default: empty

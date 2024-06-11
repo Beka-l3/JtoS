@@ -79,21 +79,93 @@
                     ]
                 },
                 {
-                    "type": "image",
+                    "type": "zStack",
                     "params": {
-                        "url": "https://images.unsplash.com/photo-1717514544287-15f08fdaddd1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                         "max_width": { "value": "Infinity" },
-                        "height": { "value": 420.0 },
-                        "skeleton_max_width": { "value": "Infinity" },
-                        "skeleton_min_height": { "value": 420.0 },
-                        "padding": {
-                            "edges": ["horizontal"],
-                            "length": 12
-                        },
-                        "content_mode": "fill",
-                        "corner_radius": 16
+                        "height": { "value": 420.0 }
                     },
-                    "ui": []
+                    "ui": [
+                        {
+                            "type": "image",
+                            "params": {
+                                "url": "https://images.unsplash.com/photo-1717514544287-15f08fdaddd1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                                "max_width": { "value": "Infinity" },
+                                "max_height": { "value": 420.0 },
+                                "skeleton_max_width": { "value": "Infinity" },
+                                "skeleton_min_height": { "value": 420.0 },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 12
+                                },
+                                "content_mode": "fill",
+                                "corner_radius": 16
+                            },
+                            "ui": []
+                        },
+                        {
+                            "type": "hStack",
+                            "params": {
+                                "min_width": { "value": 180 },
+                                "min_height": { "value": 50 },
+                                "bg_color_hex": "44ffffff",
+                                "corner_radius": 16
+                            },
+                            "ui": [
+                                {
+                                    "type": "button",
+                                    "params": {
+                                        "text_value": "-",
+                                        "font": "system",
+                                        "font_size": 24,
+                                        "button_action": {
+                                            "var_action": {
+                                                "action": "sub",
+                                                "varId": "counter_123",
+                                                "value": 1
+                                            }
+                                        },
+                                        "max_width": { "value": 44 },
+                                        "max_height": { "value": 44 },
+                                    },
+                                    "ui": []
+                                },
+                                {
+                                    "type": "text",
+                                    "params": {
+                                        "text_from_var": "counter_123",
+                                        "padding": {
+                                            "edges": ["horizontal"],
+                                            "length": 24
+                                        },
+                                        "font": "system",
+                                        "font_size": 24,
+                                        "color_hex": "efefef",
+                                        "min_width": { "value": 44 },
+                                        "min_height": { "value": 44 },
+                                    },
+                                    "ui": []
+                                },
+                                {
+                                    "type": "button",
+                                    "params": {
+                                        "text_value": "+",
+                                        "font": "system",
+                                        "font_size": 24,
+                                        "button_action": {
+                                            "var_action": {
+                                                "action": "add",
+                                                "varId": "counter_123",
+                                                "value": 1
+                                            }
+                                        },
+                                        "max_width": { "value": 44 },
+                                        "max_height": { "value": 44 },
+                                    },
+                                    "ui": []
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "image",

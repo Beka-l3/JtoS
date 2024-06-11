@@ -13,12 +13,14 @@ struct JtoSRootView: View {
     // MARK: Body
 
     var body: some View {
-        JtoSView(model: $jtos).onAppear {
-            if mockType != .none {
-                getJtoSModelFromMock()
-            } else {
-                getDataFromUrl()
-            }
+        JtoSView(model: $jtos)
+            .environment(store)
+            .onAppear {
+                if mockType != .none {
+                    getJtoSModelFromMock()
+                } else {
+                    getDataFromUrl()
+                }
         }
     }
 
