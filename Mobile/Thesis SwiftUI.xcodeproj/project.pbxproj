@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C627052D2C19AC17005723FB /* JtoSState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C627052C2C19AC17005723FB /* JtoSState.swift */; };
 		C6295EAA2C15DDDD009B3721 /* ApplyImageSkeletonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */; };
 		C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */; };
 		C6295EAE2C161475009B3721 /* ImageExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAD2C161475009B3721 /* ImageExampleView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C627052C2C19AC17005723FB /* JtoSState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSState.swift; sourceTree = "<group>"; };
 		C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyImageSkeletonParams.swift; sourceTree = "<group>"; };
 		C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImageSkeleton.swift; sourceTree = "<group>"; };
 		C6295EAD2C161475009B3721 /* ImageExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExampleView.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				C62B8C832C13913700AF6D20 /* JtoS */,
 				C62B8C6E2C138FA900AF6D20 /* Params */,
 				C6E4898A2BF28F2300427675 /* JtoSMockType.swift */,
+				C627052C2C19AC17005723FB /* JtoSState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				C62B8C8A2C1391FA00AF6D20 /* ApplyImageParams.swift in Sources */,
 				C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */,
 				C62B8C792C13904E00AF6D20 /* ParamsColor.swift in Sources */,
+				C627052D2C19AC17005723FB /* JtoSState.swift in Sources */,
 				C62B8C882C1391D500AF6D20 /* ApplyTextParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -62,6 +62,14 @@ struct Params: Decodable, Equatable, Hashable {
         var minHeight: CGFloatValueWrapper?         = nil
     }
 
+    struct State: Decodable, Equatable, Hashable {
+
+        var conditional: String?
+        var valueForConditional: Int?
+
+        var varId: String?
+    }
+
     // MARK: Internal Properties
 
     var ignoresSafeArea: Bool?                      = nil
@@ -106,4 +114,6 @@ struct Params: Decodable, Equatable, Hashable {
     var textFromVar: String?                        = nil
 
     var buttonAction: ButtonAction?                 = nil
+
+    var state: State?                               = nil
 }

@@ -8,6 +8,10 @@ struct JtoSView: View {
     var body: some View {
         buildView(for: $model)
             .modifier(ApplyCommonParams(params: ParamsCommon(params: $model.wrappedValue.params)))
+            .wrapIntoConditional(
+                state: .convertStateModel(rawState: $model.wrappedValue.params.state),
+                store: store
+            )
     }
 }
 
@@ -149,39 +153,64 @@ extension JtoSView {
         Button {
             switch buttonParams.actionType {
 
-            case .openBottomSheet(_):
-                break
+                case .openBottomSheet(_):
+                    break
 
-            case .openNewView(_):
-                break
+                case .openNewView(_):
+                    break
 
-            case .goBack:
-                break
+                case .goBack:
+                    break
 
-            case .update:
-                break
+                case .update:
+                    break
 
-            case let .varAction(.set(varId, value)):
-                store.update(for: varId, action: .set(value: value))
+                case let .varAction(.set(varId, value)):
+                    store.update(for: varId, action: .set(value: value))
 
-            case let .varAction(.add(varId, value)):
-                store.update(for: varId, action: .add(value: value))
+                case let .varAction(.add(varId, value)):
+                    store.update(for: varId, action: .add(value: value))
 
-            case let .varAction(.sub(varId, value)):
-                store.update(for: varId, action: .sub(value: value))
+                case let .varAction(.sub(varId, value)):
+                    store.update(for: varId, action: .sub(value: value))
 
-            case let .varAction(.mult(varId, value)):
-                store.update(for: varId, action: .mult(value: value))
+                case let .varAction(.mult(varId, value)):
+                    store.update(for: varId, action: .mult(value: value))
 
-            case let .varAction(.div(varId, value)):
-                store.update(for: varId, action: .div(value: value))
+                case let .varAction(.div(varId, value)):
+                    store.update(for: varId, action: .div(value: value))
 
-            default: break
+                default: break
             }
 
         } label: {
             Text(buttonParams.textValue)
                 .modifier(ApplyTextParams(params: textParams))
+        }
+    }
+}
+
+private extension View {
+
+    @ViewBuilder
+    func wrapIntoConditional(state: JtoSState?, store: JtoSStore) -> some View {
+        if let state {
+            if let conditional = state.conditional {
+                switch conditional.condition {
+                    case let .equal(value):             if value == store.get(for: conditional.varId) { self }
+                    case let .notEqual(value):          if value != store.get(for: conditional.varId) { self }
+                    case let .greater(value):           if value > store.get(for: conditional.varId) { self }
+                    case let .greaterOrEqual(value):    if value >= store.get(for: conditional.varId) { self }
+                    case let .less(value):              if value < store.get(for: conditional.varId) { self }
+                    case let .lessOrEqual(value):       if value <= store.get(for: conditional.varId) { self }
+
+                    default: self
+                }
+            } else {
+                self
+            }
+        } else {
+            self
         }
     }
 }
