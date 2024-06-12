@@ -74,8 +74,16 @@ struct Params: Decodable, Equatable, Hashable {
 
     struct Tabbar: Decodable, Equatable, Hashable {
 
-        let systemImage: String?
-        let imageUrl: String?
+        var tag: Int
+        var title: String?                          = nil
+
+        var systemImage: String?                    = nil
+        var imageUrl: String?                       = nil
+
+        var mock: String?                           = nil
+        var url: String?                            = nil
+
+        var tintColor: String?                      = nil
     }
 
     // MARK: Internal Properties
@@ -110,4 +118,5 @@ struct Params: Decodable, Equatable, Hashable {
     var state: State?                               = nil
 
     var tabbars: [Tabbar]?                          = nil
+    var tabbarVarId: String?                        = nil
 }
