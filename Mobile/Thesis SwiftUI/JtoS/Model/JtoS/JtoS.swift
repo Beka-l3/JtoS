@@ -10,6 +10,7 @@ struct JtoS: Decodable, Equatable, Hashable {
         case vStack, hStack, zStack
         case scrollView
         case spacer
+        case tabbar
 
         case unknown
     }

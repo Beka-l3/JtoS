@@ -60,6 +60,8 @@ struct Params: Decodable, Equatable, Hashable {
         var height: CGFloatValueWrapper?            = nil
         var maxHeight: CGFloatValueWrapper?         = nil
         var minHeight: CGFloatValueWrapper?         = nil
+
+        var alignment: String?                      = nil
     }
 
     struct State: Decodable, Equatable, Hashable {
@@ -70,28 +72,18 @@ struct Params: Decodable, Equatable, Hashable {
         var varId: String?
     }
 
+    struct Tabbar: Decodable, Equatable, Hashable {
+
+        let systemImage: String?
+        let imageUrl: String?
+    }
+
     // MARK: Internal Properties
 
     var ignoresSafeArea: Bool?                      = nil
 
-    var width: CGFloatValueWrapper?                 = nil
-    var maxWidth: CGFloatValueWrapper?              = nil
-    var minWidth: CGFloatValueWrapper?              = nil
-    var skeletonWidth: CGFloatValueWrapper?         = nil
-    var skeletonMaxWidth: CGFloatValueWrapper?      = nil
-    var skeletonMinWidth: CGFloatValueWrapper?      = nil
-
-    var height: CGFloatValueWrapper?                = nil
-    var maxHeight: CGFloatValueWrapper?             = nil
-    var minHeight: CGFloatValueWrapper?             = nil
-    var skeletonHeight: CGFloatValueWrapper?        = nil
-    var skeletonMaxHeight: CGFloatValueWrapper?     = nil
-    var skeletonMinHeight: CGFloatValueWrapper?     = nil
-
     var frame: FrameSize?                           = nil
     var skeletonFrame: FrameSize?                   = nil
-
-    var frameAlignment: String?                     = nil
 
     var padding: Padding?                           = nil
     var padding2: Padding?                          = nil
@@ -116,4 +108,6 @@ struct Params: Decodable, Equatable, Hashable {
     var buttonAction: ButtonAction?                 = nil
 
     var state: State?                               = nil
+
+    var tabbars: [Tabbar]?                          = nil
 }

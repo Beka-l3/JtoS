@@ -62,7 +62,7 @@ struct ParamsCommon: JtoSParams {
 
     init(params: Params) {
         var alignment: Alignment
-        if let a = params.frameAlignment {
+        if let a = params.frame?.alignment {
             alignment = switch a {
 
             case "leading" : .leading
@@ -77,15 +77,15 @@ struct ParamsCommon: JtoSParams {
         else { alignment = .center }
 
         var width: Frame.WidthParamType
-        if let w = params.width { width = .width(value: w.value) }
-        else if let w = params.maxWidth { width = .maxWidth(value: w.value) }
-        else if let w = params.minWidth { width = .minWidth(value: w.value) }
+        if let w = params.frame?.width { width = .width(value: w.value) }
+        else if let w = params.frame?.maxWidth { width = .maxWidth(value: w.value) }
+        else if let w = params.frame?.minWidth { width = .minWidth(value: w.value) }
         else { width = .none }
 
         var height: Frame.HeightParamType
-        if let h = params.height { height = .height(value: h.value) }
-        else if let h = params.maxHeight { height = .maxHeight(value: h.value) }
-        else if let h = params.minHeight { height = .minHeight(value: h.value) }
+        if let h = params.frame?.height { height = .height(value: h.value) }
+        else if let h = params.frame?.maxHeight { height = .maxHeight(value: h.value) }
+        else if let h = params.frame?.minHeight { height = .minHeight(value: h.value) }
         else { height = .none }
 
         self.frame = .init(

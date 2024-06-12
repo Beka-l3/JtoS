@@ -28,14 +28,14 @@ struct ParamsImageSkeleton: JtoSParams {
     // MARK: Init
 
     init(params: Params) {
-        if let w = params.skeletonWidth { self.width = .width(value: w.value) }
-        else if let w = params.skeletonMaxWidth { self.width = .maxWidth(value: w.value) }
-        else if let w = params.skeletonMinWidth { self.width = .minWidth(value: w.value) }
+        if let w = params.skeletonFrame?.width { self.width = .width(value: w.value) }
+        else if let w = params.skeletonFrame?.maxWidth { self.width = .maxWidth(value: w.value) }
+        else if let w = params.skeletonFrame?.minWidth { self.width = .minWidth(value: w.value) }
         else { self.width = .none }
 
-        if let h = params.skeletonHeight { self.height = .height(value: h.value) }
-        else if let h = params.skeletonMaxHeight { self.height = .maxHeight(value: h.value) }
-        else if let h = params.skeletonMinHeight { self.height = .minHeight(value: h.value) }
+        if let h = params.skeletonFrame?.height { self.height = .height(value: h.value) }
+        else if let h = params.skeletonFrame?.maxHeight { self.height = .maxHeight(value: h.value) }
+        else if let h = params.skeletonFrame?.minHeight { self.height = .minHeight(value: h.value) }
         else { self.height = .none }
     }
 }

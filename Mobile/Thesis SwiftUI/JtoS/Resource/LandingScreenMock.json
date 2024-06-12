@@ -19,8 +19,10 @@
                 {
                     "type": "zStack",
                     "params": {
-                        "max_width": { "value": "Infinity" },
-                        "max_height": { "value": 180.0 },
+                        "frame": {
+                            "max_width": { "value": "Infinity" },
+                            "max_height": { "value": 180.0 },
+                        },
                         "padding": {
                             "edges": ["top"],
                             "length": 44
@@ -31,10 +33,14 @@
                             "type": "image",
                             "params": {
                                 "url": "https://images.unsplash.com/photo-1625926852782-3bef718476dc?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                                "max_width": { "value": "Infinity" },
-                                "max_height": { "value": 180.0 },
-                                "skeleton_max_width": { "value": "Infinity" },
-                                "skeleton_min_height": { "value": 180.0 },
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "max_height": { "value": 180.0 },
+                                },
+                                "skeleton_frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "min_height": { "value": 180.0 },
+                                },
                                 "padding": {
                                     "edges": ["horizontal", "bottom"],
                                     "length": 12
@@ -52,7 +58,6 @@
                                     "type": "spacer",
                                     "params": {},
                                     "ui": []
-
                                 },
                                 {
                                     "type": "text",
@@ -61,8 +66,10 @@
                                         "text_value": "Innopolis",
                                         "font": "system",
                                         "font_size": 24,
-                                        "max_width": {"value": "Infinity"},
-                                        "frame_alignment": "leading",
+                                        "frame": {
+                                            "max_width": {"value": "Infinity"},
+                                            "alignment": "leading",
+                                        },
                                         "padding": {
                                             "edges": ["horizontal"],
                                             "length": 44
@@ -81,18 +88,26 @@
                 {
                     "type": "zStack",
                     "params": {
-                        "max_width": { "value": "Infinity" },
-                        "height": { "value": 420.0 }
+                        "frame": {
+                            "frame": {
+                                "max_width": { "value": "Infinity" },
+                                "height": { "value": 420 },
+                            }
+                        },
                     },
                     "ui": [
                         {
                             "type": "image",
                             "params": {
                                 "url": "https://images.unsplash.com/photo-1717514544287-15f08fdaddd1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                                "max_width": { "value": "Infinity" },
-                                "max_height": { "value": 420.0 },
-                                "skeleton_max_width": { "value": "Infinity" },
-                                "skeleton_min_height": { "value": 420.0 },
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "max_height": { "value": 420 },
+                                },
+                                "skeleton_frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "min_height": { "value": 420 },
+                                },
                                 "padding": {
                                     "edges": ["horizontal"],
                                     "length": 12
@@ -105,8 +120,10 @@
                         {
                             "type": "hStack",
                             "params": {
-                                "min_width": { "value": 180 },
-                                "min_height": { "value": 50 },
+                                "frame": {
+                                    "min_width": { "value": 180 },
+                                    "min_height": { "value": 50 },
+                                },
                                 "bg_color_hex": "44ffffff",
                                 "corner_radius": 16
                             },
@@ -125,8 +142,10 @@
                                                 "value": 1
                                             }
                                         },
-                                        "max_width": { "value": 44 },
-                                        "max_height": { "value": 44 },
+                                        "frame": {
+                                            "max_width": { "value": 44 },
+                                            "max_height": { "value": 44 },
+                                        },
                                         "state": {
                                             "conditional": "less",
                                             "var_id": "counter_123",
@@ -146,8 +165,10 @@
                                         "font": "system",
                                         "font_size": 24,
                                         "color_hex": "efefef",
-                                        "min_width": { "value": 44 },
-                                        "min_height": { "value": 44 },
+                                        "frame": {
+                                            "min_width": { "value": 44 },
+                                            "min_height": { "value": 44 },
+                                        },
                                         "state": {
                                             "conditional": "less",
                                             "var_id": "counter_123",
@@ -170,8 +191,10 @@
                                                 "value": 1
                                             }
                                         },
-                                        "max_width": { "value": 44 },
-                                        "max_height": { "value": 44 },
+                                        "frame": {
+                                            "max_width": { "value": 44 },
+                                            "max_height": { "value": 44 },
+                                        }
                                     },
                                     "ui": []
                                 }
@@ -183,10 +206,14 @@
                     "type": "image",
                     "params": {
                         "url": "https://images.unsplash.com/photo-1717256429311-a03ce77bfb59?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                        "max_width": { "value": "Infinity" },
-                        "max_height": { "value": 420.0 },
-                        "skeleton_max_width": { "value": "Infinity" },
-                        "skeleton_min_height": { "value": 420.0 },
+                        "frame": {
+                            "max_width": { "value": "Infinity" },
+                            "max_height": { "value": 420.0 },
+                        },
+                        "skeleton_frame": {
+                            "max_width": { "value": "Infinity" },
+                            "min_height": { "value": 420.0 },
+                        },
                         "padding": {
                             "edges": ["horizontal"],
                             "length": 12
@@ -200,10 +227,14 @@
                     "type": "image",
                     "params": {
                         "url": "https:<corruption>//images.unsplash.com/photo-1629043916430-feca2aed4eea?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                        "max_width": { "value": "Infinity" },
-                        "max_height": { "value": 180.0 },
-                        "skeleton_max_width": { "value": "Infinity" },
-                        "skeleton_min_height": { "value": 180.0 },
+                        "frame": {
+                            "max_width": { "value": "Infinity" },
+                            "max_height": { "value": 180.0 },
+                        },
+                        "skeleton_frame": {
+                            "max_width": { "value": "Infinity" },
+                            "min_height": { "value": 180.0 },
+                        },
                         "padding": {
                             "edges": ["horizontal"],
                             "length": 12
@@ -217,10 +248,14 @@
                     "type": "image",
                     "params": {
                         "url": "https://images.unsplash.com/photo-1625924305476-d8f96c560c21?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                        "max_width": { "value": "Infinity" },
-                        "max_height": { "value": 420 },
-                        "skeleton_max_width": { "value": "Infinity" },
-                        "skeleton_min_height": { "value": 420.0 },
+                        "frame": {
+                            "max_width": { "value": "Infinity" },
+                            "max_height": { "value": 420 },
+                        },
+                        "skeleton_frame": {
+                            "max_width": { "value": "Infinity" },
+                            "min_height": { "value": 420.0 },
+                        },
                         "padding": {
                             "edges": ["horizontal"],
                             "length": 12
