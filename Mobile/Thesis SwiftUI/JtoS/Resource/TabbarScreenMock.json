@@ -1,0 +1,45 @@
+{
+    "type": "tabbar",
+    "params": {
+        "tabbars": [
+            {
+                "tag": 0,
+                "mock": "LandingScreenMock",
+                "system_image": "star",
+                "tint_color": "4fd673"
+            },
+            {
+                "tag": 1,
+                "system_image": "circle",
+                "tint_color": "6bc4ed"
+            },
+            {
+                "tag": 2,
+                "system_image": "square",
+                "title": "none",
+                "tint_color": "d667f5"
+            },
+            {
+                "tag": 3,
+                "mock": "CatalogScreenMock",
+                "system_image": "triangle",
+                "tint_color": "eb3859"
+            }
+        ],
+        "color_hex": "cc000000",
+        "corner_radius": 16,
+        "frame": {
+            "max_width": { "value" : "Infinity" },
+            "max_height": { "value": 60 }
+        },
+        "padding": {
+            "edges": ["horizontal"],
+            "length": 16
+        },
+        "padding2": {
+            "edges": ["bottom"],
+            "length": 32
+        }
+    },
+    "ui": []
+}

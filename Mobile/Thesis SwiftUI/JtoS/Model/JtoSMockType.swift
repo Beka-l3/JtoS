@@ -9,4 +9,5 @@ enum JtoSMockScreenType: String {
     case productCart = "ProductCard"
     case cart = "Cart"
     case landing = "Landing"
+    case tabbar = "Tabbar"
 }

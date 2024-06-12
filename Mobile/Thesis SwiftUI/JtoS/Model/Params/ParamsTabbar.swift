@@ -16,7 +16,7 @@ struct ParamsTabbar: JtoSParams {
 
         enum RootSourceType {
 
-            case url(url: URL?)
+            case url(string: String)
             case mock(filename: String)
         }
 
@@ -52,8 +52,8 @@ struct ParamsTabbar: JtoSParams {
                 }
 
                 let rootSourceType: Tabbar.RootSourceType
-                if let url = tb.url {
-                    rootSourceType = .url(url: URL(string: url))
+                if let urlString = tb.url {
+                    rootSourceType = .url(string: urlString)
                 } else {
                     rootSourceType = .mock(filename: tb.mock ?? "empty")
                 }
