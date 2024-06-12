@@ -4,6 +4,7 @@ struct JtoSView: View {
 
     @Binding var model: JtoS
     @Environment(JtoSStore.self) private var store
+    @State var navigationPath: NavigationPath = .init()
 
     var body: some View {
         buildView(for: $model)
@@ -232,7 +233,7 @@ extension JtoSView {
     private func tabbarView(_ params: Params, tabbarParams: ParamsTabbar) -> some View {
         ZStack {
             Color.fromHex(params.colorHex ?? "")
-                .blur(radius: 16)
+                .background(Blur(radius: 3))
 
             HStack {
                 Spacer()
@@ -249,14 +250,17 @@ extension JtoSView {
 
     @ViewBuilder
     private func tabbarButton(for varId: String, _ params: ParamsTabbar.Tabbar) -> some View {
+        let isSelected = store.get(for: varId) == params.tag
+        let colors = (tint: params.tintColor, faded: Color.fromHex("88aaaaaa"))
+
         Button {
             store.update(for: varId, action: .set(value: params.tag))
         } label: {
             tabbarButtonLabel(params)
-                .foregroundStyle( 
-                    (store.get(for: varId) == params.tag)
-                    ? params.tintColor
-                    : Color.fromHex("88aaaaaa")
+                .foregroundStyle(isSelected ? colors.tint : colors.faded)
+                .shadow(
+                    color: isSelected ? colors.tint : colors.faded,
+                    radius: isSelected ? 10 : 0
                 )
         }
     }

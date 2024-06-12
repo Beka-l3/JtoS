@@ -11,6 +11,7 @@
 		C627052F2C1A0AFC005723FB /* ParamsTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C627052E2C1A0AFC005723FB /* ParamsTabbar.swift */; };
 		C62705312C1A16D6005723FB /* ApplyTabbarParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62705302C1A16D6005723FB /* ApplyTabbarParams.swift */; };
 		C62705332C1A233D005723FB /* TabbarScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62705322C1A233D005723FB /* TabbarScreenMock.json */; };
+		C62705362C1A35EE005723FB /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62705352C1A35EE005723FB /* Blur.swift */; };
 		C6295EAA2C15DDDD009B3721 /* ApplyImageSkeletonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */; };
 		C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */; };
 		C6295EAE2C161475009B3721 /* ImageExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAD2C161475009B3721 /* ImageExampleView.swift */; };
@@ -57,6 +58,7 @@
 		C627052E2C1A0AFC005723FB /* ParamsTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsTabbar.swift; sourceTree = "<group>"; };
 		C62705302C1A16D6005723FB /* ApplyTabbarParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyTabbarParams.swift; sourceTree = "<group>"; };
 		C62705322C1A233D005723FB /* TabbarScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TabbarScreenMock.json; sourceTree = "<group>"; };
+		C62705352C1A35EE005723FB /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyImageSkeletonParams.swift; sourceTree = "<group>"; };
 		C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImageSkeleton.swift; sourceTree = "<group>"; };
 		C6295EAD2C161475009B3721 /* ImageExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExampleView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C62705342C1A35DC005723FB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C62705352C1A35EE005723FB /* Blur.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C6295EAF2C16152D009B3721 /* ExampleViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 		C6E489832BF28DF200427675 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				C62705342C1A35DC005723FB /* Components */,
 				C62B8C842C13917A00AF6D20 /* ViewModifier */,
 				C6E489872BF28EE300427675 /* JtoSView.swift */,
 				C6E489812BF28DEE00427675 /* JtoSConverter.swift */,
@@ -362,6 +373,7 @@
 				C63D72852BF3F49D00818450 /* Params.swift in Sources */,
 				C6295EB32C1622D2009B3721 /* CounterWithModelExampleView.swift in Sources */,
 				C62B8C772C13903700AF6D20 /* ParamsImage.swift in Sources */,
+				C62705362C1A35EE005723FB /* Blur.swift in Sources */,
 				C64C326C2C14E37300192683 /* JtoSRootView.swift in Sources */,
 				C6E4898D2BF28FD900427675 /* JtoS.swift in Sources */,
 				C6E489882BF28EE300427675 /* JtoSView.swift in Sources */,
