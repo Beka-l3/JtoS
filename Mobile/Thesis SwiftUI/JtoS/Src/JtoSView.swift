@@ -206,11 +206,14 @@ private extension View {
 
                     default: self
                 }
-            } else {
-                self
             }
-        } else {
-            self
+            
+            /// for other types of State
+            /// else if { }
+
+            else { self }
         }
+
+        else { self }
     }
 }

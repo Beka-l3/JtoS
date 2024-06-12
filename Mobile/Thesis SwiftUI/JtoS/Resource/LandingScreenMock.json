@@ -115,6 +115,7 @@
                                     "type": "button",
                                     "params": {
                                         "text_value": "-",
+                                        "color_hex": "efefef",
                                         "font": "system",
                                         "font_size": 24,
                                         "button_action": {
@@ -126,6 +127,11 @@
                                         },
                                         "max_width": { "value": 44 },
                                         "max_height": { "value": 44 },
+                                        "state": {
+                                            "conditional": "less",
+                                            "var_id": "counter_123",
+                                            "valueForConditional": 0
+                                        }
                                     },
                                     "ui": []
                                 },
@@ -142,12 +148,18 @@
                                         "color_hex": "efefef",
                                         "min_width": { "value": 44 },
                                         "min_height": { "value": 44 },
+                                        "state": {
+                                            "conditional": "less",
+                                            "var_id": "counter_123",
+                                            "valueForConditional": 0
+                                        }
                                     },
                                     "ui": []
                                 },
                                 {
                                     "type": "button",
                                     "params": {
+                                        "color_hex": "efefef",
                                         "text_value": "+",
                                         "font": "system",
                                         "font_size": 24,
