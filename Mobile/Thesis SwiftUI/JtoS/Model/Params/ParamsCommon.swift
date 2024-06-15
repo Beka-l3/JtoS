@@ -47,6 +47,28 @@ struct ParamsCommon: JtoSParams {
         let edge: JtoSEdge
     }
 
+    enum ActionType {
+
+        enum VarAction {
+
+            case set(varId: String, value: Int)
+            case add(varId: String, value: Int)
+            case sub(varId: String, value: Int)
+            case mult(varId: String, value: Int)
+            case div(varId: String, value: Int)
+
+            case unkown
+        }
+
+        case none
+        case openBottomSheetUrl(string: String)
+        case openBottomSheetMock(filename: String)
+        case openNewView(urlString: String)
+        case goBack
+        case update
+        case varAction(VarAction)
+    }
+
     // MARK: Internal Properties
 
     let frame: Frame
@@ -57,6 +79,8 @@ struct ParamsCommon: JtoSParams {
     let ignoresSafeArea: Bool
 
     let bgColorHex: String?
+
+    let actionType: ActionType?
 
     // MARK: Init
 
@@ -161,5 +185,26 @@ struct ParamsCommon: JtoSParams {
         self.ignoresSafeArea = params.ignoresSafeArea ?? false
         self.cornerRadius = CGFloat(params.cornerRadius ?? 0)
         self.bgColorHex = params.bgColorHex
+
+        if let varActionRaw = params.onTapAction?.varAction {
+            let varAction: ActionType.VarAction = switch varActionRaw.action {
+                case "set": .set(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "add": .add(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "sub": .sub(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "mult": .mult(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "div": .div(varId: varActionRaw.varId, value: varActionRaw.value)
+                default: .unkown
+            }
+
+            self.actionType = .varAction(varAction)
+        } else if let bottomSheet = params.onTapAction?.bottomSheet {
+            self.actionType = if bottomSheet.source == "mock" {
+                ActionType.openBottomSheetMock(filename: bottomSheet.string)
+            } else {
+                ActionType.openBottomSheetUrl(string: bottomSheet.string)
+            }
+        } else {
+            self.actionType = nil
+        }
     }
 }

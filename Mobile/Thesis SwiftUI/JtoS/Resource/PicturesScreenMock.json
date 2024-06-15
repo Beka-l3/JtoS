@@ -135,7 +135,7 @@
                                         "color_hex": "efefef",
                                         "font": "system",
                                         "font_size": 24,
-                                        "button_action": {
+                                        "on_tap_action": {
                                             "var_action": {
                                                 "action": "sub",
                                                 "varId": "counter_123",
@@ -184,7 +184,7 @@
                                         "text_value": "+",
                                         "font": "system",
                                         "font_size": 24,
-                                        "button_action": {
+                                        "on_tap_action": {
                                             "var_action": {
                                                 "action": "add",
                                                 "varId": "counter_123",
@@ -219,7 +219,13 @@
                             "length": 12
                         },
                         "content_mode": "fill",
-                        "corner_radius": 16
+                        "corner_radius": 16,
+                        "on_tap_action": {
+                            "bottom_sheet": {
+                                "source": "mock",
+                                "string": "SomeTextScreenMock"
+                            }
+                        }
                     },
                     "ui": []
                 },

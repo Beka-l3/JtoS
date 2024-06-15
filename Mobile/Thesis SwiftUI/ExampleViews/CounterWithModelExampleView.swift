@@ -319,39 +319,7 @@ extension ExampleView {
         let textParams = ParamsText(params: element.wrappedValue.params)
 
         Button {
-
-            switch buttonParams.actionType {
-
-            case .openBottomSheet(_):
-                break
-
-            case .openNewView(_):
-                break
-
-            case .goBack:
-                break
-
-            case .update:
-                break
-
-            case let .varAction(.set(varId, value)):
-                store.update(for: varId, action: .set(value: value))
-
-            case let .varAction(.add(varId, value)):
-                store.update(for: varId, action: .add(value: value))
-
-            case let .varAction(.sub(varId, value)):
-                store.update(for: varId, action: .sub(value: value))
-
-            case let .varAction(.mult(varId, value)):
-                store.update(for: varId, action: .mult(value: value))
-
-            case let .varAction(.div(varId, value)):
-                store.update(for: varId, action: .div(value: value))
-
-            default: break
-            }
-
+            
         } label: {
             Text(buttonParams.textValue)
                 .modifier(ApplyTextParams(params: textParams))

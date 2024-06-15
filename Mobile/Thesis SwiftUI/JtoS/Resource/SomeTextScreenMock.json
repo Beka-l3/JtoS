@@ -1,0 +1,7 @@
+{
+    "type": "text",
+    "params": {
+        "text_value": "Hello World! From Bottom Sheet"
+    },
+    "ui": []
+}

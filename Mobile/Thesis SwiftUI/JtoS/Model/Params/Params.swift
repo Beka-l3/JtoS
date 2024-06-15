@@ -36,7 +36,7 @@ struct Params: Decodable, Equatable, Hashable {
         let length: CGFloat
     }
 
-    struct ButtonAction: Decodable, Equatable, Hashable {
+    struct OnTapAction: Decodable, Equatable, Hashable {
 
         // MARK: Nested Types
 
@@ -47,9 +47,16 @@ struct Params: Decodable, Equatable, Hashable {
             var value: Int
         }
 
+        struct BottomSheet: Decodable, Equatable, Hashable {
+            
+            var source: String
+            var string: String
+        }
+
         // MARK: Internal Properties
 
         var varAction: VarAction?
+        var bottomSheet: BottomSheet?
     }
 
     struct FrameSize: Decodable, Equatable, Hashable {
@@ -113,7 +120,7 @@ struct Params: Decodable, Equatable, Hashable {
 
     var textFromVar: String?                        = nil
 
-    var buttonAction: ButtonAction?                 = nil
+    var onTapAction: OnTapAction?                   = nil
 
     var state: State?                               = nil
 

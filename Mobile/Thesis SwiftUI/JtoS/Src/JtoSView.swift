@@ -12,6 +12,7 @@ struct JtoSView: View {
                 state: .convertStateModel(rawState: $model.wrappedValue.params.state),
                 store: store
             )
+            .wrapIntoTapGesture(params: .init(params: $model.wrappedValue.params), store: store, shouldPresent: $store.shouldPresent)
     }
 }
 
@@ -171,44 +172,9 @@ extension JtoSView {
         let buttonParams = ParamsButton(params: element.wrappedValue.params)
         let textParams = ParamsText(params: element.wrappedValue.params)
 
-        Button {
-            switch buttonParams.actionType {
-
-                case .openBottomSheet(_):
-                    break
-
-                case .openNewView(_):
-                    break
-
-                case .goBack:
-                    break
-
-                case .update:
-                    break
-
-                case let .varAction(.set(varId, value)):
-                    store.update(for: varId, action: .set(value: value))
-
-                case let .varAction(.add(varId, value)):
-                    store.update(for: varId, action: .add(value: value))
-
-                case let .varAction(.sub(varId, value)):
-                    store.update(for: varId, action: .sub(value: value))
-
-                case let .varAction(.mult(varId, value)):
-                    store.update(for: varId, action: .mult(value: value))
-
-                case let .varAction(.div(varId, value)):
-                    store.update(for: varId, action: .div(value: value))
-
-                default: break
-            }
-
-        } label: {
-            Text(buttonParams.textValue)
-                .modifier(ApplyTextParams(params: textParams))
-        }
-        .modifier(ApplyCommonParams(params: ParamsCommon(params: element.wrappedValue.params)))
+        Text(buttonParams.textValue)
+            .modifier(ApplyTextParams(params: textParams))
+            .modifier(ApplyCommonParams(params: ParamsCommon(params: element.wrappedValue.params)))
     }
 
     // MARK: Tabbar
@@ -319,5 +285,66 @@ private extension View {
         }
 
         else { self }
+    }
+
+    @ViewBuilder
+    func wrapIntoTapGesture(params: ParamsCommon, store: JtoSStore, shouldPresent: Binding<Bool>) -> some View {
+        switch params.actionType {
+
+        case let .openBottomSheetUrl(string):
+            self.onTapGesture {
+                store.shouldPresent = true
+            }
+            .sheet(isPresented: shouldPresent) {
+                JtoSRootView(url: string)
+            }
+
+        case let .openBottomSheetMock(filename):
+            self.onTapGesture {
+                store.shouldPresent = true
+            }
+            .sheet(isPresented: shouldPresent) {
+                JtoSRootView(mock: .filename, filename)
+            }
+
+        case .openNewView(_):
+            self
+
+        case .goBack:
+            self
+
+        case .update:
+            self
+
+        case let .varAction(.set(varId, value)):
+            self.onTapGesture {
+                store.update(for: varId, action: .set(value: value))
+            }
+
+
+        case let .varAction(.add(varId, value)):
+            self.onTapGesture {
+                print("\n\n~aaaaa~\n\n")
+                store.update(for: varId, action: .add(value: value))
+            }
+
+        case let .varAction(.sub(varId, value)):
+            self.onTapGesture {
+                store.update(for: varId, action: .sub(value: value))
+            }
+
+        case let .varAction(.mult(varId, value)):
+            self.onTapGesture {
+                store.update(for: varId, action: .mult(value: value))
+            }
+
+        case let .varAction(.div(varId, value)):
+            self.onTapGesture {
+                store.update(for: varId, action: .div(value: value))
+            }
+
+        default: self
+        }
+
     }
 }
