@@ -4,7 +4,7 @@
         "tabbars": [
             {
                 "tag": 0,
-                "mock": "LandingScreenMock",
+                "mock": "PicturesScreenMock",
                 "system_image": "star",
                 "tint_color": "4fd673"
             },
