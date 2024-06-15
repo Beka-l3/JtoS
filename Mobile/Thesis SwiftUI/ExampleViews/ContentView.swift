@@ -12,9 +12,9 @@ struct ContentView: View {
 
 //        CounterWithModelExampleView()
 
-//        JtoSRootView(mock: .tabbar)
+        JtoSRootView(mock: .tabbar)
 
-        TabbarWithBottomSheetExampleView()
+//        TabbarWithBottomSheetExampleView()
     }
 }
 

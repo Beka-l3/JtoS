@@ -1,7 +1,6 @@
 import SwiftUI
 
-@Observable
-final class JtoSStore {
+final class JtoSStore: ObservableObject {
 
     // MARK: Nested Types
 
@@ -14,9 +13,13 @@ final class JtoSStore {
         case div(value: Int)
     }
 
+    // MARK: Internal Properties
+
+    @Published var shouldPresent = false
+
     // MARK: Private Properties
 
-    private var variables: [String: Int]
+    @Published private var variables: [String: Int]
 
     // MARK: Init
 
@@ -32,6 +35,10 @@ extension JtoSStore {
 
     func get(for id: String) -> Int {
         variables[id] ?? 0
+    }
+
+    func getBool(for id: String) -> Bool {
+        get(for: id) > 0
     }
 
     // MARK: Set

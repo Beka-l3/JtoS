@@ -3,7 +3,7 @@ import SwiftUI
 struct JtoSView: View {
 
     @Binding var model: JtoS
-    @Environment(JtoSStore.self) private var store
+    @EnvironmentObject var store: JtoSStore
     @State var navigationPath: NavigationPath = .init()
 
     var body: some View {
