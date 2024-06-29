@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsText: JtoSParams {
+struct ParamsText {
 
     let textValue: String
     let font: Font
@@ -12,7 +12,8 @@ struct ParamsText: JtoSParams {
 
     init(params: Params) {
         self.textValue = params.textValue ?? ""
-        self.font = .system(size: CGFloat(params.fontSize ?? 16))
+//        self.font = .system(size: CGFloat(params.fontSize ?? 16))
+        self.font = .custom(params.font ?? "system", size: CGFloat(params.fontSize ?? 16))
         self.foregroundColor = Color.fromHex(params.colorHex ?? "")
         self.textFromVar = params.textFromVar
     }

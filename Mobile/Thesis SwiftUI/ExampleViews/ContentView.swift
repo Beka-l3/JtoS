@@ -1,20 +1,11 @@
 import SwiftUI
-import UIKit
 
 struct ContentView: View {
 
     var body: some View {
-//        JtoSRootView(mock: .landing)
-
-//        ImageExampleView()
-
-//        CounterExampleView()
-
-//        CounterWithModelExampleView()
-
+//        JtoSRootView(mock: .filename, "examples")
+//        JtoSRootView(mock: .filename, "PicturesScreenMock")
         JtoSRootView(mock: .tabbar)
-
-//        TabbarWithBottomSheetExampleView()
     }
 }
 

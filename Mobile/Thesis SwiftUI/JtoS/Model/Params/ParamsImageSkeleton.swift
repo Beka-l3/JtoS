@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsImageSkeleton: JtoSParams {
+struct ParamsImageSkeleton {
     
     // MARK: Nested Types
 

@@ -4,15 +4,18 @@ struct JtoSView: View {
 
     @Binding var model: JtoS
     @EnvironmentObject var store: JtoSStore
-    @State var navigationPath: NavigationPath = .init()
 
     var body: some View {
         buildView(for: $model)
             .wrapIntoConditional(
-                state: .convertStateModel(rawState: $model.wrappedValue.params.state),
+                state: ParamsCommon.convert(state: $model.wrappedValue.params.state),
                 store: store
             )
-            .wrapIntoTapGesture(params: .init(params: $model.wrappedValue.params), store: store, shouldPresent: $store.shouldPresent)
+            .wrapIntoTapGesture(
+                actionType: ParamsCommon.convert(onTapAction: $model.wrappedValue.params.onTapAction),
+                store: store,
+                shouldPresent: $store.shouldPresent
+            )
     }
 }
 
@@ -29,7 +32,7 @@ extension JtoSView {
             case .hStack: hStackView(for: element)
             case .zStack: zStackView(for: element)
             case .scrollView: scrollViewView(for: element)
-            case .button: button(for: element)
+//            case .button: button(for: element)
             case .tabbar: tabbarNavigation(for: element)
             case .spacer: Spacer()
 
@@ -58,14 +61,16 @@ extension JtoSView {
     private func textView(for element: Binding<JtoS>) -> some View {
         let params = ParamsText(params: element.wrappedValue.params)
         
-        if let varName = params.textFromVar {
-            Text("\(store.get(for: varName))")
-                .modifier(ApplyTextParams(params: params))
-                .modifier(ApplyCommonParams(params: ParamsCommon(params: element.wrappedValue.params)))
+        resolveTextView(varName: params.textFromVar, textValue: params.textValue)
+            .modifier(ApplyTextParams(params: params))
+            .modifier(ApplyCommonParams(params: ParamsCommon(params: element.wrappedValue.params)))
+    }
+
+    private func resolveTextView(varName: String?, textValue: String) -> Text {
+        if let varName {
+            return Text("\(store.get(for: varName))")
         } else {
-            Text(params.textValue)
-                .modifier(ApplyTextParams(params: params))
-                .modifier(ApplyCommonParams(params: ParamsCommon(params: element.wrappedValue.params)))
+            return Text(textValue)
         }
     }
 
@@ -263,7 +268,7 @@ extension JtoSView {
 private extension View {
 
     @ViewBuilder
-    func wrapIntoConditional(state: JtoSState?, store: JtoSStore) -> some View {
+    func wrapIntoConditional(state: ParamsCommon.JtoSState?, store: JtoSStore) -> some View {
         if let state {
             if let conditional = state.conditional {
                 switch conditional.condition {
@@ -288,8 +293,8 @@ private extension View {
     }
 
     @ViewBuilder
-    func wrapIntoTapGesture(params: ParamsCommon, store: JtoSStore, shouldPresent: Binding<Bool>) -> some View {
-        switch params.actionType {
+    func wrapIntoTapGesture(actionType: ParamsCommon.ActionType?, store: JtoSStore, shouldPresent: Binding<Bool>) -> some View {
+        switch actionType {
 
         case let .openBottomSheetUrl(string):
             self.onTapGesture {
@@ -321,10 +326,8 @@ private extension View {
                 store.update(for: varId, action: .set(value: value))
             }
 
-
         case let .varAction(.add(varId, value)):
             self.onTapGesture {
-                print("\n\n~aaaaa~\n\n")
                 store.update(for: varId, action: .add(value: value))
             }
 

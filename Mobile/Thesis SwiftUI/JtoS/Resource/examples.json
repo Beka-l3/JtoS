@@ -1,0 +1,82 @@
+{
+    "type": "hStack",
+    "params": {
+        "frame": {
+            "max_height": { "value": 60 }
+        },
+        "bg_color_hex": "22000000",
+        "corner_radius": 16
+    },
+    "ui": [
+        {
+            "type": "text",
+            "params": {
+                "text_value": "-",
+                "color_hex": "010101",
+                "bg_color_hex": "22010101",
+                "corner_radius": 16,
+                "font": "system",
+                "font_size": 24,
+                "on_tap_action": {
+                    "var_action": {
+                        "action": "sub",
+                        "varId": "counter_123",
+                        "value": 1
+                    }
+                },
+                "frame": {
+                    "max_width": { "value": 60 },
+                    "max_height": { "value": 60 }
+                },
+                "state": {
+                    "conditional": "less",
+                    "var_id": "counter_123",
+                    "value_for_conditional": 0
+                }
+            },
+            "ui": []
+        },
+        {
+            "type": "text",
+            "params": {
+                "text_from_var": "counter_123",
+                "font": "system",
+                "font_size": 24,
+                "color_hex": "010101",
+                "frame": {
+                    "min_width": { "value": 44 },
+                    "min_height": { "value": 44 }
+                },
+                "state": {
+                    "conditional": "less",
+                    "var_id": "counter_123",
+                    "value_for_conditional": 0
+                }
+            },
+            "ui": []
+        },
+        {
+            "type": "text",
+            "params": {
+                "color_hex": "010101",
+                "bg_color_hex": "22010101",
+                "corner_radius": 16,
+                "text_value": "+",
+                "font": "system",
+                "font_size": 24,
+                "on_tap_action": {
+                    "var_action": {
+                        "action": "add",
+                        "varId": "counter_123",
+                        "value": 1
+                    }
+                },
+                "frame": {
+                    "max_width": { "value": 60 },
+                    "max_height": { "value": 60 }
+                }
+            },
+            "ui": []
+        }
+    ]
+}

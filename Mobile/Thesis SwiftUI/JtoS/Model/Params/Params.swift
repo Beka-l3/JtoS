@@ -2,12 +2,47 @@ import Foundation
 
 struct Params: Decodable, Equatable, Hashable {
 
-    // MARK: Nested Types
+    var ignoresSafeArea: Bool?      = nil
+
+    var frame: FrameSize?           = nil
+    var skeletonFrame: FrameSize?   = nil
+
+    var padding: Padding?           = nil
+    var padding2: Padding?          = nil
+
+    var bgColorHex: String?         = nil
+    var colorHex: String?           = nil
+    var cornerRadius: Double?       = nil
+
+    var textValue: String?          = nil
+    var font: String?               = nil
+    var fontSize: Int?              = nil
+
+    var url: String?                = nil
+    var contentMode: String?        = nil
+
+    var spacing: Int?               = nil
+    var alignment: String?          = nil
+    var axes: String?               = nil
+
+    var textFromVar: String?        = nil
+
+    var onTapAction: OnTapAction?   = nil
+
+    var state: State?               = nil
+
+    var tabbars: [Tabbar]?          = nil
+    var tabbarVarId: String?        = nil
+}
+
+// MARK: - Nested Types
+
+extension Params {
 
     struct CGFloatValueWrapper: Decodable, Equatable, Hashable {
 
         // MARK: Nested Types
-        
+
         enum CodingKeys: String, CodingKey {
             case value
         }
@@ -29,12 +64,18 @@ struct Params: Decodable, Equatable, Hashable {
             }
         }
     }
+}
+
+extension Params {
 
     struct Padding: Decodable, Equatable, Hashable {
 
         let edges: [String]
         let length: CGFloat
     }
+}
+
+extension Params {
 
     struct OnTapAction: Decodable, Equatable, Hashable {
 
@@ -48,7 +89,7 @@ struct Params: Decodable, Equatable, Hashable {
         }
 
         struct BottomSheet: Decodable, Equatable, Hashable {
-            
+
             var source: String
             var string: String
         }
@@ -58,6 +99,9 @@ struct Params: Decodable, Equatable, Hashable {
         var varAction: VarAction?
         var bottomSheet: BottomSheet?
     }
+}
+
+extension Params {
 
     struct FrameSize: Decodable, Equatable, Hashable {
         var width: CGFloatValueWrapper?             = nil
@@ -70,6 +114,9 @@ struct Params: Decodable, Equatable, Hashable {
 
         var alignment: String?                      = nil
     }
+}
+
+extension Params {
 
     struct State: Decodable, Equatable, Hashable {
 
@@ -78,6 +125,9 @@ struct Params: Decodable, Equatable, Hashable {
 
         var varId: String?
     }
+}
+
+extension Params {
 
     struct Tabbar: Decodable, Equatable, Hashable {
 
@@ -92,38 +142,4 @@ struct Params: Decodable, Equatable, Hashable {
 
         var tintColor: String?                      = nil
     }
-
-    // MARK: Internal Properties
-
-    var ignoresSafeArea: Bool?                      = nil
-
-    var frame: FrameSize?                           = nil
-    var skeletonFrame: FrameSize?                   = nil
-
-    var padding: Padding?                           = nil
-    var padding2: Padding?                          = nil
-
-    var bgColorHex: String?                         = nil
-    var colorHex: String?                           = nil
-    var cornerRadius: Double?                       = nil
-
-    var textValue: String?                          = nil
-    var font: String?                               = nil
-    var fontSize: Int?                              = nil
-
-    var url: String?                                = nil
-    var contentMode: String?                        = nil
-
-    var spacing: Int?                               = nil
-    var alignment: String?                          = nil
-    var axes: String?                               = nil
-
-    var textFromVar: String?                        = nil
-
-    var onTapAction: OnTapAction?                   = nil
-
-    var state: State?                               = nil
-
-    var tabbars: [Tabbar]?                          = nil
-    var tabbarVarId: String?                        = nil
 }

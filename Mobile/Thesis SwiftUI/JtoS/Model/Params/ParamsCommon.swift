@@ -1,8 +1,37 @@
 import SwiftUI
 
-struct ParamsCommon: JtoSParams {
+struct ParamsCommon {
 
-    // MARK: Nested Types
+    let frame: Frame
+    let padding: Padding
+    let padding2: Padding
+
+    let cornerRadius: CGFloat
+    let ignoresSafeArea: Bool
+    let bgColorHex: String?
+
+    let actionType: ActionType?
+    let state: JtoSState?
+
+    // MARK: Init
+
+    init(params: Params) {
+        self.frame      = Self.convert(frame: params.frame)
+        self.padding    = Self.convert(padding: params.padding)
+        self.padding2   = Self.convert(padding: params.padding2)
+
+        self.ignoresSafeArea = params.ignoresSafeArea ?? false
+        self.cornerRadius = CGFloat(params.cornerRadius ?? 0)
+        self.bgColorHex = params.bgColorHex
+
+        self.actionType = Self.convert(onTapAction: params.onTapAction)
+        self.state      = Self.convert(state: params.state)
+    }
+}
+
+// MARK: - Nested Types
+
+extension ParamsCommon {
 
     struct Frame {
 
@@ -30,6 +59,9 @@ struct ParamsCommon: JtoSParams {
         let width: WidthParamType
         let height: HeightParamType
     }
+}
+
+extension ParamsCommon {
 
     struct Padding {
 
@@ -46,6 +78,9 @@ struct ParamsCommon: JtoSParams {
         let length: CGFloat
         let edge: JtoSEdge
     }
+}
+
+extension ParamsCommon {
 
     enum ActionType {
 
@@ -68,25 +103,118 @@ struct ParamsCommon: JtoSParams {
         case update
         case varAction(VarAction)
     }
+}
 
-    // MARK: Internal Properties
+extension ParamsCommon {
 
-    let frame: Frame
-    let padding: Padding
-    let padding2: Padding
+    struct State: Decodable, Equatable, Hashable {
 
-    let cornerRadius: CGFloat
-    let ignoresSafeArea: Bool
+        var conditional: String?
+        var valueForConditional: Int?
 
-    let bgColorHex: String?
+        var varId: String?
+    }
+}
 
-    let actionType: ActionType?
+extension ParamsCommon {
 
-    // MARK: Init
+    struct JtoSState {
 
-    init(params: Params) {
-        var alignment: Alignment
-        if let a = params.frame?.alignment {
+        // MARK: Nested Types
+
+        struct Conditional {
+
+            // MARK: Nested Types
+
+            enum Condition {
+
+                case equal(Int), notEqual(Int)
+                case greater(Int), greaterOrEqual(Int)
+                case less(Int), lessOrEqual(Int)
+
+                case unkown
+            }
+
+            // MARK: Internal Properties
+
+            let condition: Condition
+            let varId: String
+        }
+
+        // MARK: Internal Properties
+
+        let conditional: Conditional?
+    }
+}
+
+
+// MARK: - Public Type methods
+
+extension ParamsCommon {
+
+    static func convert(onTapAction: Params.OnTapAction?) -> ActionType? {
+        if let varActionRaw = onTapAction?.varAction {
+            let varAction: ActionType.VarAction = switch varActionRaw.action {
+                case "set": .set(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "add": .add(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "sub": .sub(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "mult": .mult(varId: varActionRaw.varId, value: varActionRaw.value)
+                case "div": .div(varId: varActionRaw.varId, value: varActionRaw.value)
+                default: .unkown
+            }
+
+            return .varAction(varAction)
+
+        } else if let bottomSheet = onTapAction?.bottomSheet {
+
+            if bottomSheet.source == "mock" {
+                return ActionType.openBottomSheetMock(filename: bottomSheet.string)
+
+            } else {
+                return ActionType.openBottomSheetUrl(string: bottomSheet.string)
+
+            }
+        }
+
+        return nil
+    }
+
+    static func convert(state: Params.State?) -> JtoSState? {
+        if let state {
+            if
+                let conditional = state.conditional,
+                let valueForConditional = state.valueForConditional,
+                let varId = state.varId
+            {
+                let condition: JtoSState.Conditional.Condition = switch conditional {
+                    case "equal": .equal(valueForConditional)
+                    case "notEqaul": .notEqual(valueForConditional)
+                    case "greater": .greater(valueForConditional)
+                    case "greaterOrEqual": .greaterOrEqual(valueForConditional)
+                    case "less": .less(valueForConditional)
+                    case "lessOrEqual": .lessOrEqual(valueForConditional)
+
+                    default: .unkown
+                }
+
+                return JtoSState(conditional: .init(condition: condition, varId: varId))
+            }
+        }
+
+        return nil
+    }
+}
+
+// MARK: - Private Type Converters
+
+extension ParamsCommon {
+
+    private static func convert(frame: Params.FrameSize?) -> Frame {
+        var alignment: Alignment = .center
+        var width: Frame.WidthParamType
+        var height: Frame.HeightParamType
+
+        if let a = frame?.alignment {
             alignment = switch a {
 
             case "leading" : .leading
@@ -98,28 +226,24 @@ struct ParamsCommon: JtoSParams {
 
             }
         }
-        else { alignment = .center }
 
-        var width: Frame.WidthParamType
-        if let w = params.frame?.width { width = .width(value: w.value) }
-        else if let w = params.frame?.maxWidth { width = .maxWidth(value: w.value) }
-        else if let w = params.frame?.minWidth { width = .minWidth(value: w.value) }
-        else { width = .none }
+        if          let w = frame?.width        { width = .width(value: w.value) }
+        else if     let w = frame?.maxWidth     { width = .maxWidth(value: w.value) }
+        else if     let w = frame?.minWidth     { width = .minWidth(value: w.value) }
+        else                                    { width = .none }
 
-        var height: Frame.HeightParamType
-        if let h = params.frame?.height { height = .height(value: h.value) }
-        else if let h = params.frame?.maxHeight { height = .maxHeight(value: h.value) }
-        else if let h = params.frame?.minHeight { height = .minHeight(value: h.value) }
-        else { height = .none }
+        if          let h = frame?.height       { height = .height(value: h.value) }
+        else if     let h = frame?.maxHeight    { height = .maxHeight(value: h.value) }
+        else if     let h = frame?.minHeight    { height = .minHeight(value: h.value) }
+        else                                    { height = .none }
 
-        self.frame = .init(
-            alignment: alignment,
-            width: width,
-            height: height
-        )
+        return .init(alignment: alignment, width: width, height: height)
+    }
 
+    private static func convert(padding: Params.Padding?) -> Padding {
         let jToSEdge: Padding.JtoSEdge
-        if let es = params.padding?.edges {
+
+        if let es = padding?.edges {
             var edgesSet: Edge.Set = []
 
             for e in es {
@@ -145,66 +269,6 @@ struct ParamsCommon: JtoSParams {
             jToSEdge = .none
         }
 
-        self.padding = .init(
-            length: params.padding?.length ?? 0,
-            edge: jToSEdge
-        )
-
-        let jToSEdge2: Padding.JtoSEdge
-        if let es = params.padding2?.edges {
-            var edgesSet: Edge.Set = []
-
-            for e in es {
-
-                let edge: Edge.Set = switch e {
-
-                case "leading": .leading
-                case "trailing": .trailing
-                case "horizontal": .horizontal
-                case "vertical": .vertical
-                case "top": .top
-                case "bottom": .bottom
-
-                default: .all
-
-                }
-
-                edgesSet.insert(edge)
-            }
-
-            jToSEdge2 = .set(edgesSet)
-        } else {
-            jToSEdge2 = .none
-        }
-
-        self.padding2 = .init(
-            length: params.padding2?.length ?? 0,
-            edge: jToSEdge2
-        )
-
-        self.ignoresSafeArea = params.ignoresSafeArea ?? false
-        self.cornerRadius = CGFloat(params.cornerRadius ?? 0)
-        self.bgColorHex = params.bgColorHex
-
-        if let varActionRaw = params.onTapAction?.varAction {
-            let varAction: ActionType.VarAction = switch varActionRaw.action {
-                case "set": .set(varId: varActionRaw.varId, value: varActionRaw.value)
-                case "add": .add(varId: varActionRaw.varId, value: varActionRaw.value)
-                case "sub": .sub(varId: varActionRaw.varId, value: varActionRaw.value)
-                case "mult": .mult(varId: varActionRaw.varId, value: varActionRaw.value)
-                case "div": .div(varId: varActionRaw.varId, value: varActionRaw.value)
-                default: .unkown
-            }
-
-            self.actionType = .varAction(varAction)
-        } else if let bottomSheet = params.onTapAction?.bottomSheet {
-            self.actionType = if bottomSheet.source == "mock" {
-                ActionType.openBottomSheetMock(filename: bottomSheet.string)
-            } else {
-                ActionType.openBottomSheetUrl(string: bottomSheet.string)
-            }
-        } else {
-            self.actionType = nil
-        }
+        return .init(length: padding?.length ?? 0, edge: jToSEdge)
     }
 }

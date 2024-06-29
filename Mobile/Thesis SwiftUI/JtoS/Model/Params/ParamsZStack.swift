@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsZStack: JtoSParams {
+struct ParamsZStack {
     
     let alignment: Alignment
     

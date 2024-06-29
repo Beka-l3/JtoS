@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C627052D2C19AC17005723FB /* JtoSState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C627052C2C19AC17005723FB /* JtoSState.swift */; };
 		C627052F2C1A0AFC005723FB /* ParamsTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C627052E2C1A0AFC005723FB /* ParamsTabbar.swift */; };
 		C62705312C1A16D6005723FB /* ApplyTabbarParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62705302C1A16D6005723FB /* ApplyTabbarParams.swift */; };
 		C62705332C1A233D005723FB /* TabbarScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62705322C1A233D005723FB /* TabbarScreenMock.json */; };
@@ -18,7 +17,6 @@
 		C6295EB12C16154C009B3721 /* CounterExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EB02C16154C009B3721 /* CounterExampleView.swift */; };
 		C6295EB32C1622D2009B3721 /* CounterWithModelExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EB22C1622D2009B3721 /* CounterWithModelExampleView.swift */; };
 		C62B8C6D2C137E6500AF6D20 /* PicturesScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62B8C6C2C137E6500AF6D20 /* PicturesScreenMock.json */; };
-		C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C702C138FF100AF6D20 /* JtoSParams.swift */; };
 		C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */; };
 		C62B8C752C13902000AF6D20 /* ParamsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C742C13902000AF6D20 /* ParamsText.swift */; };
 		C62B8C772C13903700AF6D20 /* ParamsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C762C13903700AF6D20 /* ParamsImage.swift */; };
@@ -39,6 +37,7 @@
 		C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */; };
 		C64C326A2C14707300192683 /* ParamsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C32692C14707300192683 /* ParamsButton.swift */; };
 		C64C326C2C14E37300192683 /* JtoSRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C326B2C14E37300192683 /* JtoSRootView.swift */; };
+		C660EDA82C2B727F00A27AE6 /* examples.json in Resources */ = {isa = PBXBuildFile; fileRef = C660EDA72C2B727F00A27AE6 /* examples.json */; };
 		C670EA1E2C1DFB4600B05D21 /* TabbarWithBottomSheetExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670EA1D2C1DFB4600B05D21 /* TabbarWithBottomSheetExampleView.swift */; };
 		C670EA202C1E2B7A00B05D21 /* SomeTextScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C670EA1F2C1E2B7A00B05D21 /* SomeTextScreenMock.json */; };
 		C6B09DCD2C186F2400C1F285 /* ExampleCounterScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C6B09DCC2C186F2400C1F285 /* ExampleCounterScreenMock.json */; };
@@ -56,7 +55,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C627052C2C19AC17005723FB /* JtoSState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSState.swift; sourceTree = "<group>"; };
 		C627052E2C1A0AFC005723FB /* ParamsTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsTabbar.swift; sourceTree = "<group>"; };
 		C62705302C1A16D6005723FB /* ApplyTabbarParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyTabbarParams.swift; sourceTree = "<group>"; };
 		C62705322C1A233D005723FB /* TabbarScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TabbarScreenMock.json; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 		C6295EB02C16154C009B3721 /* CounterExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterExampleView.swift; sourceTree = "<group>"; };
 		C6295EB22C1622D2009B3721 /* CounterWithModelExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterWithModelExampleView.swift; sourceTree = "<group>"; };
 		C62B8C6C2C137E6500AF6D20 /* PicturesScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PicturesScreenMock.json; sourceTree = "<group>"; wrapsLines = 0; };
-		C62B8C702C138FF100AF6D20 /* JtoSParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSParams.swift; sourceTree = "<group>"; };
 		C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsCommon.swift; sourceTree = "<group>"; };
 		C62B8C742C13902000AF6D20 /* ParamsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsText.swift; sourceTree = "<group>"; };
 		C62B8C762C13903700AF6D20 /* ParamsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImage.swift; sourceTree = "<group>"; };
@@ -88,6 +85,7 @@
 		C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsScrollView.swift; sourceTree = "<group>"; };
 		C64C32692C14707300192683 /* ParamsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsButton.swift; sourceTree = "<group>"; };
 		C64C326B2C14E37300192683 /* JtoSRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSRootView.swift; sourceTree = "<group>"; };
+		C660EDA72C2B727F00A27AE6 /* examples.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = examples.json; sourceTree = "<group>"; };
 		C670EA1D2C1DFB4600B05D21 /* TabbarWithBottomSheetExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWithBottomSheetExampleView.swift; sourceTree = "<group>"; };
 		C670EA1F2C1E2B7A00B05D21 /* SomeTextScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SomeTextScreenMock.json; sourceTree = "<group>"; };
 		C6B09DCC2C186F2400C1F285 /* ExampleCounterScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleCounterScreenMock.json; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				C63D72842BF3F49D00818450 /* Params.swift */,
-				C62B8C702C138FF100AF6D20 /* JtoSParams.swift */,
 				C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */,
 				C62B8C742C13902000AF6D20 /* ParamsText.swift */,
 				C62B8C762C13903700AF6D20 /* ParamsImage.swift */,
@@ -274,6 +271,7 @@
 				C62705322C1A233D005723FB /* TabbarScreenMock.json */,
 				C6B09DCC2C186F2400C1F285 /* ExampleCounterScreenMock.json */,
 				C670EA1F2C1E2B7A00B05D21 /* SomeTextScreenMock.json */,
+				C660EDA72C2B727F00A27AE6 /* examples.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -284,7 +282,6 @@
 				C62B8C832C13913700AF6D20 /* JtoS */,
 				C62B8C6E2C138FA900AF6D20 /* Params */,
 				C6E4898A2BF28F2300427675 /* JtoSMockType.swift */,
-				C627052C2C19AC17005723FB /* JtoSState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,6 +356,7 @@
 				C670EA202C1E2B7A00B05D21 /* SomeTextScreenMock.json in Resources */,
 				C62705332C1A233D005723FB /* TabbarScreenMock.json in Resources */,
 				C62B8C6D2C137E6500AF6D20 /* PicturesScreenMock.json in Resources */,
+				C660EDA82C2B727F00A27AE6 /* examples.json in Resources */,
 				C6E489772BF286F600427675 /* Assets.xcassets in Resources */,
 				C6B09DCD2C186F2400C1F285 /* ExampleCounterScreenMock.json in Resources */,
 				C6E489862BF28E1C00427675 /* CatalogScreenMock.json in Resources */,
@@ -407,9 +405,7 @@
 				C6295EB12C16154C009B3721 /* CounterExampleView.swift in Sources */,
 				C62B8C752C13902000AF6D20 /* ParamsText.swift in Sources */,
 				C62B8C8A2C1391FA00AF6D20 /* ApplyImageParams.swift in Sources */,
-				C62B8C712C138FF100AF6D20 /* JtoSParams.swift in Sources */,
 				C62B8C792C13904E00AF6D20 /* ParamsColor.swift in Sources */,
-				C627052D2C19AC17005723FB /* JtoSState.swift in Sources */,
 				C62B8C882C1391D500AF6D20 /* ApplyTextParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

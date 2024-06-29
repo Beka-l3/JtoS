@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsTabbar: JtoSParams {
+struct ParamsTabbar {
 
     // MARK: Nested Types
 

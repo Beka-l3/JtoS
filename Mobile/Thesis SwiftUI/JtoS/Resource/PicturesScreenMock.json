@@ -129,7 +129,7 @@
                             },
                             "ui": [
                                 {
-                                    "type": "button",
+                                    "type": "text",
                                     "params": {
                                         "text_value": "-",
                                         "color_hex": "efefef",
@@ -178,7 +178,7 @@
                                     "ui": []
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "text",
                                     "params": {
                                         "color_hex": "efefef",
                                         "text_value": "+",

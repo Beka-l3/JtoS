@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsColor: JtoSParams {
+struct ParamsColor {
 
     let colorHex: String
 

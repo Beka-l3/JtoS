@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsScrollView: JtoSParams {
+struct ParamsScrollView {
 
     let spacing: CGFloat
     let axes: Axis.Set

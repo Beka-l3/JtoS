@@ -28,7 +28,6 @@ final class JtoSStore: ObservableObject {
     }
 }
 
-
 extension JtoSStore {
 
     // MARK: Get

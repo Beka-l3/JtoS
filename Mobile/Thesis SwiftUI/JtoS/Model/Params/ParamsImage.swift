@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsImage: JtoSParams {
+struct ParamsImage {
 
     let url: String
     let contentMode: ContentMode

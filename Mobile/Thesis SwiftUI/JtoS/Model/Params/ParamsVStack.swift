@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsVStack: JtoSParams {
+struct ParamsVStack {
 
     let alignment: HorizontalAlignment
     let spacing: CGFloat

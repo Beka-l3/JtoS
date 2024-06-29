@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ParamsButton: JtoSParams {
+struct ParamsButton {
 
     // MARK: Internal Properties
 
