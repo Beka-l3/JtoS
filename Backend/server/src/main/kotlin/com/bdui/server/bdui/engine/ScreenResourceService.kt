@@ -10,6 +10,7 @@ import kotlinx.coroutines.runBlocking
 import com.bdui.server.bdui.core.abstract.AbstractAssembler
 import com.bdui.server.bdui.core.abstract.AbstractSection
 import com.bdui.server.bdui.core.abstract.toSectionResponses
+import com.bdui.server.bdui.core.model.ScreenTemplate
 
 @Service
 @Primary
@@ -18,9 +19,10 @@ class ScreenResourceService(
     private val assemblerContext: AssemblerContext,
 ) {
     fun get(
-        request: ScreenRequest
+        request: ScreenRequest,
+        screenTemplateBuilder: () -> ScreenTemplate
     ): ScreenResponse {
-        val screenTemplate = request.buildScreenTemplate()
+        val screenTemplate = screenTemplateBuilder.invoke()
         val sectionResponses = runBlocking {
              screenTemplate.sections.map { section ->
                 async {

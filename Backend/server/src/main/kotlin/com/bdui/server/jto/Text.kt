@@ -1,9 +1,15 @@
 package com.bdui.server.jto
 
+import ColorRGB
+import color
 import com.bdui.server.jto.model.ContentMode
+import com.bdui.server.jto.model.HorizontalAlignment
+import com.bdui.server.jto.model.center
 import com.bdui.server.jto.model.insets.EdgeInsets
 import com.bdui.server.jto.model.insets.edgeInsets
 import com.bdui.server.jto.model.size.Size
+import com.bdui.server.jto.model.size.matchParentSize
+import com.bdui.server.jto.model.size.wrapContentSize
 import com.fasterxml.jackson.annotation.JsonUnwrapped
 import java.awt.Color
 import java.util.UUID
@@ -21,22 +27,40 @@ class Text internal constructor(
         val width: Size,
         val height: Size,
         val padding: EdgeInsets,
-        val fontSize: Int
+        val fontSize: Int,
+        val horizontalAlignment: HorizontalAlignment,
+        val backgroundColor: ColorRGB,
     )
 }
 
 fun UiNamespace.text(
     text: String,
-    width: Size,
-    height: Size,
-    padding: EdgeInsets,
-    fontSize: Int
+    width: Size = wrapContentSize(),
+    height: Size = wrapContentSize(),
+    padding: EdgeInsets = edgeInsets(),
+    horizontalAlignment: HorizontalAlignment = center,
+    backgroundColor: ColorRGB = color(Color.white),
+    fontSize: Int = 14
 ): Text = Text(
     Text.Properties(
         text = text,
         width = width,
         height = height,
         padding = padding,
+        horizontalAlignment = horizontalAlignment,
+        backgroundColor = backgroundColor,
         fontSize = fontSize
+    )
+)
+
+fun UiNamespace.spacer(): Text = Text(
+    Text.Properties(
+        text = "",
+        width = matchParentSize(),
+        height = wrapContentSize(),
+        padding = edgeInsets(),
+        fontSize = 1,
+        backgroundColor = color(Color.white),
+        horizontalAlignment = center
     )
 )

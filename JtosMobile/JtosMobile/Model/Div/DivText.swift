@@ -6,4 +6,6 @@ struct DivText: Decodable {
     let height: Size
     let padding: DivEdgeInsets
     let fontSize: Int
+    let backgroundColor: ColorRGB
+    let horizontalAlignment: DivHorizontalAlignment
 }

@@ -39,6 +39,12 @@
 		8E7EF1FC2C287C0F0020DB72 /* ColorRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7EF1FB2C287C0F0020DB72 /* ColorRGB.swift */; };
 		8E7EF1FE2C287F1F0020DB72 /* DivText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7EF1FD2C287F1F0020DB72 /* DivText.swift */; };
 		8E7EF2002C287F510020DB72 /* DivTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7EF1FF2C287F510020DB72 /* DivTextView.swift */; };
+		8EEAE78E2C3B22C200CA9C07 /* DivCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE78D2C3B22C200CA9C07 /* DivCornerRadius.swift */; };
+		8EEAE7912C3B2AA800CA9C07 /* DivHorizontalAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7902C3B2AA800CA9C07 /* DivHorizontalAlignment.swift */; };
+		8EEAE7932C3B2BD100CA9C07 /* DivVerticalAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7922C3B2BD100CA9C07 /* DivVerticalAlignment.swift */; };
+		8EEAE7A02C3B4A3700CA9C07 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE79F2C3B4A3700CA9C07 /* CachedImageView.swift */; };
+		8EEAE7A22C3B4A6600CA9C07 /* ImageServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7A12C3B4A6600CA9C07 /* ImageServiceImp.swift */; };
+		8EEAE7A52C3B4AA900CA9C07 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7A42C3B4AA900CA9C07 /* HTTPError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +100,12 @@
 		8E7EF1FB2C287C0F0020DB72 /* ColorRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRGB.swift; sourceTree = "<group>"; };
 		8E7EF1FD2C287F1F0020DB72 /* DivText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivText.swift; sourceTree = "<group>"; };
 		8E7EF1FF2C287F510020DB72 /* DivTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivTextView.swift; sourceTree = "<group>"; };
+		8EEAE78D2C3B22C200CA9C07 /* DivCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivCornerRadius.swift; sourceTree = "<group>"; };
+		8EEAE7902C3B2AA800CA9C07 /* DivHorizontalAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivHorizontalAlignment.swift; sourceTree = "<group>"; };
+		8EEAE7922C3B2BD100CA9C07 /* DivVerticalAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivVerticalAlignment.swift; sourceTree = "<group>"; };
+		8EEAE79F2C3B4A3700CA9C07 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
+		8EEAE7A12C3B4A6600CA9C07 /* ImageServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceImp.swift; sourceTree = "<group>"; };
+		8EEAE7A42C3B4AA900CA9C07 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,7 @@
 		8E7EF1932C275EB90020DB72 /* JtosMobile */ = {
 			isa = PBXGroup;
 			children = (
+				8EEAE7A32C3B4A9900CA9C07 /* CachedImage */,
 				8E7EF1E12C2827270020DB72 /* Engine */,
 				8E7EF1D62C280FDD0020DB72 /* View */,
 				8E7EF1D32C2782C40020DB72 /* Resource */,
@@ -184,6 +197,8 @@
 		8E7EF1BE2C275EDD0020DB72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8EEAE78F2C3B2A9800CA9C07 /* DivAlignment */,
+				8EEAE78C2C3B22B500CA9C07 /* DivCornerRadius */,
 				8E7EF1FA2C287C090020DB72 /* Color */,
 				8E7EF1F52C2870000020DB72 /* Orientation */,
 				8E7EF1F02C2861C30020DB72 /* EdgeInsets */,
@@ -288,6 +303,33 @@
 				8E7EF1FB2C287C0F0020DB72 /* ColorRGB.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		8EEAE78C2C3B22B500CA9C07 /* DivCornerRadius */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE78D2C3B22C200CA9C07 /* DivCornerRadius.swift */,
+			);
+			path = DivCornerRadius;
+			sourceTree = "<group>";
+		};
+		8EEAE78F2C3B2A9800CA9C07 /* DivAlignment */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE7902C3B2AA800CA9C07 /* DivHorizontalAlignment.swift */,
+				8EEAE7922C3B2BD100CA9C07 /* DivVerticalAlignment.swift */,
+			);
+			path = DivAlignment;
+			sourceTree = "<group>";
+		};
+		8EEAE7A32C3B4A9900CA9C07 /* CachedImage */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE79F2C3B4A3700CA9C07 /* CachedImageView.swift */,
+				8EEAE7A12C3B4A6600CA9C07 /* ImageServiceImp.swift */,
+				8EEAE7A42C3B4AA900CA9C07 /* HTTPError.swift */,
+			);
+			path = CachedImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,11 +464,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7EF1F72C2870070020DB72 /* DivOrientation.swift in Sources */,
+				8EEAE7A22C3B4A6600CA9C07 /* ImageServiceImp.swift in Sources */,
 				8E7EF1DE2C2825F90020DB72 /* JsonReader.swift in Sources */,
 				8E7EF1C22C275F570020DB72 /* Section.swift in Sources */,
 				8E7EF1F22C2861CE0020DB72 /* DivEdgeInsets.swift in Sources */,
 				8E7EF1F92C2870470020DB72 /* DivContainerView.swift in Sources */,
 				8E7EF1ED2C2836890020DB72 /* DivContentMode.swift in Sources */,
+				8EEAE7932C3B2BD100CA9C07 /* DivVerticalAlignment.swift in Sources */,
 				8E7EF1C42C275F920020DB72 /* JtoView.swift in Sources */,
 				8E7EF1952C275EB90020DB72 /* JtosMobileApp.swift in Sources */,
 				8E7EF1C02C275F040020DB72 /* ScreenResponse.swift in Sources */,
@@ -439,7 +483,9 @@
 				8E7EF1D02C2779040020DB72 /* DivImage.swift in Sources */,
 				8E7EF1F42C286FD20020DB72 /* DivContainer.swift in Sources */,
 				8E7EF1EA2C2830DA0020DB72 /* Size.swift in Sources */,
+				8EEAE7A52C3B4AA900CA9C07 /* HTTPError.swift in Sources */,
 				8E7EF1DA2C2811470020DB72 /* SectionView.swift in Sources */,
+				8EEAE7A02C3B4A3700CA9C07 /* CachedImageView.swift in Sources */,
 				8E7EF1E32C282A550020DB72 /* ScreenQuery.swift in Sources */,
 				8E7EF1DC2C2814110020DB72 /* DivView.swift in Sources */,
 				8E7EF1CD2C27756A0020DB72 /* DivType.swift in Sources */,
@@ -447,6 +493,8 @@
 				8E7EF2002C287F510020DB72 /* DivTextView.swift in Sources */,
 				8E7EF1D22C27791E0020DB72 /* DivBase.swift in Sources */,
 				8E7EF1CB2C2775190020DB72 /* Div.swift in Sources */,
+				8EEAE78E2C3B22C200CA9C07 /* DivCornerRadius.swift in Sources */,
+				8EEAE7912C3B2AA800CA9C07 /* DivHorizontalAlignment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

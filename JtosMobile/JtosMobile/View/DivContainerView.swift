@@ -12,22 +12,29 @@ struct DivContainerView: View {
     @ViewBuilder
     private func buildContainerView(_ containerData: DivContainer) -> some View {
         if containerData.orientation == .horizontal {
-            HStack(spacing: 0) {
+            HStack(alignment: containerData.verticalAlignment.toSwiftUIVertical(), spacing: 0) {
                 ForEach(containerData.items, id: \.id) { item in
                     DivView(div: item)
                 }
             }
             .frame(
                 width: containerData.width.getSize(),
-                height: containerData.height.getSize()
+                height: containerData.height.getSize(),
+                alignment: containerData.horizontalAlignment.toSwiftUI()
             )
             .frame(
                 maxWidth: containerData.width.getMaxSize(),
-                maxHeight: containerData.height.getMaxSize()
+                maxHeight: containerData.height.getMaxSize(),
+                alignment: containerData.horizontalAlignment.toSwiftUI()
             )
             .padding(containerData.padding.toSwiftUI())
             .background(Color(uiColor: containerData.backgroundColor.toUIColor()))
-            .cornerRadius(CGFloat(containerData.cornerRadius))
+            .addCorners(
+                topLeadingRadius: containerData.cornerRadius.topLeading,
+                bottomLeadingRadius: containerData.cornerRadius.bottomLeading,
+                bottomTrailingRadius: containerData.cornerRadius.bottomTrailing,
+                topTrailingRadius: containerData.cornerRadius.topTrailing
+            )
         } else {
             VStack(spacing: 0) {
                 ForEach(containerData.items, id: \.id) { item in
@@ -36,15 +43,52 @@ struct DivContainerView: View {
             }
             .frame(
                 width: containerData.width.getSize(),
-                height: containerData.height.getSize()
+                height: containerData.height.getSize(),
+                alignment: containerData.verticalAlignment.toSwiftUI()
             )
             .frame(
                 maxWidth: containerData.width.getMaxSize(),
-                maxHeight: containerData.height.getMaxSize()
+                maxHeight: containerData.height.getMaxSize(),
+                alignment: containerData.verticalAlignment.toSwiftUI()
             )
             .padding(containerData.padding.toSwiftUI())
             .background(Color(uiColor: containerData.backgroundColor.toUIColor()))
-            .cornerRadius(CGFloat(containerData.cornerRadius))
+            .addCorners(
+                topLeadingRadius: containerData.cornerRadius.topLeading,
+                bottomLeadingRadius: containerData.cornerRadius.bottomLeading,
+                bottomTrailingRadius: containerData.cornerRadius.bottomTrailing,
+                topTrailingRadius: containerData.cornerRadius.topTrailing
+            )
+        }
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func addCorners(
+        topLeadingRadius: CGFloat,
+        bottomLeadingRadius: CGFloat,
+        bottomTrailingRadius: CGFloat,
+        topTrailingRadius: CGFloat
+    ) -> some View {
+        if topLeadingRadius == 0.0 && bottomLeadingRadius == 0.0 && bottomTrailingRadius == 0.0 && topTrailingRadius == 0.0 {
+            self
+        } else if 
+            topLeadingRadius == bottomLeadingRadius &&
+            topLeadingRadius == bottomTrailingRadius &&
+            topLeadingRadius == topTrailingRadius
+        {
+            self.cornerRadius(topLeadingRadius)
+        } else {
+            self
+            .clipShape(
+                .rect(
+                    topLeadingRadius: topLeadingRadius,
+                    bottomLeadingRadius: bottomLeadingRadius,
+                    bottomTrailingRadius: bottomTrailingRadius,
+                    topTrailingRadius: topTrailingRadius
+                )
+            )
         }
     }
 }

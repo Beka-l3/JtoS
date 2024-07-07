@@ -15,12 +15,15 @@ struct DivTextView: View {
             .font(.system(size: CGFloat(textData.fontSize)))
             .frame(
                 width: textData.width.getSize(),
-                height: textData.height.getSize()
+                height: textData.height.getSize(),
+                alignment: textData.horizontalAlignment.toSwiftUI()
             )
             .frame(
                 maxWidth: textData.width.getMaxSize(),
-                maxHeight: textData.height.getMaxSize()
+                maxHeight: textData.height.getMaxSize(),
+                alignment: textData.horizontalAlignment.toSwiftUI()
             )
             .padding(textData.padding.toSwiftUI())
+            .background(Color(uiColor: textData.backgroundColor.toUIColor()))
     }
 }
