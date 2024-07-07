@@ -27,7 +27,7 @@ struct DivContainerView: View {
                 maxHeight: containerData.height.getMaxSize(),
                 alignment: containerData.horizontalAlignment.toSwiftUI()
             )
-            .padding(containerData.padding.toSwiftUI())
+            .setPaddings(containerData.padding.toSwiftUI())
             .background(Color(uiColor: containerData.backgroundColor.toUIColor()))
             .addCorners(
                 topLeadingRadius: containerData.cornerRadius.topLeading,
@@ -51,7 +51,7 @@ struct DivContainerView: View {
                 maxHeight: containerData.height.getMaxSize(),
                 alignment: containerData.verticalAlignment.toSwiftUI()
             )
-            .padding(containerData.padding.toSwiftUI())
+            .setPaddings(containerData.padding.toSwiftUI())
             .background(Color(uiColor: containerData.backgroundColor.toUIColor()))
             .addCorners(
                 topLeadingRadius: containerData.cornerRadius.topLeading,
@@ -89,6 +89,17 @@ extension View {
                     topTrailingRadius: topTrailingRadius
                 )
             )
+        }
+    }
+    
+    @ViewBuilder
+    func setPaddings(
+        _ edgeInsets: EdgeInsets
+    ) -> some View {
+        if edgeInsets.leading == 0.0 && edgeInsets.trailing == 0.0 && edgeInsets.bottom == 0.0 && edgeInsets.top == 0.0 {
+            self
+        } else {
+            self.padding(edgeInsets)
         }
     }
 }
