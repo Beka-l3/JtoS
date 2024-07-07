@@ -4,6 +4,8 @@ struct DivContainer: Decodable {
     let padding: DivEdgeInsets
     let items: Array<Div>
     let orientation: DivOrientation
-    let cornerRadius: Int
+    let cornerRadius: DivCornerRadius
     let backgroundColor: ColorRGB
+    let horizontalAlignment: DivHorizontalAlignment
+    let verticalAlignment: DivVerticalAlignment
 }

@@ -16,10 +16,10 @@ class EdgeInsets internal constructor(
 }
 
 fun UiNamespace.edgeInsets(
-    bottom: Int? = null,
-    left: Int? = null,
-    top: Int? = null,
-    right: Int? = null,
+    bottom: Int = 0,
+    left: Int = 0,
+    top: Int = 0,
+    right: Int = 0,
 ): EdgeInsets = EdgeInsets(
     EdgeInsets.Properties(
         bottom = bottom,

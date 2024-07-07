@@ -1,10 +1,10 @@
-package com.bdui.server.screenLogic.sections.test
+package com.bdui.server.screenLogic.sections.cartAddress
 
 import com.bdui.server.bdui.core.abstract.AbstractAssembler
 import com.bdui.server.bdui.core.abstract.AbstractSection
 import com.bdui.server.jto.View
-import com.bdui.server.screenLogic.sections.test.mapper.TestMapper
-import com.bdui.server.screenLogic.sections.test.renderer.TestRenderer
+import com.bdui.server.screenLogic.sections.cartAddress.mapper.TestMapper
+import com.bdui.server.screenLogic.sections.cartAddress.renderer.TestRenderer
 
 class TestAssembler(): AbstractAssembler() {
     override fun getName(): String {

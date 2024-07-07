@@ -1,4 +1,4 @@
-package com.bdui.server.screenLogic.sections.test
+package com.bdui.server.screenLogic.sections.cartAddress
 
 import com.bdui.server.bdui.core.abstract.AbstractSection
 

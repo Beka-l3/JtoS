@@ -4,6 +4,8 @@ import com.bdui.server.jto.model.ContentMode
 import com.bdui.server.jto.model.insets.EdgeInsets
 import com.bdui.server.jto.model.insets.edgeInsets
 import com.bdui.server.jto.model.size.Size
+import com.bdui.server.jto.model.size.matchParentSize
+import com.bdui.server.jto.model.size.wrapContentSize
 import com.fasterxml.jackson.annotation.JsonUnwrapped
 import java.awt.Color
 import java.util.UUID
@@ -27,10 +29,10 @@ class Text internal constructor(
 
 fun UiNamespace.text(
     text: String,
-    width: Size,
-    height: Size,
-    padding: EdgeInsets,
-    fontSize: Int
+    width: Size = wrapContentSize(),
+    height: Size = wrapContentSize(),
+    padding: EdgeInsets = edgeInsets(),
+    fontSize: Int = 14
 ): Text = Text(
     Text.Properties(
         text = text,
@@ -38,5 +40,15 @@ fun UiNamespace.text(
         height = height,
         padding = padding,
         fontSize = fontSize
+    )
+)
+
+fun UiNamespace.spacer(): Text = Text(
+    Text.Properties(
+        text = "",
+        width = matchParentSize(),
+        height = wrapContentSize(),
+        padding = edgeInsets(),
+        fontSize = 1
     )
 )

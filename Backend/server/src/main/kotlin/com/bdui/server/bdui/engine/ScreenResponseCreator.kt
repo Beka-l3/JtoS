@@ -13,19 +13,13 @@ class ScreenResponseCreator(
 ) {
     fun create(
         request: ScreenRequest,
+        screenTemplateBuilder: () -> ScreenTemplate
     ): ScreenResponse {
         // preprocess response
         // ...
-        // call resolvers
-        val response = screenResourceService.get(request)
+        val response = screenResourceService.get(request, screenTemplateBuilder)
         // post process response
         // ...
         return response
-    }
-
-    private fun getScreenTemplate(
-        screenGenerator: Supplier<ScreenTemplate>
-    ): ScreenTemplate {
-        return screenGenerator.get()
     }
 }
