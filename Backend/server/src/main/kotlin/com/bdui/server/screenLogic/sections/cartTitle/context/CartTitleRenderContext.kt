@@ -1,4 +1,6 @@
 package com.bdui.server.screenLogic.sections.cartTitle.context
 
-class CartTitleRenderContext {
-}
+class CartTitleRenderContext(
+    val available: Int,
+    val unavailable: Int?
+)

@@ -19,7 +19,7 @@ def patch():
 
 def __getItems__(database: CartDatabase):
     cart_items = database.read_cart_items()
-    serialized_data = [item.serialize() for item in cart_items]
+    serialized_data = [item.serialize_for_frontend() for item in cart_items]
     return jsonify({'data': serialized_data})
 
 if __name__ == '__main__':

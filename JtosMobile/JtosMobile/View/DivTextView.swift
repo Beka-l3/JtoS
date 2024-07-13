@@ -7,6 +7,20 @@ struct DivTextView: View {
     let actionDispatcher: ActionDispatcher
     let stateStore: StateStore
 
+    init(
+        divText: DivText,
+        actionDispatcher: ActionDispatcher,
+        stateStore: StateStore
+    ) {
+        self.divText = divText
+        self.actionDispatcher = actionDispatcher
+        self.stateStore = stateStore
+        
+        if let textVariable = divText.textVariable {
+            stateStore.updateVariable(variable: textVariable)
+        }
+    }
+    
     var body: some View {
         buildTextView(divText)
     }

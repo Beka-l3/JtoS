@@ -25,8 +25,8 @@ class TestPatchController(
     private val realBackendClient: RealBackendClient
 ) : AbstractPatchController() {
 
-    @PostMapping("/cart/increasePatch")
-    fun increasePatch(
+    @PostMapping("/cart/changeCountPatch")
+    fun changeCountPatch(
         @RequestBody body: PatchRequestBody
     ):  ResponseEntity<ScreenResponse> {
         val patchData = RealBackendPatchType.ChangeCounterPatch(
@@ -35,7 +35,36 @@ class TestPatchController(
         ).patchData()
 
         val response = runBlocking {
-            realBackendClient.sendPatch( patchData = patchData)
+            realBackendClient.sendPatch(patchData = patchData)
+        } ?: return createFallback()
+
+        return ResponseEntity(createScreenResponse(response = response), HttpStatus.OK)
+    }
+
+    @PostMapping("/cart/changeIsSelectedPatch")
+    fun changeIsSelectedPatch(
+        @RequestBody body: PatchRequestBody
+    ):  ResponseEntity<ScreenResponse> {
+        val patchData = RealBackendPatchType.ChangeIsSelectedPatch(
+            targetId = body.target,
+            newValue = body.state["cartItem-isChecked-${body.target}"] ?: return createFallback()
+        ).patchData()
+
+        val response = runBlocking {
+            realBackendClient.sendPatch(patchData = patchData)
+        } ?: return createFallback()
+
+        return ResponseEntity(createScreenResponse(response = response), HttpStatus.OK)
+    }
+
+    @PostMapping("/cart/chooseAllPatch")
+    fun chooseAllPatchPatch(
+        @RequestBody body: PatchRequestBody
+    ):  ResponseEntity<ScreenResponse> {
+        val patchData = RealBackendPatchType.ChooseAlPatch().patchData()
+
+        val response = runBlocking {
+            realBackendClient.sendPatch(patchData = patchData)
         } ?: return createFallback()
 
         return ResponseEntity(createScreenResponse(response = response), HttpStatus.OK)

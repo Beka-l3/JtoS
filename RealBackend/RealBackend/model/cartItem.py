@@ -21,6 +21,17 @@ class CartItem:
             'is_available_state': self.is_available_state
         }
 
+    def serialize_for_frontend(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'shop_name': self.shop_name,
+            'price': round(self.price * self.count, 2),
+            'count': self.count,
+            'is_selected_state': self.is_selected_state,
+            'image_url': self.image_url,
+            'is_available_state': self.is_available_state
+        }
     @classmethod
     def from_dict(cls, data):
         return cls(

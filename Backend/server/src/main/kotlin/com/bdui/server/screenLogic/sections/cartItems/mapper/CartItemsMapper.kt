@@ -19,9 +19,9 @@ object CartItemsMapper {
             shopName = cartItem.shopName,
             price = cartItem.price,
             count = cartItem.count,
-            isSelected = cartItem.isSelectedState,
+            isSelected = cartItem.isSelected,
             imageUrl = cartItem.imageUrl,
-            isAvailable = cartItem.isAvailableState
+            isAvailable = cartItem.isAvailable
         )
     }
 }

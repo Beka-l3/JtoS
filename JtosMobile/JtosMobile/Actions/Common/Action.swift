@@ -6,6 +6,7 @@ enum Action: Decodable {
     case changeIntegerStateAction(ChangeIntegerStateAction)
     case listAction(ListAction)
     case patchAction(PatchAction)
+    case changeBooleanStateAction(ChangeBooleanStateAction)
     
     private enum CodingKeys: String, CodingKey {
         case realType
@@ -28,6 +29,9 @@ enum Action: Decodable {
         case PatchAction.realType:
             let patchAction = try PatchAction(from: decoder)
             self = .patchAction(patchAction)
+        case ChangeBooleanStateAction.realType:
+            let changeBooleanStateAction = try ChangeBooleanStateAction(from: decoder)
+            self = .changeBooleanStateAction(changeBooleanStateAction)
         default:
             fatalError("Action do not exist")
         }

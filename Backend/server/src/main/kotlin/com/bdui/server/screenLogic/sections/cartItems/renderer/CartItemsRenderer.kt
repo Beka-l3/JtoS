@@ -1,19 +1,21 @@
 package com.bdui.server.screenLogic.sections.cartItems.renderer
 
 import color
+import com.bdui.server.actions.ChangeBooleanStateAction
 import com.bdui.server.actions.ChangeIntegerStateAction
 import com.bdui.server.actions.ListAction
 import com.bdui.server.actions.PatchAction
-import com.bdui.server.bdui.core.abstract.AbstractAction
-import com.bdui.server.jto.Action
 import com.bdui.server.jto.Div
 import com.bdui.server.jto.UiNamespace
 import com.bdui.server.jto.View
 import com.bdui.server.jto.action
 import com.bdui.server.jto.container
 import com.bdui.server.jto.image
+import com.bdui.server.jto.model.Variable.ImageVariable
 import com.bdui.server.jto.model.Variable.TextVariable
+import com.bdui.server.jto.model.boolean
 import com.bdui.server.jto.model.cornerRadius.cornerRadius
+import com.bdui.server.jto.model.fit
 import com.bdui.server.jto.model.fromExisting
 import com.bdui.server.jto.model.horizontal
 import com.bdui.server.jto.model.insets.edgeInsets
@@ -59,7 +61,7 @@ object CartItemsRenderer {
         }
     }
 
-    private fun UiNamespace.renderImage(url: String) : Div {
+    private fun UiNamespace.renderImage(url: String): Div {
         return image(
             url(url = url),
             width = fixedSize(96),
@@ -67,7 +69,7 @@ object CartItemsRenderer {
         )
     }
 
-    private fun UiNamespace.renderItemInfoContainer(renderContext: CartItemRenderContext) : Div {
+    private fun UiNamespace.renderItemInfoContainer(renderContext: CartItemRenderContext): Div {
         return container(
             width = matchParentSize(),
             height = matchParentSize(),
@@ -75,11 +77,7 @@ object CartItemsRenderer {
             verticalAlignment = top,
             padding = edgeInsets(left = 12),
             items = listOf(
-                text(
-                    text = renderContext.name,
-                    width = matchParentSize(),
-                    horizontalAlignment = left
-                ),
+                renderTextAndCheckedButton(renderContext = renderContext),
                 text(
                     text = renderContext.shopName,
                     width = matchParentSize(),
@@ -92,7 +90,53 @@ object CartItemsRenderer {
         )
     }
 
-    private fun UiNamespace.renderPriceContainer(price: Double) : Div {
+    private fun UiNamespace.renderTextAndCheckedButton(renderContext: CartItemRenderContext): Div {
+        return container(
+            width = matchParentSize(),
+            height = wrapContentSize(),
+            orientation = horizontal,
+            items = listOf(
+                text(
+                    text = renderContext.name,
+                    width = matchParentSize(),
+                    horizontalAlignment = left
+                ),
+                image(
+                    imageVariable = ImageVariable(
+                        name = "cartItem-isChecked-${renderContext.id}",
+                        type = boolean(renderContext.isSelected),
+                        falseState = "https://i.ibb.co/r5zZGSq/unchecked.png",
+                        trueState = "https://i.ibb.co/GvcpNWf/Shape-Square-Size-Large-Hovered-No-Checked-Yes-Focused-No-Disabled-No-Indeterminate-No.png"
+                    ),
+                    width = fixedSize(24),
+                    height = fixedSize(24),
+                    contentMode = fit,
+                    action = action(
+                        actionId = "isCheckedButtonListAction",
+                        action = ListAction(
+                            actions = listOf(
+                                action(
+                                    actionId = "changeBooleanStateActionId",
+                                    action = ChangeBooleanStateAction(
+                                        variableName = "cartItem-isChecked-${renderContext.id}"
+                                    )
+                                ),
+                                action(
+                                    actionId = "decreaseButtonPatchAction",
+                                    action = PatchAction(
+                                        path = "cart/changeIsSelectedPatch",
+                                        target = "${renderContext.id}"
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    }
+
+    private fun UiNamespace.renderPriceContainer(price: Double): Div {
         return container(
             width = matchParentSize(),
             height = wrapContentSize(),
@@ -115,7 +159,7 @@ object CartItemsRenderer {
         )
     }
 
-    private fun UiNamespace.renderControls(renderContext: CartItemRenderContext) : Div {
+    private fun UiNamespace.renderControls(renderContext: CartItemRenderContext): Div {
         return container(
             width = matchParentSize(),
             height = wrapContentSize(),
@@ -152,16 +196,29 @@ object CartItemsRenderer {
                     width = wrapContentSize(),
                     fontSize = 18,
                     action = action(
-                        actionId = "decreaseButtonAction",
-                        action = ChangeIntegerStateAction(
-                            variableName = "${renderContext.id}",
-                            newValue = -1,
-                            type = fromExisting
+                        actionId = "decreaseButtonListAction",
+                        action = ListAction(
+                            actions = listOf(
+                                action(
+                                    actionId = "decreaseButtonAction",
+                                    action = ChangeIntegerStateAction(
+                                        variableName = "${renderContext.id}",
+                                        newValue = -1,
+                                        type = fromExisting
+                                    )
+                                ),
+                                action(
+                                    actionId = "decreaseButtonPatchAction",
+                                    action = PatchAction(
+                                        path = "cart/changeCountPatch",
+                                        target = "${renderContext.id}"
+                                    )
+                                )
+                            )
                         )
                     )
                 ),
                 text(
-                    // text = "1",
                     textVariable = TextVariable(
                         name = "${renderContext.id}",
                         type = integer(renderContext.count)
@@ -201,7 +258,7 @@ object CartItemsRenderer {
                                 action(
                                     actionId = "increaseButtonPatchAction",
                                     action = PatchAction(
-                                        path = "cart/increasePatch",
+                                        path = "cart/changeCountPatch",
                                         target = "${renderContext.id}"
                                     )
                                 )

@@ -10,9 +10,9 @@ data class CartItem(
     val price: Double,
     val count: Int,
     @JsonProperty("is_selected_state")
-    val isSelectedState: Boolean,
+    val isSelected: Boolean,
     @JsonProperty("image_url")
     val imageUrl: String,
     @JsonProperty("is_available_state")
-    val isAvailableState: Boolean
+    val isAvailable: Boolean
 )

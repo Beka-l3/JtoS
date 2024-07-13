@@ -32,7 +32,7 @@ object CartTitleRenderer {
                         backgroundColor = color(Color.lightGray),
                         padding = edgeInsets(top = 10),
                         items = listOf(
-                            renderTitleContainer()
+                            renderTitleContainer(renderContext)
                         )
                     )
                 )
@@ -40,7 +40,7 @@ object CartTitleRenderer {
         }
     }
 
-    private fun UiNamespace.renderTitleContainer(): Div {
+    private fun UiNamespace.renderTitleContainer(renderContext: CartTitleRenderContext): Div {
         return container(
             orientation = horizontal,
             verticalAlignment = firstTextBaseline,
@@ -50,28 +50,24 @@ object CartTitleRenderer {
             ),
             padding = edgeInsets(top = 10),
             horizontalAlignment = left,
-            items = listOf(
+            items = listOfNotNull(
                 text(
                     text = "Cart",
                     fontSize = 24,
                     padding = edgeInsets(left = 16),
-                    action = action(
-                        actionId = "qerty123",
-                        action = PrintAction()
-                    )
                 ),
                 text(
-                    text = "2 available",
+                    text = "${renderContext.available} available",
                     padding = edgeInsets(left = 10)
                 ),
                 text(
                     text = "•",
                     padding = edgeInsets(left = 4)
-                ),
+                ).takeIf { renderContext.unavailable != null },
                 text(
-                    text = "1 unavailable",
+                    text = "${renderContext.unavailable} unavailable",
                     padding = edgeInsets(left = 4)
-                )
+                ).takeIf { renderContext.unavailable != null }
             )
         )
     }

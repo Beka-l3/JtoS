@@ -14,7 +14,14 @@ class ImageCache {
     }
     
     static func setImageForId(id: String, image: Image) {
+        if imageCache.storage.keys.count > 100 {
+            imageCache.storage = [:]
+        }
         imageCache.storage[id] = image
+    }
+    
+    static func getImage(for id: String) -> Image? {
+        return imageCache.storage[id]
     }
     
     static func getImage(for id: String) -> Image {

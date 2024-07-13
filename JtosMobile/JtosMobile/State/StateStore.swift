@@ -5,9 +5,24 @@ class StateStore: ObservableObject {
     @Published var store: [String: Variable] = [:]
     
     func readVariable(variable: TextVariable?) -> String {
-        guard let variableUnwrapped = variable else { return "" }
-        let storeVariable = addToStoreIfNeeded(variable: variableUnwrapped)
-        return storeVariable.toString
+        guard 
+            let variableUnwrapped = variable,
+            let variable = store[variableUnwrapped.name]
+        else { return "" }
+        return variable.toString
+    }
+    
+    func readVariable(variable: ImageVariable?) -> Bool {
+        guard
+            let variableUnwrapped = variable,
+            let variable = store[variableUnwrapped.name]
+        else { return false }
+        switch variable {
+        case .boolean(let value):
+            return value
+        case .integer(_):
+            return false
+        }
     }
     
     func changeIntegerVariable(
@@ -32,7 +47,23 @@ class StateStore: ObservableObject {
         }
     }
     
-    private func addToStoreIfNeeded(variable: TextVariable) -> Variable {
+    func changeBooleanVariable(
+        with id: String,
+        defaultValue: Bool
+    ) {
+        if let value = store[id] {
+            switch(value) {
+            case .integer(_):
+                fatalError("tried to change boolean variable to integer")
+            case .boolean(let boolValue):
+                store[id] = Variable.boolean(!boolValue)
+            }
+        } else {
+            store[id] = Variable.boolean(!defaultValue)
+        }
+    }
+    
+    func updateVariable(variable: TextVariable) -> Variable {
         let id = variable.name
         let value = switch variable.type {
         case .boolean(let value):
@@ -40,8 +71,28 @@ class StateStore: ObservableObject {
         case .integer(let value):
             Variable.integer(value.defaultValue)
         }
-        if store[id] == nil { store[id] = value }
-        return store[id]!
+        if let oldValue = store[id],
+           value == oldValue {
+            return oldValue
+        }
+        store[id] = value
+        return value
+    }
+    
+    func updateVariable(variable: ImageVariable) -> Variable {
+        let id = variable.name
+        let value = switch variable.type {
+        case .boolean(let value):
+            Variable.boolean(value.defaultValue)
+        case .integer(let value):
+            Variable.integer(value.defaultValue)
+        }
+        if let oldValue = store[id],
+           value == oldValue {
+            return oldValue
+        }
+        store[id] = value
+        return value
     }
 }
 

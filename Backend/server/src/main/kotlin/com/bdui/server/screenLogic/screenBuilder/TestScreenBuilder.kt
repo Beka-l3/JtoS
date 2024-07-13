@@ -19,7 +19,7 @@ class TestScreenBuilder: AbstractScreenBuilder() {
             }
             section<CartTitleSection> {
                 id = "${CartTitleSection.NAME}-1"
-                resolver = TestStubResolver()
+                resolver = RealBackendResolver()
                 assemblerType = "CartTitleAssembler"
             }
             section<CartControlsSection> {

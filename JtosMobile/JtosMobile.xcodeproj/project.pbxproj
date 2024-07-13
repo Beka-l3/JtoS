@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E6F51882C431E7E0024F94C /* ChangeBooleanStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F51872C431E7E0024F94C /* ChangeBooleanStateAction.swift */; };
+		8E6F518A2C431F2C0024F94C /* ChangeBooleanStateActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F51892C431F2C0024F94C /* ChangeBooleanStateActionHandler.swift */; };
+		8E6F518C2C4320D20024F94C /* ImageVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6F518B2C4320D20024F94C /* ImageVariable.swift */; };
 		8E7EF1952C275EB90020DB72 /* JtosMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7EF1942C275EB90020DB72 /* JtosMobileApp.swift */; };
 		8E7EF1992C275EBB0020DB72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7EF1982C275EBB0020DB72 /* Assets.xcassets */; };
 		8E7EF19C2C275EBB0020DB72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7EF19B2C275EBB0020DB72 /* Preview Assets.xcassets */; };
@@ -84,6 +87,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E6F51872C431E7E0024F94C /* ChangeBooleanStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBooleanStateAction.swift; sourceTree = "<group>"; };
+		8E6F51892C431F2C0024F94C /* ChangeBooleanStateActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBooleanStateActionHandler.swift; sourceTree = "<group>"; };
+		8E6F518B2C4320D20024F94C /* ImageVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVariable.swift; sourceTree = "<group>"; };
 		8E7EF1912C275EB90020DB72 /* JtosMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JtosMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7EF1942C275EB90020DB72 /* JtosMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtosMobileApp.swift; sourceTree = "<group>"; };
 		8E7EF1982C275EBB0020DB72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -381,6 +387,7 @@
 				8EEAE7C62C42A11B00CA9C07 /* Common */,
 				8EEAE7B72C42632600CA9C07 /* ActionDispatcher */,
 				8EEAE7AD2C3C444500CA9C07 /* PrintAction.swift */,
+				8E6F51872C431E7E0024F94C /* ChangeBooleanStateAction.swift */,
 				8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */,
 				8EEAE7C72C42A13000CA9C07 /* ListAction.swift */,
 				8EEAE7CF2C42A9F500CA9C07 /* PatchAction.swift */,
@@ -405,6 +412,7 @@
 				8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */,
 				8EEAE7CD2C42A62900CA9C07 /* ListActionHandler.swift */,
 				8EEAE7D12C42AA3F00CA9C07 /* PatchActionHandler.swift */,
+				8E6F51892C431F2C0024F94C /* ChangeBooleanStateActionHandler.swift */,
 			);
 			path = ActionHandler;
 			sourceTree = "<group>";
@@ -415,6 +423,7 @@
 				8EEAE7BC2C426A2300CA9C07 /* TextVariable.swift */,
 				8EEAE7BE2C426A4F00CA9C07 /* VariableType.swift */,
 				8EEAE7C02C42712A00CA9C07 /* StateStore.swift */,
+				8E6F518B2C4320D20024F94C /* ImageVariable.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -564,6 +573,7 @@
 				8EEAE7A92C3C43BA00CA9C07 /* ActionWrapper.swift in Sources */,
 				8EEAE7BF2C426A4F00CA9C07 /* VariableType.swift in Sources */,
 				8EEAE7AE2C3C444500CA9C07 /* PrintAction.swift in Sources */,
+				8E6F51882C431E7E0024F94C /* ChangeBooleanStateAction.swift in Sources */,
 				8EEAE7A22C3B4A6600CA9C07 /* ImageServiceImp.swift in Sources */,
 				8E7EF1DE2C2825F90020DB72 /* JsonReader.swift in Sources */,
 				8E7EF1C22C275F570020DB72 /* Section.swift in Sources */,
@@ -594,6 +604,7 @@
 				8E7EF1DA2C2811470020DB72 /* SectionView.swift in Sources */,
 				8EEAE7A02C3B4A3700CA9C07 /* CachedImageView.swift in Sources */,
 				8EEAE7C82C42A13000CA9C07 /* ListAction.swift in Sources */,
+				8E6F518C2C4320D20024F94C /* ImageVariable.swift in Sources */,
 				8E7EF1E32C282A550020DB72 /* ScreenQuery.swift in Sources */,
 				8E7EF1DC2C2814110020DB72 /* DivView.swift in Sources */,
 				8EEAE7D82C42C6B700CA9C07 /* ImageCache.swift in Sources */,
@@ -602,6 +613,7 @@
 				8EEAE7D22C42AA3F00CA9C07 /* PatchActionHandler.swift in Sources */,
 				8E7EF1E02C28271F0020DB72 /* ScreenEngineView.swift in Sources */,
 				8E7EF2002C287F510020DB72 /* DivTextView.swift in Sources */,
+				8E6F518A2C431F2C0024F94C /* ChangeBooleanStateActionHandler.swift in Sources */,
 				8E7EF1D22C27791E0020DB72 /* DivBase.swift in Sources */,
 				8EEAE7B92C42633400CA9C07 /* ActionDispatcherFactory.swift in Sources */,
 				8EEAE7B02C3C445E00CA9C07 /* PrintActionHandler.swift in Sources */,

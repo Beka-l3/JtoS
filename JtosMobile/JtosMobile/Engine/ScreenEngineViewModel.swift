@@ -26,7 +26,7 @@ class ScreenEngineViewModel: ObservableObject {
 
 extension ScreenEngineViewModel {
     func fetchData() {
-        loading = true
+//        loading = true
         
         var urlComponents = Constants.backendUrl
         urlComponents.path = query.path
@@ -42,7 +42,7 @@ extension ScreenEngineViewModel {
             let jsonData = try JSONSerialization.data(withJSONObject: query.body, options: [])
             request.httpBody = jsonData
         } catch {
-            loading = false
+//            loading = false
             return
         }
         
@@ -60,7 +60,7 @@ extension ScreenEngineViewModel {
                         self.error = error
                     }
                 }
-                self.loading = false
+//                self.loading = false
             }
         }.resume()
     }
@@ -91,7 +91,7 @@ extension ScreenEngineViewModel {
             request.httpBody = jsonData
         } catch {
             self.error = EngineError.unableToDecodeStateToJson
-            loading = false
+//            loading = false
             return
         }
         
@@ -109,7 +109,7 @@ extension ScreenEngineViewModel {
                         self.error = error
                     }
                 }
-                self.loading = false
+//                self.loading = false
             }
         }.resume()
     }

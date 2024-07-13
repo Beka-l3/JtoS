@@ -1,46 +1,46 @@
 [
     {
-        "count": 37,
+        "count": 1,
         "id": 1,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
-        "is_selected_state": true,
+        "is_selected_state": false,
         "name": "Aboba Headphones",
-        "price": 79.99,
+        "price": 200.11,
         "shop_name": "TechGadgets"
     },
     {
-        "count": 2,
+        "count": 20,
         "id": 2,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
         "is_selected_state": false,
         "name": "Leather Wallet",
-        "price": 39.99,
+        "price": 240.02,
         "shop_name": "FashionAccessories"
     },
     {
-        "count": 1,
+        "count": 5,
         "id": 3,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
-        "is_selected_state": true,
+        "is_selected_state": false,
         "name": "Stainless Steel Water Bottle",
-        "price": 24.99,
+        "price": 320,
         "shop_name": "OutdoorGear"
     },
     {
-        "count": 3,
+        "count": 6,
         "id": 4,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
-        "is_available_state": true,
-        "is_selected_state": true,
+        "is_available_state": false,
+        "is_selected_state": false,
         "name": "Organic Cotton T-Shirt",
-        "price": 19.99,
+        "price": 750,
         "shop_name": "SustainableFashion"
     },
     {
-        "count": 1,
+        "count": 4,
         "id": 5,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
@@ -54,23 +54,23 @@
         "id": 6,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": false,
-        "is_selected_state": true,
+        "is_selected_state": false,
         "name": "Yoga Mat",
         "price": 34.99,
         "shop_name": "FitnessEssentials"
     },
     {
-        "count": 2,
+        "count": 13,
         "id": 7,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
-        "is_selected_state": true,
+        "is_selected_state": false,
         "name": "Scented Candle Set",
-        "price": 27.99,
+        "price": 223.92,
         "shop_name": "HomeDecor"
     },
     {
-        "count": 1,
+        "count": 8,
         "id": 8,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
@@ -80,11 +80,11 @@
         "shop_name": "TechGadgets"
     },
     {
-        "count": 1,
+        "count": 5,
         "id": 9,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
-        "is_selected_state": true,
+        "is_selected_state": false,
         "name": "Stainless Steel Mixer",
         "price": 129.99,
         "shop_name": "KitchenEssentials"
@@ -94,7 +94,7 @@
         "id": 10,
         "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
         "is_available_state": true,
-        "is_selected_state": true,
+        "is_selected_state": false,
         "name": "Leather Tote Bag",
         "price": 89.99,
         "shop_name": "FashionAccessories"

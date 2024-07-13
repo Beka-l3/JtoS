@@ -13,4 +13,25 @@ sealed class RealBackendPatchType {
             )
         }
     }
+
+    data class ChangeIsSelectedPatch(
+        val targetId: String,
+        val newValue: String
+    ): RealBackendPatchType() {
+        fun patchData() : Map<String, String> {
+            return mapOf(
+                "patchType" to "ChangeIsSelectedPatch",
+                "targetId" to targetId,
+                "newValue" to newValue
+            )
+        }
+    }
+
+    class ChooseAlPatch(): RealBackendPatchType() {
+        fun patchData() : Map<String, String> {
+            return mapOf(
+                "patchType" to "ChooseAlPatch",
+            )
+        }
+    }
 }

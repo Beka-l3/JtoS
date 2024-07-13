@@ -15,7 +15,8 @@ class ActionDispatcherFactory {
             PrintActionHandler(),
             ChangeIntegerStateActionHandler(stateStore: stateStore),
             ListActionHandler(actionDispatcher: actionDispatcher),
-            PatchActionHandler(viewModel: viewModel, stateStore: stateStore)
+            PatchActionHandler(viewModel: viewModel, stateStore: stateStore),
+            ChangeBooleanStateActionHandler(stateStore: stateStore)
         ]
         actionDispatcher.updateHandlers(handlers: actionHandlers)
     }
