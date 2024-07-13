@@ -2,101 +2,101 @@
     {
         "count": 1,
         "id": 1,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/KrgfpCw/1.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Aboba Headphones",
-        "price": 200.11,
-        "shop_name": "TechGadgets"
+        "is_selected_state": true,
+        "name": "\u041d\u0430\u0431\u043e\u0440 \u0441\u0442\u0430\u043a\u0430\u043d\u043e\u0432 \u0438\u0437 4-\u0445 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u043e\u0432 Entree Villeroy & Boch",
+        "price": 3920,
+        "shop_name": "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u0434\u0438\u043b\u0435\u0440 Villeroy & Boch"
     },
     {
-        "count": 20,
+        "count": 1,
         "id": 2,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/nCchjrc/2.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Leather Wallet",
-        "price": 240.02,
-        "shop_name": "FashionAccessories"
+        "is_selected_state": true,
+        "name": "\u0424\u0443\u0442\u0431\u043e\u043b\u043a\u0430 Off Street, \u0440\u0430\u0437\u043c\u0435\u0440 M, \u0433\u043e\u043b\u0443\u0431\u043e\u0439",
+        "price": 2949,
+        "shop_name": "Off Street"
     },
     {
-        "count": 5,
+        "count": 3,
         "id": 3,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/FBjBgP4/3.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Stainless Steel Water Bottle",
-        "price": 320,
-        "shop_name": "OutdoorGear"
+        "is_selected_state": true,
+        "name": "\u041f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u043d\u0430\u0431\u043e\u0440 \u043e\u0442\u0432\u0435\u0440\u0442\u043e\u043a \u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0434\u043b\u044f \u0442\u043e\u0447\u043d\u044b\u0445 \u0440\u0430\u0431\u043e\u0442 Precision Screwdriver 24 \u0432 1",
+        "price": 213,
+        "shop_name": "\u041c\u0430\u0433\u0438\u044f \u041c\u043e\u043c\u0435\u043d\u0442\u0430"
     },
     {
-        "count": 6,
+        "count": 1,
         "id": 4,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/fCXZXVb/4.jpg",
         "is_available_state": false,
-        "is_selected_state": false,
-        "name": "Organic Cotton T-Shirt",
-        "price": 750,
-        "shop_name": "SustainableFashion"
+        "is_selected_state": true,
+        "name": "IPad Air 5 64GB Wi-Fi Starlight (2022)",
+        "price": 52350,
+        "shop_name": "Market Gadget"
     },
     {
-        "count": 4,
+        "count": 2,
         "id": 5,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/ysnHS3L/5.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Gourmet Coffee Beans",
-        "price": 12.99,
-        "shop_name": "CoffeeLove"
+        "is_selected_state": true,
+        "name": "\u0411\u0435\u0441\u043f\u0440\u043e\u0432\u043e\u0434\u043d\u044b\u0435 \u043d\u0430\u0443\u0448\u043d\u0438\u043a\u0438 Apple AirPods 3 Lightning Charging Case, \u0431\u0435\u043b\u044b\u0439",
+        "price": 15255,
+        "shop_name": "yabloko-store"
     },
     {
         "count": 1,
         "id": 6,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/frCshYz/6.jpg",
         "is_available_state": false,
-        "is_selected_state": false,
-        "name": "Yoga Mat",
-        "price": 34.99,
-        "shop_name": "FitnessEssentials"
+        "is_selected_state": true,
+        "name": "\u0411\u0435\u0441\u043f\u0440\u043e\u0432\u043e\u0434\u043d\u044b\u0435 \u043d\u0430\u0443\u0448\u043d\u0438\u043a\u0438 JBL Wave 200TWS, \u0431\u0435\u043b\u044b\u0439",
+        "price": 3480,
+        "shop_name": "SmartTehnik"
     },
     {
-        "count": 13,
+        "count": 2,
         "id": 7,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/WB1jjTf/7.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Scented Candle Set",
-        "price": 223.92,
-        "shop_name": "HomeDecor"
+        "is_selected_state": true,
+        "name": "\u0421\u043c\u0430\u0440\u0442\u0444\u043e\u043d Samsung Galaxy A24 4/128 \u0413\u0411, Dual nano SIM, \u0447\u0435\u0440\u043d\u044b\u0439",
+        "price": 15990,
+        "shop_name": "\u041f\u043b\u0435\u0435\u0440\u0420\u0443"
     },
     {
-        "count": 8,
+        "count": 1,
         "id": 8,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/Ct1km0t/8.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Wireless Charging Pad",
-        "price": 49.99,
-        "shop_name": "TechGadgets"
+        "is_selected_state": true,
+        "name": "\u0421\u043c\u0430\u0440\u0442\u0444\u043e\u043d Apple iPhone 15 Pro 256 \u0413\u0411, Dual: nano SIM + eSIM, \u0442\u0438\u0442\u0430\u043d",
+        "price": 101450,
+        "shop_name": "MOBILE-ROOMS"
     },
     {
-        "count": 5,
+        "count": 4,
         "id": 9,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/zX7tsng/9.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Stainless Steel Mixer",
-        "price": 129.99,
-        "shop_name": "KitchenEssentials"
+        "is_selected_state": true,
+        "name": "\u0421\u043c\u0430\u0440\u0442\u0444\u043e\u043d Xiaomi Redmi 13C 4/128 \u0413\u0411 Global, Dual nano SIM, \u0447\u0435\u0440\u043d\u044b\u0439",
+        "price": 10346,
+        "shop_name": "\u042f\u043d\u0434\u0435\u043a\u0441 \u041c\u0430\u0440\u043a\u0435\u0442"
     },
     {
         "count": 1,
         "id": 10,
-        "image_url": "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg",
+        "image_url": "https://i.ibb.co/TBDLNmv/10.jpg",
         "is_available_state": true,
-        "is_selected_state": false,
-        "name": "Leather Tote Bag",
-        "price": 89.99,
-        "shop_name": "FashionAccessories"
+        "is_selected_state": true,
+        "name": "\u0412\u0435\u0448\u0430\u043b\u043a\u0430-\u043f\u043b\u0435\u0447\u0438\u043a\u0438 \u0434\u043b\u044f \u043e\u0434\u0435\u0436\u0434\u044b \u043c\u0435\u0442\u0430\u043b\u043b\u0438\u0447\u0435\u0441\u043a\u0438\u0435 Ridberg 50 \u0448\u0442 \u0431\u0435\u043b\u044b\u0435",
+        "price": 902,
+        "shop_name": "iCover"
     }
 ]

@@ -16,4 +16,15 @@ enum DivHorizontalAlignment: String, Decodable {
             return .trailing
         }
     }
+    
+    func toSwiftUI() -> HorizontalAlignment {
+        switch(self) {
+        case .left:
+            return .leading
+        case .center:
+            return .center
+        case .right:
+            return .trailing
+        }
+    }
 }

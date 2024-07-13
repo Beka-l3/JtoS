@@ -1,5 +1,6 @@
 package com.bdui.server.screenLogic.sections.cartControls.renderer
 
+import color
 import com.bdui.server.actions.PatchAction
 import com.bdui.server.jto.View
 import com.bdui.server.jto.action
@@ -13,6 +14,7 @@ import com.bdui.server.jto.text
 import com.bdui.server.jto.ui
 import com.bdui.server.jto.view
 import com.bdui.server.screenLogic.sections.cartControls.context.CartControlsContext
+import java.awt.Color
 import java.util.UUID
 
 object CartControlsRenderer {
@@ -28,11 +30,15 @@ object CartControlsRenderer {
                         items = listOf(
                             text(
                                 "Delete chosen",
+                                textColor = color(Color.gray),
+                                isBold = true,
                                 padding = edgeInsets(left = 16)
                             ),
                             spacer(),
                             text(
                                 "Choose all",
+                                textColor = color(Color.gray),
+                                isBold = true,
                                 padding = edgeInsets(right = 16),
                                 action = action(
                                     actionId = "chooseAllPatchAction",

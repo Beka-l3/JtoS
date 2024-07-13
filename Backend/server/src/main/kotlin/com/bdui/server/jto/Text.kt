@@ -31,6 +31,8 @@ class Text internal constructor(
         val fontSize: Int,
         val horizontalAlignment: HorizontalAlignment,
         val backgroundColor: ColorRGB,
+        val textColor: ColorRGB,
+        val isBold: Boolean,
         val action: Action?
     )
 }
@@ -43,6 +45,8 @@ fun UiNamespace.text(
     padding: EdgeInsets = edgeInsets(),
     horizontalAlignment: HorizontalAlignment = center,
     backgroundColor: ColorRGB = color(Color.white),
+    textColor: ColorRGB = color(Color.black),
+    isBold: Boolean = false,
     fontSize: Int = 14,
     action: Action? = null
 ): Text = Text(
@@ -55,7 +59,9 @@ fun UiNamespace.text(
         horizontalAlignment = horizontalAlignment,
         backgroundColor = backgroundColor,
         fontSize = fontSize,
-        action = action
+        action = action,
+        textColor = textColor,
+        isBold = isBold
     )
 )
 
@@ -69,6 +75,8 @@ fun UiNamespace.spacer(): Text = Text(
         fontSize = 1,
         backgroundColor = color(Color.white),
         horizontalAlignment = center,
-        action = null
+        action = null,
+        textColor = color(Color.black),
+        isBold = false
     )
 )

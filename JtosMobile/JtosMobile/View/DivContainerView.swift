@@ -38,7 +38,7 @@ struct DivContainerView: View {
                 topTrailingRadius: containerData.cornerRadius.topTrailing
             )
         } else {
-            VStack(spacing: 0) {
+            VStack(alignment: containerData.horizontalAlignment.toSwiftUI(), spacing: 0) {
                 ForEach(containerData.items, id: \.id) { item in
                     DivView(div: item, actionDispatcher: actionDispatcher, stateStore: stateStore)
                 }
@@ -51,7 +51,7 @@ struct DivContainerView: View {
             .frame(
                 maxWidth: containerData.width.getMaxSize(),
                 maxHeight: containerData.height.getMaxSize(),
-                alignment: containerData.verticalAlignment.toSwiftUI()
+                alignment: containerData.horizontalAlignment.toSwiftUI()
             )
             .setPaddings(containerData.padding.toSwiftUI())
             .background(Color(uiColor: containerData.backgroundColor.toUIColor()))

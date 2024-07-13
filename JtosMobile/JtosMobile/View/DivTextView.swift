@@ -36,6 +36,8 @@ struct DivTextView: View {
         if let textVariable = textData.textVariable {
             Text(variableText)
                 .font(.system(size: CGFloat(textData.fontSize)))
+                .setIsBold(isBold: textData.isBold)
+                .foregroundColor(Color(textData.textColor.toUIColor()))
                 .frame(
                     width: textData.width.getSize(),
                     height: textData.height.getSize(),
@@ -57,6 +59,8 @@ struct DivTextView: View {
         } else {
             Text(textData.text ?? "")
                 .font(.system(size: CGFloat(textData.fontSize)))
+                .setIsBold(isBold: textData.isBold)
+                .foregroundColor(Color(textData.textColor.toUIColor()))
                 .frame(
                     width: textData.width.getSize(),
                     height: textData.height.getSize(),
@@ -72,6 +76,19 @@ struct DivTextView: View {
                 .onTapGesture {
                     actionDispatcher.dispatchAction(action: textData.action?.action)
                 }
+        }
+    }
+}
+
+extension Text {
+    @ViewBuilder
+    func setIsBold(
+        isBold: Bool
+    ) -> some View {
+        if isBold {
+            self.bold()
+        } else {
+            self
         }
     }
 }

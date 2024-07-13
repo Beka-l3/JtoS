@@ -80,6 +80,7 @@ object CartItemsRenderer {
                 renderTextAndCheckedButton(renderContext = renderContext),
                 text(
                     text = renderContext.shopName,
+                    textColor = color(Color.gray),
                     width = matchParentSize(),
                     horizontalAlignment = left,
                     padding = edgeInsets(top = 12)
@@ -95,9 +96,11 @@ object CartItemsRenderer {
             width = matchParentSize(),
             height = wrapContentSize(),
             orientation = horizontal,
+            verticalAlignment = top,
             items = listOf(
                 text(
                     text = renderContext.name,
+                    isBold = true,
                     width = matchParentSize(),
                     horizontalAlignment = left
                 ),
@@ -144,12 +147,8 @@ object CartItemsRenderer {
             padding = edgeInsets(top = 12),
             items = listOf(
                 text(
-                    text = "С картой Я.Пэй",
-                    width = matchParentSize(),
-                    horizontalAlignment = left
-                ),
-                text(
                     text = "$price руб",
+                    isBold = true,
                     width = matchParentSize(),
                     horizontalAlignment = left,
                     padding = edgeInsets(top = 2),
@@ -167,7 +166,10 @@ object CartItemsRenderer {
             padding = edgeInsets(top = 12),
             items = listOf(
                 text(
-                    text = "Удалить",
+                    isBold = true,
+                    textColor = color(Color.gray),
+                    fontSize = 14,
+                    text = "Delete",
                     width = wrapContentSize(),
                 ),
                 spacer(),
@@ -181,12 +183,12 @@ object CartItemsRenderer {
             orientation = horizontal,
             width = fixedSize(96),
             height = wrapContentSize(),
-            backgroundColor = color(Color.lightGray),
+            backgroundColor = color(Color(242, 242, 242)),
             cornerRadius = cornerRadius(8.0F),
             items = listOf(
                 text(
                     text = "-",
-                    backgroundColor = color(Color.lightGray),
+                    backgroundColor = color(Color(242, 242, 242)),
                     padding = edgeInsets(
                         left = 12,
                         right = 8,
@@ -223,7 +225,7 @@ object CartItemsRenderer {
                         name = "${renderContext.id}",
                         type = integer(renderContext.count)
                     ),
-                    backgroundColor = color(Color.lightGray),
+                    backgroundColor = color(Color(242, 242, 242)),
                     width = matchParentSize(),
                     padding = edgeInsets(
                         left = 4,
@@ -234,7 +236,7 @@ object CartItemsRenderer {
                 ),
                 text(
                     text = "+",
-                    backgroundColor = color(Color.lightGray),
+                    backgroundColor = color(Color(242, 242, 242)),
                     width = wrapContentSize(),
                     padding = edgeInsets(
                         left = 8,

@@ -29,7 +29,7 @@ object CartTitleRenderer {
                 states = singleState(
                     div = container(
                         orientation = vertical,
-                        backgroundColor = color(Color.lightGray),
+                        backgroundColor = color(Color(242, 242, 242)),
                         padding = edgeInsets(top = 10),
                         items = listOf(
                             renderTitleContainer(renderContext)
@@ -52,21 +52,28 @@ object CartTitleRenderer {
             horizontalAlignment = left,
             items = listOfNotNull(
                 text(
-                    text = "Cart",
-                    fontSize = 24,
+                    text = "My Cart",
+                    fontSize = 28,
+                    isBold = true,
                     padding = edgeInsets(left = 16),
                 ),
                 text(
                     text = "${renderContext.available} available",
+                    fontSize = 14,
+                    textColor = color(Color(159, 159, 159)),
                     padding = edgeInsets(left = 10)
                 ),
                 text(
                     text = "•",
+                    fontSize = 14,
+                    textColor = color(Color.lightGray),
                     padding = edgeInsets(left = 4)
                 ).takeIf { renderContext.unavailable != null },
                 text(
                     text = "${renderContext.unavailable} unavailable",
-                    padding = edgeInsets(left = 4)
+                    padding = edgeInsets(left = 4),
+                    fontSize = 14,
+                    textColor = color(Color(238, 159, 81))
                 ).takeIf { renderContext.unavailable != null }
             )
         )
