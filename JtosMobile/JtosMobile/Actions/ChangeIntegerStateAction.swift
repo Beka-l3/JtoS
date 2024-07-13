@@ -1,6 +1,6 @@
 import Foundation
 
-struct ChangeIntegerStateAction: Decodable {
+struct ChangeIntegerStateAction: DecodableAction {
     static var realType = "ChangeIntegerStateAction"
     let variableName: String
     let newValue: Int

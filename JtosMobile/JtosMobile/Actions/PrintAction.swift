@@ -1,6 +1,6 @@
 import Foundation
 
-struct PrintAction: Decodable {
+struct PrintAction: DecodableAction {
     static var realType = "PrintAction"
     let isBold: Bool
 }

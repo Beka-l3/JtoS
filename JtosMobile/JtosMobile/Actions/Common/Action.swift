@@ -4,6 +4,8 @@ import Foundation
 enum Action: Decodable {
     case printAction(PrintAction)
     case changeIntegerStateAction(ChangeIntegerStateAction)
+    case listAction(ListAction)
+    case patchAction(PatchAction)
     
     private enum CodingKeys: String, CodingKey {
         case realType
@@ -20,6 +22,12 @@ enum Action: Decodable {
         case ChangeIntegerStateAction.realType:
             let changeIntegerStateAction = try ChangeIntegerStateAction(from: decoder)
             self = .changeIntegerStateAction(changeIntegerStateAction)
+        case ListAction.realType:
+            let listAction = try ListAction(from: decoder)
+            self = .listAction(listAction)
+        case PatchAction.realType:
+            let patchAction = try PatchAction(from: decoder)
+            self = .patchAction(patchAction)
         default:
             fatalError("Action do not exist")
         }

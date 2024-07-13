@@ -58,6 +58,11 @@
 		8EEAE7C32C42759700CA9C07 /* ChangeIntegerStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */; };
 		8EEAE7C52C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */; };
 		8EEAE7C82C42A13000CA9C07 /* ListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C72C42A13000CA9C07 /* ListAction.swift */; };
+		8EEAE7CA2C42A21700CA9C07 /* DecodableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C92C42A21700CA9C07 /* DecodableAction.swift */; };
+		8EEAE7CE2C42A62900CA9C07 /* ListActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7CD2C42A62900CA9C07 /* ListActionHandler.swift */; };
+		8EEAE7D02C42A9F500CA9C07 /* PatchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7CF2C42A9F500CA9C07 /* PatchAction.swift */; };
+		8EEAE7D22C42AA3F00CA9C07 /* PatchActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7D12C42AA3F00CA9C07 /* PatchActionHandler.swift */; };
+		8EEAE7D42C42BADC00CA9C07 /* EngineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7D32C42BADC00CA9C07 /* EngineError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +137,11 @@
 		8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIntegerStateAction.swift; sourceTree = "<group>"; };
 		8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIntegerStateActionHandler.swift; sourceTree = "<group>"; };
 		8EEAE7C72C42A13000CA9C07 /* ListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAction.swift; sourceTree = "<group>"; };
+		8EEAE7C92C42A21700CA9C07 /* DecodableAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableAction.swift; sourceTree = "<group>"; };
+		8EEAE7CD2C42A62900CA9C07 /* ListActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListActionHandler.swift; sourceTree = "<group>"; };
+		8EEAE7CF2C42A9F500CA9C07 /* PatchAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchAction.swift; sourceTree = "<group>"; };
+		8EEAE7D12C42AA3F00CA9C07 /* PatchActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchActionHandler.swift; sourceTree = "<group>"; };
+		8EEAE7D32C42BADC00CA9C07 /* EngineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +299,7 @@
 				8E7EF1DF2C28271F0020DB72 /* ScreenEngineView.swift */,
 				8E7EF1E42C282B200020DB72 /* ScreenEngineViewModel.swift */,
 				8E7EF1E22C282A550020DB72 /* ScreenQuery.swift */,
+				8EEAE7D32C42BADC00CA9C07 /* EngineError.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -369,6 +380,7 @@
 				8EEAE7AD2C3C444500CA9C07 /* PrintAction.swift */,
 				8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */,
 				8EEAE7C72C42A13000CA9C07 /* ListAction.swift */,
+				8EEAE7CF2C42A9F500CA9C07 /* PatchAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -388,6 +400,8 @@
 				8EEAE7B52C41BF7B00CA9C07 /* AbstractActionHandler.swift */,
 				8EEAE7AF2C3C445E00CA9C07 /* PrintActionHandler.swift */,
 				8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */,
+				8EEAE7CD2C42A62900CA9C07 /* ListActionHandler.swift */,
+				8EEAE7D12C42AA3F00CA9C07 /* PatchActionHandler.swift */,
 			);
 			path = ActionHandler;
 			sourceTree = "<group>";
@@ -407,6 +421,7 @@
 			children = (
 				8EEAE7A82C3C43BA00CA9C07 /* ActionWrapper.swift */,
 				8EEAE7B12C41BCA900CA9C07 /* Action.swift */,
+				8EEAE7C92C42A21700CA9C07 /* DecodableAction.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -560,13 +575,16 @@
 				8E7EF1EF2C2836F80020DB72 /* DivImageView.swift in Sources */,
 				8E7EF1E52C282B200020DB72 /* ScreenEngineViewModel.swift in Sources */,
 				8EEAE7C12C42712A00CA9C07 /* StateStore.swift in Sources */,
+				8EEAE7CE2C42A62900CA9C07 /* ListActionHandler.swift in Sources */,
 				8E7EF1FC2C287C0F0020DB72 /* ColorRGB.swift in Sources */,
 				8E7EF1C92C2774FC0020DB72 /* State.swift in Sources */,
 				8E7EF1C72C275FE20020DB72 /* Tagged.swift in Sources */,
+				8EEAE7D42C42BADC00CA9C07 /* EngineError.swift in Sources */,
 				8E7EF1FE2C287F1F0020DB72 /* DivText.swift in Sources */,
 				8E7EF1D02C2779040020DB72 /* DivImage.swift in Sources */,
 				8E7EF1F42C286FD20020DB72 /* DivContainer.swift in Sources */,
 				8E7EF1EA2C2830DA0020DB72 /* Size.swift in Sources */,
+				8EEAE7D02C42A9F500CA9C07 /* PatchAction.swift in Sources */,
 				8EEAE7C52C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift in Sources */,
 				8EEAE7A52C3B4AA900CA9C07 /* HTTPError.swift in Sources */,
 				8EEAE7BD2C426A2300CA9C07 /* TextVariable.swift in Sources */,
@@ -575,7 +593,9 @@
 				8EEAE7C82C42A13000CA9C07 /* ListAction.swift in Sources */,
 				8E7EF1E32C282A550020DB72 /* ScreenQuery.swift in Sources */,
 				8E7EF1DC2C2814110020DB72 /* DivView.swift in Sources */,
+				8EEAE7CA2C42A21700CA9C07 /* DecodableAction.swift in Sources */,
 				8E7EF1CD2C27756A0020DB72 /* DivType.swift in Sources */,
+				8EEAE7D22C42AA3F00CA9C07 /* PatchActionHandler.swift in Sources */,
 				8E7EF1E02C28271F0020DB72 /* ScreenEngineView.swift in Sources */,
 				8E7EF2002C287F510020DB72 /* DivTextView.swift in Sources */,
 				8E7EF1D22C27791E0020DB72 /* DivBase.swift in Sources */,

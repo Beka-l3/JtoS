@@ -3,16 +3,16 @@ import Foundation
 
 class ActionDispatcher {
     
-    private let handlers: [AbstractActionHandler]
-    
-    init(actionHandlers: [AbstractActionHandler]) {
-        self.handlers = actionHandlers
-    }
+    private var handlers: [AbstractActionHandler] = []
     
     func dispatchAction(action: Action?) {
         guard let action else { return }
         for handler in handlers {
             handler.handle(action: action)
         }
+    }
+    
+    func updateHandlers(handlers: [AbstractActionHandler]) {
+        self.handlers = handlers
     }
 }

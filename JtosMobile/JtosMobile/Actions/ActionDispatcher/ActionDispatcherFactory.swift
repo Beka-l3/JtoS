@@ -1,11 +1,22 @@
 import Foundation
 
 class ActionDispatcherFactory {
-    static func createActionDispatcher(stateStore: StateStore) -> ActionDispatcher {
+    static func createActionDispatcher() -> ActionDispatcher {
+        let dispatcher = ActionDispatcher()
+        return dispatcher
+    }
+    
+    static func updateActionHandlers(
+        actionDispatcher: ActionDispatcher,
+        stateStore: StateStore,
+        viewModel: ScreenEngineViewModel
+    ) {
         let actionHandlers: [AbstractActionHandler] = [
             PrintActionHandler(),
-            ChangeIntegerStateActionHandler(stateStore: stateStore)
+            ChangeIntegerStateActionHandler(stateStore: stateStore),
+            ListActionHandler(actionDispatcher: actionDispatcher),
+            PatchActionHandler(viewModel: viewModel, stateStore: stateStore)
         ]
-        return ActionDispatcher(actionHandlers: actionHandlers)
+        actionDispatcher.updateHandlers(handlers: actionHandlers)
     }
 }

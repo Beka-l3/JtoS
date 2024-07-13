@@ -2,6 +2,10 @@ package com.bdui.server.screenLogic.sections.cartItems.renderer
 
 import color
 import com.bdui.server.actions.ChangeIntegerStateAction
+import com.bdui.server.actions.ListAction
+import com.bdui.server.actions.PatchAction
+import com.bdui.server.bdui.core.abstract.AbstractAction
+import com.bdui.server.jto.Action
 import com.bdui.server.jto.Div
 import com.bdui.server.jto.UiNamespace
 import com.bdui.server.jto.View
@@ -183,11 +187,25 @@ object CartItemsRenderer {
                     ),
                     fontSize = 18,
                     action = action(
-                        actionId = "increaseButtonAction",
-                        action = ChangeIntegerStateAction(
-                            variableName = "cartItemCounter-${renderContext.id}",
-                            newValue = 1,
-                            type = fromExisting
+                        actionId = "increaseButtonListAction",
+                        action = ListAction(
+                            actions = listOf(
+                                action(
+                                    actionId = "increaseButtonAction",
+                                    action = ChangeIntegerStateAction(
+                                        variableName = "cartItemCounter-${renderContext.id}",
+                                        newValue = 1,
+                                        type = fromExisting
+                                    )
+                                ),
+                                action(
+                                    actionId = "increaseButtonPatchAction",
+                                    action = PatchAction(
+                                        path = "cart/increasePatch",
+                                        target = "cartItemCounter-${renderContext.id}"
+                                    )
+                                )
+                            )
                         )
                     )
                 )

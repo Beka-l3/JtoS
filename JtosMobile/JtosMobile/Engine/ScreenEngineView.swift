@@ -10,10 +10,10 @@ struct ScreenEngineView: View {
             VStack(spacing: 0) {
                 if viewModel.loading {
                     ProgressView()
-                } else if let screenResponse = viewModel.screenResponse {
-                    ScreenView(viewModel: viewModel, screenResponse: screenResponse)
                 } else if let error = viewModel.error {
                     ErrorView(viewModel: viewModel, error: error)
+                } else if let screenResponse = viewModel.screenResponse {
+                    ScreenView(viewModel: viewModel, screenResponse: screenResponse)
                 } else {
                     NoDataView(viewModel: viewModel)
                 }

@@ -45,7 +45,7 @@ class StateStore: ObservableObject {
     }
 }
 
-enum Variable {
+enum Variable: Encodable, Equatable {
     case integer(Int)
     case boolean(Bool)
     
@@ -55,6 +55,16 @@ enum Variable {
             return "\(value)"
         case .boolean(let value):
             return "\(value)"
+        }
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .integer(let value):
+            try container.encode(value)
+        case .boolean(let value):
+            try container.encode(value)
         }
     }
 }
