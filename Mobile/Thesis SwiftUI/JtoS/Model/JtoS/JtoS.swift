@@ -6,7 +6,8 @@ struct JtoS: Decodable, Equatable, Hashable {
 
     enum JtoSType: String {
 
-        case text, image, button, color
+        case container
+        case text, image, color
         case vStack, hStack, zStack
         case scrollView
         case spacer

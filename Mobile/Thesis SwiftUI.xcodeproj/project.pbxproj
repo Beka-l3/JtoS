@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C627052F2C1A0AFC005723FB /* ParamsTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C627052E2C1A0AFC005723FB /* ParamsTabbar.swift */; };
-		C62705312C1A16D6005723FB /* ApplyTabbarParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62705302C1A16D6005723FB /* ApplyTabbarParams.swift */; };
 		C62705332C1A233D005723FB /* TabbarScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62705322C1A233D005723FB /* TabbarScreenMock.json */; };
 		C62705362C1A35EE005723FB /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62705352C1A35EE005723FB /* Blur.swift */; };
-		C6295EAA2C15DDDD009B3721 /* ApplyImageSkeletonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */; };
 		C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */; };
 		C62B8C6D2C137E6500AF6D20 /* PicturesScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C62B8C6C2C137E6500AF6D20 /* PicturesScreenMock.json */; };
 		C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */; };
@@ -21,14 +19,6 @@
 		C62B8C7B2C13906000AF6D20 /* ParamsVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C7A2C13906000AF6D20 /* ParamsVStack.swift */; };
 		C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C7C2C13907000AF6D20 /* ParamsHStack.swift */; };
 		C62B8C7F2C13908A00AF6D20 /* ParamsZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C7E2C13908A00AF6D20 /* ParamsZStack.swift */; };
-		C62B8C862C13918400AF6D20 /* ApplyCommonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C852C13918400AF6D20 /* ApplyCommonParams.swift */; };
-		C62B8C882C1391D500AF6D20 /* ApplyTextParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C872C1391D500AF6D20 /* ApplyTextParams.swift */; };
-		C62B8C8A2C1391FA00AF6D20 /* ApplyImageParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C892C1391FA00AF6D20 /* ApplyImageParams.swift */; };
-		C62B8C8C2C13920A00AF6D20 /* ApplyColorParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C8B2C13920A00AF6D20 /* ApplyColorParams.swift */; };
-		C62B8C8E2C13921D00AF6D20 /* ApplyVStackParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C8D2C13921D00AF6D20 /* ApplyVStackParams.swift */; };
-		C62B8C902C13923800AF6D20 /* ApplyHStackParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C8F2C13923800AF6D20 /* ApplyHStackParams.swift */; };
-		C62B8C922C13926000AF6D20 /* ApplyZStackParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C912C13926000AF6D20 /* ApplyZStackParams.swift */; };
-		C62B8C942C13927700AF6D20 /* ApplyScrollViewParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B8C932C13927700AF6D20 /* ApplyScrollViewParams.swift */; };
 		C63D72852BF3F49D00818450 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72842BF3F49D00818450 /* Params.swift */; };
 		C63D72892BF3F4D200818450 /* JtoS+traverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D72882BF3F4D200818450 /* JtoS+traverse.swift */; };
 		C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */; };
@@ -36,8 +26,15 @@
 		C64C326C2C14E37300192683 /* JtoSRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C326B2C14E37300192683 /* JtoSRootView.swift */; };
 		C660EDA82C2B727F00A27AE6 /* examples.json in Resources */ = {isa = PBXBuildFile; fileRef = C660EDA72C2B727F00A27AE6 /* examples.json */; };
 		C670EA202C1E2B7A00B05D21 /* SomeTextScreenMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C670EA1F2C1E2B7A00B05D21 /* SomeTextScreenMock.json */; };
-		C6B09DCD2C186F2400C1F285 /* Picture.json in Resources */ = {isa = PBXBuildFile; fileRef = C6B09DCC2C186F2400C1F285 /* Picture.json */; };
+		C6B09DCD2C186F2400C1F285 /* Innopolis.json in Resources */ = {isa = PBXBuildFile; fileRef = C6B09DCC2C186F2400C1F285 /* Innopolis.json */; };
 		C6B09DD02C18CF3B00C1F285 /* JtoSStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B09DCF2C18CF3B00C1F285 /* JtoSStore.swift */; };
+		C6E3BD442C3B48CC003699C9 /* JtoSView+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3BD432C3B48CC003699C9 /* JtoSView+Text.swift */; };
+		C6E3BD462C3B4AD5003699C9 /* JtoSView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3BD452C3B4AD5003699C9 /* JtoSView+Image.swift */; };
+		C6E3BD482C3B4AF9003699C9 /* JtoSView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3BD472C3B4AF9003699C9 /* JtoSView+Color.swift */; };
+		C6E3BD4A2C3B4B23003699C9 /* JtoSView+Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3BD492C3B4B23003699C9 /* JtoSView+Stack.swift */; };
+		C6E3BD4C2C3B4B55003699C9 /* JtoSView+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3BD4B2C3B4B55003699C9 /* JtoSView+ScrollView.swift */; };
+		C6E3BD4E2C3B4B95003699C9 /* JtoSView+tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3BD4D2C3B4B95003699C9 /* JtoSView+tabbar.swift */; };
+		C6E3BD502C3B4DA1003699C9 /* JtoSView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3BD4F2C3B4DA1003699C9 /* JtoSView+Container.swift */; };
 		C6E489732BF286F500427675 /* Thesis_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */; };
 		C6E489752BF286F500427675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E489742BF286F500427675 /* ContentView.swift */; };
 		C6E489772BF286F600427675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E489762BF286F600427675 /* Assets.xcassets */; };
@@ -51,10 +48,8 @@
 
 /* Begin PBXFileReference section */
 		C627052E2C1A0AFC005723FB /* ParamsTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsTabbar.swift; sourceTree = "<group>"; };
-		C62705302C1A16D6005723FB /* ApplyTabbarParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyTabbarParams.swift; sourceTree = "<group>"; };
 		C62705322C1A233D005723FB /* TabbarScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TabbarScreenMock.json; sourceTree = "<group>"; };
 		C62705352C1A35EE005723FB /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
-		C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyImageSkeletonParams.swift; sourceTree = "<group>"; };
 		C6295EAB2C15DE07009B3721 /* ParamsImageSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsImageSkeleton.swift; sourceTree = "<group>"; };
 		C62B8C6C2C137E6500AF6D20 /* PicturesScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PicturesScreenMock.json; sourceTree = "<group>"; wrapsLines = 0; };
 		C62B8C722C13900A00AF6D20 /* ParamsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsCommon.swift; sourceTree = "<group>"; };
@@ -64,14 +59,6 @@
 		C62B8C7A2C13906000AF6D20 /* ParamsVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsVStack.swift; sourceTree = "<group>"; };
 		C62B8C7C2C13907000AF6D20 /* ParamsHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsHStack.swift; sourceTree = "<group>"; };
 		C62B8C7E2C13908A00AF6D20 /* ParamsZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsZStack.swift; sourceTree = "<group>"; };
-		C62B8C852C13918400AF6D20 /* ApplyCommonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyCommonParams.swift; sourceTree = "<group>"; };
-		C62B8C872C1391D500AF6D20 /* ApplyTextParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyTextParams.swift; sourceTree = "<group>"; };
-		C62B8C892C1391FA00AF6D20 /* ApplyImageParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyImageParams.swift; sourceTree = "<group>"; };
-		C62B8C8B2C13920A00AF6D20 /* ApplyColorParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyColorParams.swift; sourceTree = "<group>"; };
-		C62B8C8D2C13921D00AF6D20 /* ApplyVStackParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyVStackParams.swift; sourceTree = "<group>"; };
-		C62B8C8F2C13923800AF6D20 /* ApplyHStackParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyHStackParams.swift; sourceTree = "<group>"; };
-		C62B8C912C13926000AF6D20 /* ApplyZStackParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyZStackParams.swift; sourceTree = "<group>"; };
-		C62B8C932C13927700AF6D20 /* ApplyScrollViewParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyScrollViewParams.swift; sourceTree = "<group>"; };
 		C63D72842BF3F49D00818450 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		C63D72882BF3F4D200818450 /* JtoS+traverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoS+traverse.swift"; sourceTree = "<group>"; };
 		C63D728A2BF3F4F700818450 /* ParamsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsScrollView.swift; sourceTree = "<group>"; };
@@ -79,8 +66,15 @@
 		C64C326B2C14E37300192683 /* JtoSRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSRootView.swift; sourceTree = "<group>"; };
 		C660EDA72C2B727F00A27AE6 /* examples.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = examples.json; sourceTree = "<group>"; };
 		C670EA1F2C1E2B7A00B05D21 /* SomeTextScreenMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SomeTextScreenMock.json; sourceTree = "<group>"; };
-		C6B09DCC2C186F2400C1F285 /* Picture.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Picture.json; sourceTree = "<group>"; };
+		C6B09DCC2C186F2400C1F285 /* Innopolis.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Innopolis.json; sourceTree = "<group>"; };
 		C6B09DCF2C18CF3B00C1F285 /* JtoSStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JtoSStore.swift; sourceTree = "<group>"; };
+		C6E3BD432C3B48CC003699C9 /* JtoSView+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoSView+Text.swift"; sourceTree = "<group>"; };
+		C6E3BD452C3B4AD5003699C9 /* JtoSView+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoSView+Image.swift"; sourceTree = "<group>"; };
+		C6E3BD472C3B4AF9003699C9 /* JtoSView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoSView+Color.swift"; sourceTree = "<group>"; };
+		C6E3BD492C3B4B23003699C9 /* JtoSView+Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoSView+Stack.swift"; sourceTree = "<group>"; };
+		C6E3BD4B2C3B4B55003699C9 /* JtoSView+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoSView+ScrollView.swift"; sourceTree = "<group>"; };
+		C6E3BD4D2C3B4B95003699C9 /* JtoSView+tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoSView+tabbar.swift"; sourceTree = "<group>"; };
+		C6E3BD4F2C3B4DA1003699C9 /* JtoSView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JtoSView+Container.swift"; sourceTree = "<group>"; };
 		C6E4896F2BF286F500427675 /* Thesis SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thesis SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E489722BF286F500427675 /* Thesis_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thesis_SwiftUIApp.swift; sourceTree = "<group>"; };
 		C6E489742BF286F500427675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,29 +158,27 @@
 			path = JtoS;
 			sourceTree = "<group>";
 		};
-		C62B8C842C13917A00AF6D20 /* ViewModifier */ = {
-			isa = PBXGroup;
-			children = (
-				C62B8C852C13918400AF6D20 /* ApplyCommonParams.swift */,
-				C62B8C872C1391D500AF6D20 /* ApplyTextParams.swift */,
-				C62B8C892C1391FA00AF6D20 /* ApplyImageParams.swift */,
-				C62B8C8B2C13920A00AF6D20 /* ApplyColorParams.swift */,
-				C62B8C8D2C13921D00AF6D20 /* ApplyVStackParams.swift */,
-				C62B8C8F2C13923800AF6D20 /* ApplyHStackParams.swift */,
-				C62B8C912C13926000AF6D20 /* ApplyZStackParams.swift */,
-				C62B8C932C13927700AF6D20 /* ApplyScrollViewParams.swift */,
-				C6295EA92C15DDDD009B3721 /* ApplyImageSkeletonParams.swift */,
-				C62705302C1A16D6005723FB /* ApplyTabbarParams.swift */,
-			);
-			path = ViewModifier;
-			sourceTree = "<group>";
-		};
 		C63D72832BF3F47400818450 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				C63D72882BF3F4D200818450 /* JtoS+traverse.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C6E3BD422C3B48B9003699C9 /* JtoSView */ = {
+			isa = PBXGroup;
+			children = (
+				C6E489872BF28EE300427675 /* JtoSView.swift */,
+				C6E3BD4B2C3B4B55003699C9 /* JtoSView+ScrollView.swift */,
+				C6E3BD492C3B4B23003699C9 /* JtoSView+Stack.swift */,
+				C6E3BD472C3B4AF9003699C9 /* JtoSView+Color.swift */,
+				C6E3BD452C3B4AD5003699C9 /* JtoSView+Image.swift */,
+				C6E3BD432C3B48CC003699C9 /* JtoSView+Text.swift */,
+				C6E3BD4D2C3B4B95003699C9 /* JtoSView+tabbar.swift */,
+				C6E3BD4F2C3B4DA1003699C9 /* JtoSView+Container.swift */,
+			);
+			path = JtoSView;
 			sourceTree = "<group>";
 		};
 		C6E489662BF286F500427675 = {
@@ -239,9 +231,8 @@
 		C6E489832BF28DF200427675 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				C6E3BD422C3B48B9003699C9 /* JtoSView */,
 				C62705342C1A35DC005723FB /* Components */,
-				C62B8C842C13917A00AF6D20 /* ViewModifier */,
-				C6E489872BF28EE300427675 /* JtoSView.swift */,
 				C6E489812BF28DEE00427675 /* JtoSConverter.swift */,
 				C64C326B2C14E37300192683 /* JtoSRootView.swift */,
 				C6B09DCF2C18CF3B00C1F285 /* JtoSStore.swift */,
@@ -255,7 +246,7 @@
 				C6E489852BF28E1C00427675 /* CatalogScreenMock.json */,
 				C62B8C6C2C137E6500AF6D20 /* PicturesScreenMock.json */,
 				C62705322C1A233D005723FB /* TabbarScreenMock.json */,
-				C6B09DCC2C186F2400C1F285 /* Picture.json */,
+				C6B09DCC2C186F2400C1F285 /* Innopolis.json */,
 				C670EA1F2C1E2B7A00B05D21 /* SomeTextScreenMock.json */,
 				C660EDA72C2B727F00A27AE6 /* examples.json */,
 			);
@@ -343,7 +334,7 @@
 				C62B8C6D2C137E6500AF6D20 /* PicturesScreenMock.json in Resources */,
 				C660EDA82C2B727F00A27AE6 /* examples.json in Resources */,
 				C6E489772BF286F600427675 /* Assets.xcassets in Resources */,
-				C6B09DCD2C186F2400C1F285 /* Picture.json in Resources */,
+				C6B09DCD2C186F2400C1F285 /* Innopolis.json in Resources */,
 				C6E489862BF28E1C00427675 /* CatalogScreenMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,38 +346,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62B8C8E2C13921D00AF6D20 /* ApplyVStackParams.swift in Sources */,
 				C627052F2C1A0AFC005723FB /* ParamsTabbar.swift in Sources */,
-				C6295EAA2C15DDDD009B3721 /* ApplyImageSkeletonParams.swift in Sources */,
-				C62B8C862C13918400AF6D20 /* ApplyCommonParams.swift in Sources */,
 				C63D72852BF3F49D00818450 /* Params.swift in Sources */,
+				C6E3BD482C3B4AF9003699C9 /* JtoSView+Color.swift in Sources */,
 				C62B8C772C13903700AF6D20 /* ParamsImage.swift in Sources */,
 				C62705362C1A35EE005723FB /* Blur.swift in Sources */,
 				C64C326C2C14E37300192683 /* JtoSRootView.swift in Sources */,
 				C6E4898D2BF28FD900427675 /* JtoS.swift in Sources */,
 				C6E489882BF28EE300427675 /* JtoSView.swift in Sources */,
-				C62705312C1A16D6005723FB /* ApplyTabbarParams.swift in Sources */,
 				C6E489752BF286F500427675 /* ContentView.swift in Sources */,
 				C64C326A2C14707300192683 /* ParamsButton.swift in Sources */,
-				C62B8C902C13923800AF6D20 /* ApplyHStackParams.swift in Sources */,
 				C62B8C7F2C13908A00AF6D20 /* ParamsZStack.swift in Sources */,
 				C62B8C7D2C13907000AF6D20 /* ParamsHStack.swift in Sources */,
 				C6295EAC2C15DE07009B3721 /* ParamsImageSkeleton.swift in Sources */,
 				C6B09DD02C18CF3B00C1F285 /* JtoSStore.swift in Sources */,
 				C63D728B2BF3F4F700818450 /* ParamsScrollView.swift in Sources */,
 				C6E489822BF28DEE00427675 /* JtoSConverter.swift in Sources */,
-				C62B8C8C2C13920A00AF6D20 /* ApplyColorParams.swift in Sources */,
 				C6F1CB172BF50C9300CF9317 /* Color+hex.swift in Sources */,
+				C6E3BD4C2C3B4B55003699C9 /* JtoSView+ScrollView.swift in Sources */,
+				C6E3BD4A2C3B4B23003699C9 /* JtoSView+Stack.swift in Sources */,
 				C62B8C7B2C13906000AF6D20 /* ParamsVStack.swift in Sources */,
 				C63D72892BF3F4D200818450 /* JtoS+traverse.swift in Sources */,
-				C62B8C922C13926000AF6D20 /* ApplyZStackParams.swift in Sources */,
+				C6E3BD442C3B48CC003699C9 /* JtoSView+Text.swift in Sources */,
+				C6E3BD4E2C3B4B95003699C9 /* JtoSView+tabbar.swift in Sources */,
+				C6E3BD502C3B4DA1003699C9 /* JtoSView+Container.swift in Sources */,
 				C6E489732BF286F500427675 /* Thesis_SwiftUIApp.swift in Sources */,
 				C62B8C732C13900A00AF6D20 /* ParamsCommon.swift in Sources */,
-				C62B8C942C13927700AF6D20 /* ApplyScrollViewParams.swift in Sources */,
 				C62B8C752C13902000AF6D20 /* ParamsText.swift in Sources */,
-				C62B8C8A2C1391FA00AF6D20 /* ApplyImageParams.swift in Sources */,
+				C6E3BD462C3B4AD5003699C9 /* JtoSView+Image.swift in Sources */,
 				C62B8C792C13904E00AF6D20 /* ParamsColor.swift in Sources */,
-				C62B8C882C1391D500AF6D20 /* ApplyTextParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

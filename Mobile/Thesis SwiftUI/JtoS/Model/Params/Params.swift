@@ -2,37 +2,39 @@ import Foundation
 
 struct Params: Decodable, Equatable, Hashable {
 
-    var ignoresSafeArea: Bool?      = nil
+    var ignoresSafeArea: Bool?          = nil
 
-    var frame: FrameSize?           = nil
-    var skeletonFrame: FrameSize?   = nil
+    var frame: FrameSize?                   = nil
+    var skeletonFrame: FrameSize?           = nil
 
-    var padding: Padding?           = nil
-    var padding2: Padding?          = nil
+    var padding: Padding?                   = nil
+    var padding2: Padding?                  = nil
 
-    var bgColorHex: String?         = nil
-    var colorHex: String?           = nil
-    var cornerRadius: Double?       = nil
+    var bgColorHex: String?                 = nil
+    var colorHex: String?                   = nil
+    var cornerRadius: Double?               = nil
 
-    var textValue: String?          = nil
-    var font: String?               = nil
-    var fontSize: Int?              = nil
+    var textValue: String?                  = nil
+    var font: String?                       = nil
+    var fontSize: Int?                      = nil
 
-    var url: String?                = nil
-    var contentMode: String?        = nil
+    var url: String?                        = nil
+    var contentMode: String?                = nil
 
-    var spacing: Int?               = nil
-    var alignment: String?          = nil
-    var axes: String?               = nil
+    var spacing: Int?                       = nil
+    var alignment: String?                  = nil
+    var axes: String?                       = nil
 
-    var textFromVar: String?        = nil
+    var textFromVar: String?                = nil
 
-    var onTapAction: OnTapAction?   = nil
+    var onTapAction: OnTapAction?           = nil
 
-    var state: State?               = nil
+    var state: State?                       = nil
 
-    var tabbars: [Tabbar]?          = nil
-    var tabbarVarId: String?        = nil
+    var tabbars: [Tabbar]?                  = nil
+    var tabbarVarId: String?                = nil
+
+    var blurRadius: CGFloatValueWrapper?    = nil
 }
 
 // MARK: - Nested Types

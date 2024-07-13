@@ -251,25 +251,54 @@
                     "ui": []
                 },
                 {
-                    "type": "image",
+                    "type": "zStack",
                     "params": {
-                        "url": "https://images.unsplash.com/photo-1625924305476-d8f96c560c21?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                         "frame": {
                             "max_width": { "value": "Infinity" },
                             "max_height": { "value": 420 },
                         },
-                        "skeleton_frame": {
-                            "max_width": { "value": "Infinity" },
-                            "min_height": { "value": 420.0 },
-                        },
-                        "padding": {
-                            "edges": ["horizontal"],
-                            "length": 12
-                        },
-                        "content_mode": "fill",
-                        "corner_radius": 16
                     },
-                    "ui": []
+                    "ui": [
+                        {
+                            "type": "image",
+                            "params": {
+                                "url": "https://images.unsplash.com/photo-1625924305476-d8f96c560c21?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "max_height": { "value": 420 },
+                                },
+                                "skeleton_frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "min_height": { "value": 420.0 },
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 12
+                                },
+                                "content_mode": "fill",
+                                "corner_radius": 16
+                            },
+                            "ui": []
+                        },
+                        {
+                            "type": "color",
+                            "params": {
+                                "color_hex": "88123123",
+                                "blur_radius": { "value": 4 },
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "max_height": { "value": 420 },
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 12
+                                },
+                                "corner_radius": 16
+                            },
+                            "ui": []
+                        }
+
+                    ]
                 }
             ]
         }

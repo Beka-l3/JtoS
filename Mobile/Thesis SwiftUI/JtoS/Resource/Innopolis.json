@@ -1,0 +1,357 @@
+{
+    "type": "zStack",
+    "params": {
+
+    },
+    "ui": [
+        {
+            "type": "color",
+            "params": {
+                "color_hex": "1f121f",
+                "ignores_safe_area": true
+            },
+            "ui": []
+        },
+        {
+            "type": "scrollView",
+            "params": {},
+            "ui": [
+                {
+                    "type": "vStack",
+                    "params": {},
+                    "ui": [
+                        {
+                            "type": "image",
+                            "params": {
+                                "url": "https://images.unsplash.com/photo-1629043916430-feca2aed4eea?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjB8fHxlbnwwfHx8fHw%3D",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "max_height": { "value": 180.0 },
+                                },
+                                "skeleton_frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "min_height": { "value": 180.0 },
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 12
+                                },
+                                "content_mode": "fill",
+                                "corner_radius": 16
+                            },
+                            "ui": []
+                        },
+                        {
+                            "type": "text",
+                            "params": {
+                                "text_value": "Innopolis",
+                                "color_hex": "a1a188",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "max_height": { "value": 80.0 },
+                                    "alignment": "leading"
+                                },
+                                "padding": {
+                                    "edges": ["leading"],
+                                    "length": 16
+                                },
+                                "font_size": 36,
+                            },
+                            "ui": [
+                            ]
+                        },
+
+                        {
+                            "type": "scrollView",
+                            "params": {
+                                "axes": "horizontal",
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 16
+                                }
+                            },
+                            "ui": [
+                                {
+                                    "type": "hStack",
+                                    "params": {},
+                                    "ui": [
+                                        {
+                                            "type": "zStack",
+                                            "params": {
+                                                "bg_color_hex": "11efefef",
+                                                "frame": {
+                                                    "height": { "value": 30 },
+                                                },
+                                                "corner_radius": 12
+                                            },
+                                            "ui": [
+
+                                                {
+                                                    "type": "text",
+                                                    "params": {
+                                                        "text_value": "super",
+                                                        "color_hex": "ededa1",
+                                                        "font_size": 13,
+                                                        "padding": {
+                                                            "edges": ["horizontal"],
+                                                            "length": 12
+                                                        }
+                                                    },
+                                                    "ui": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "zStack",
+                                            "params": {
+                                                "bg_color_hex": "11efefef",
+                                                "frame": {
+                                                    "height": { "value": 30 },
+                                                },
+                                                "corner_radius": 12
+                                            },
+                                            "ui": [
+                                                {
+                                                    "type": "text",
+                                                    "params": {
+                                                        "text_value": "young city",
+                                                        "color_hex": "ceeda1",
+                                                        "font_size": 13,
+                                                        "padding": {
+                                                            "edges": ["horizontal"],
+                                                            "length": 12
+                                                        }
+                                                    },
+                                                    "ui": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "zStack",
+                                            "params": {
+                                                "bg_color_hex": "11efefef",
+                                                "frame": {
+                                                    "height": { "value": 30 },
+                                                },
+                                                "corner_radius": 12
+                                            },
+                                            "ui": [
+                                                {
+                                                    "type": "text",
+                                                    "params": {
+                                                        "text_value": "Kmail Khayrullin",
+                                                        "color_hex": "a1edbf",
+                                                        "font_size": 13,
+                                                        "padding": {
+                                                            "edges": ["horizontal"],
+                                                            "length": 8
+                                                        }
+                                                    },
+                                                    "ui": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "zStack",
+                                            "params": {
+                                                "bg_color_hex": "11efefef",
+                                                "frame": {
+                                                    "height": { "value": 30 },
+                                                },
+                                                "corner_radius": 12
+                                            },
+                                            "ui": [
+                                                {
+                                                    "type": "text",
+                                                    "params": {
+                                                        "text_value": "Bekzhan Talgat",
+                                                        "color_hex": "90e3f0",
+                                                        "font_size": 13,
+                                                        "padding": {
+                                                            "edges": ["horizontal"],
+                                                            "length": 8
+                                                        }
+                                                    },
+                                                    "ui": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "zStack",
+                                            "params": {},
+                                            "ui": [
+                                                {
+                                                    "type": "color",
+                                                    "params": {
+                                                        "color_hex": "11efefef",
+                                                        "frame": {
+                                                            "height": { "value": 30 },
+                                                            "width": { "value": 60 }
+                                                        },
+                                                        "corner_radius": 12
+                                                    },
+                                                    "ui": []
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "params": {
+                                                        "text_value": "super",
+                                                        "color_hex": "a1a188",
+                                                        "font_size": 13,
+                                                    },
+                                                    "ui": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "zStack",
+                                            "params": {},
+                                            "ui": [
+                                                {
+                                                    "type": "color",
+                                                    "params": {
+                                                        "color_hex": "11efefef",
+                                                        "frame": {
+                                                            "height": { "value": 30 },
+                                                            "width": { "value": 60 }
+                                                        },
+                                                        "corner_radius": 12
+                                                    },
+                                                    "ui": []
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "params": {
+                                                        "text_value": "super",
+                                                        "color_hex": "a1a188",
+                                                        "font_size": 13,
+                                                    },
+                                                    "ui": []
+                                                }
+                                            ]
+                                        },
+                                    ]
+                                }
+                            ]
+                        },
+
+                        {
+                            "type": "text",
+                            "params": {
+                                "text_value": "Innopolis University is a relatively young, specialized higher education institution situated in Innopolis, Russia. It focuses primarily on information technology and robotics. The university offers undergraduate, graduate, and doctoral programs, emphasizing practical and research-oriented learning experiences.",
+                                "color_hex": "cdcdcd",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "alignment": "leading"
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 16
+                                },
+                                "font_size": 16,
+                            },
+                            "ui": [
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "params": {
+                                "text_value": "Innopolis University has partnerships with leading global tech companies and institutions, providing students with opportunities for internships, collaborative research projects, and exposure to cutting-edge technologies and methodologies. The institution is known for its innovative approach to education, integrating academic knowledge with real-world applications.",
+                                "color_hex": "cdcdcd",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "alignment": "leading"
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 16
+                                },
+                                "font_size": 16,
+                            },
+                            "ui": [
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "params": {
+                                "text_value": "Первый в России бакалавриат для создателей ИИ-технологий будущего от Яндекса, Сбера и ведущих вузов.",
+                                "color_hex": "cdcdcd",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "alignment": "leading"
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 16
+                                },
+                                "font_size": 16,
+                            },
+                            "ui": [
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "params": {
+                                "text_value": "Новая программа ИИ360 открыта в Университете Иннополис, ИТМО, МФТИ и НИУ ВШЭ. В 2024/2025 учебном году четыре вуза примут 100 выпускников школ страны с самыми высокими баллами.",
+                                "color_hex": "cdcdcd",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "alignment": "leading"
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 16
+                                },
+                                "font_size": 16,
+                            },
+                            "ui": [
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "params": {
+                                "text_value": "Студенты будут получать повышенную стипендию и гранты Яндекса и Сбера, а также проходить образовательные модули в вузах—участниках программы.",
+                                "color_hex": "cdcdcd",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "alignment": "leading"
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 16
+                                },
+                                "font_size": 16,
+                            },
+                            "ui": [
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "params": {
+                                "text_value": "Выпускники смогут решать сложные задачи в области ИИ и претендовать на позиции уровня middle+ в ведущих ИТ-компаниях.",
+                                "color_hex": "cdcdcd",
+                                "frame": {
+                                    "max_width": { "value": "Infinity" },
+                                    "alignment": "leading"
+                                },
+                                "padding": {
+                                    "edges": ["horizontal"],
+                                    "length": 16
+                                },
+                                "font_size": 16,
+                            },
+                            "ui": [
+                            ]
+                        },
+
+                        {
+                            "type": "spacer",
+                            "params": {},
+                            "ui": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
