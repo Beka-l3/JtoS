@@ -26,7 +26,8 @@ class ScreenResourceService(
         val sectionResponses = runBlocking {
              screenTemplate.sections.map { section ->
                 async {
-                    section.resolverRespone = resolverCaller.callResolver(section.resolver)
+                    val preResolvedResponse = request.preResolvedResponses?.get(section.resolver?.javaClass?.name)
+                    section.resolverRespone = preResolvedResponse ?: resolverCaller.callResolver(section.resolver)
                     val assembler = findAssembler(section)
                     section.views = assembler.convert(section)
                     return@async section

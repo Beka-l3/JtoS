@@ -2,7 +2,7 @@ package com.bdui.server.screenLogic.screenBuilder
 
 import com.bdui.server.bdui.businessLogic.screen
 import com.bdui.server.bdui.core.abstract.AbstractScreenBuilder
-import com.bdui.server.screenLogic.api.RealBackendResolver
+import com.bdui.server.screenLogic.api.realBackend.RealBackendResolver
 import com.bdui.server.screenLogic.api.TestStubResolver
 import com.bdui.server.screenLogic.sections.cartAddress.TestSection
 import com.bdui.server.screenLogic.sections.cartControls.CartControlsSection

@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class CartItem(
     val id: Int,
     val name: String,
-    @JsonProperty("shopName")
+    @JsonProperty("shop_name")
     val shopName: String,
     val price: Double,
     val count: Int,
-    @JsonProperty("isSelectedState")
+    @JsonProperty("is_selected_state")
     val isSelectedState: Boolean,
-    @JsonProperty("imageUrl")
+    @JsonProperty("image_url")
     val imageUrl: String,
-    @JsonProperty("isAvailableState")
+    @JsonProperty("is_available_state")
     val isAvailableState: Boolean
 )

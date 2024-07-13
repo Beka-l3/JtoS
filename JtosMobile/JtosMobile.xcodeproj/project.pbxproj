@@ -63,6 +63,7 @@
 		8EEAE7D02C42A9F500CA9C07 /* PatchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7CF2C42A9F500CA9C07 /* PatchAction.swift */; };
 		8EEAE7D22C42AA3F00CA9C07 /* PatchActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7D12C42AA3F00CA9C07 /* PatchActionHandler.swift */; };
 		8EEAE7D42C42BADC00CA9C07 /* EngineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7D32C42BADC00CA9C07 /* EngineError.swift */; };
+		8EEAE7D82C42C6B700CA9C07 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7D72C42C6B700CA9C07 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		8EEAE7CF2C42A9F500CA9C07 /* PatchAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchAction.swift; sourceTree = "<group>"; };
 		8EEAE7D12C42AA3F00CA9C07 /* PatchActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchActionHandler.swift; sourceTree = "<group>"; };
 		8EEAE7D32C42BADC00CA9C07 /* EngineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineError.swift; sourceTree = "<group>"; };
+		8EEAE7D72C42C6B700CA9C07 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				8E7EF1EE2C2836F80020DB72 /* DivImageView.swift */,
 				8E7EF1F82C2870470020DB72 /* DivContainerView.swift */,
 				8E7EF1FF2C287F510020DB72 /* DivTextView.swift */,
+				8EEAE7D72C42C6B700CA9C07 /* ImageCache.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				8EEAE7C82C42A13000CA9C07 /* ListAction.swift in Sources */,
 				8E7EF1E32C282A550020DB72 /* ScreenQuery.swift in Sources */,
 				8E7EF1DC2C2814110020DB72 /* DivView.swift in Sources */,
+				8EEAE7D82C42C6B700CA9C07 /* ImageCache.swift in Sources */,
 				8EEAE7CA2C42A21700CA9C07 /* DecodableAction.swift in Sources */,
 				8E7EF1CD2C27756A0020DB72 /* DivType.swift in Sources */,
 				8EEAE7D22C42AA3F00CA9C07 /* PatchActionHandler.swift in Sources */,

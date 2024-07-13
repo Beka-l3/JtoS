@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 class ScreenEngineViewModel: ObservableObject {
     
@@ -72,7 +73,7 @@ extension ScreenEngineViewModel {
         query: ScreenQuery,
         stateStore: StateStore?
     ) {
-        loading = true
+//        loading = true
         
         var urlComponents = Constants.backendUrl
         urlComponents.path = query.path
@@ -101,8 +102,8 @@ extension ScreenEngineViewModel {
                     
                 } else if let data = data {
                     do {
-                        let screenResponse = try JSONDecoder().decode(ScreenResponse.self, from: data)
-                        self.screenResponse = screenResponse
+                        let newScreenResponse = try JSONDecoder().decode(ScreenResponse.self, from: data)
+                        self.screenResponse = newScreenResponse
                         self.error = nil
                     } catch {
                         self.error = error

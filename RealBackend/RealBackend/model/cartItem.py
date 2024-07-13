@@ -13,12 +13,12 @@ class CartItem:
         return {
             'id': self.id,
             'name': self.name,
-            'shopName': self.shop_name,
+            'shop_name': self.shop_name,
             'price': self.price,
             'count': self.count,
-            'isSelectedState': self.is_selected_state,
-            'imageUrl': self.image_url,
-            'isAvailableState': self.is_available_state
+            'is_selected_state': self.is_selected_state,
+            'image_url': self.image_url,
+            'is_available_state': self.is_available_state
         }
 
     @classmethod

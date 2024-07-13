@@ -154,7 +154,7 @@ object CartItemsRenderer {
                     action = action(
                         actionId = "decreaseButtonAction",
                         action = ChangeIntegerStateAction(
-                            variableName = "cartItemCounter-${renderContext.id}",
+                            variableName = "${renderContext.id}",
                             newValue = -1,
                             type = fromExisting
                         )
@@ -163,7 +163,7 @@ object CartItemsRenderer {
                 text(
                     // text = "1",
                     textVariable = TextVariable(
-                        name = "cartItemCounter-${renderContext.id}",
+                        name = "${renderContext.id}",
                         type = integer(renderContext.count)
                     ),
                     backgroundColor = color(Color.lightGray),
@@ -193,7 +193,7 @@ object CartItemsRenderer {
                                 action(
                                     actionId = "increaseButtonAction",
                                     action = ChangeIntegerStateAction(
-                                        variableName = "cartItemCounter-${renderContext.id}",
+                                        variableName = "${renderContext.id}",
                                         newValue = 1,
                                         type = fromExisting
                                     )
@@ -202,7 +202,7 @@ object CartItemsRenderer {
                                     actionId = "increaseButtonPatchAction",
                                     action = PatchAction(
                                         path = "cart/increasePatch",
-                                        target = "cartItemCounter-${renderContext.id}"
+                                        target = "${renderContext.id}"
                                     )
                                 )
                             )

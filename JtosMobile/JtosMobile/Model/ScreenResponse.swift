@@ -4,6 +4,9 @@ struct ScreenResponse: Decodable, Equatable, Hashable {
     
     // MARK: - Properties
     
-    let ui: Array<Section>
+    var ui: Array<Section>
     
+    mutating func update(with newScreenResponse: ScreenResponse?) {
+        guard let newScreenResponse = newScreenResponse else { return }
+    }
 }
