@@ -4,6 +4,7 @@ struct DivImageView: View {
     
     let divImage: DivImage
     let actionDispatcher: ActionDispatcher
+    let stateStore: StateStore
 
     var body: some View {
         buildImageView(divImage)

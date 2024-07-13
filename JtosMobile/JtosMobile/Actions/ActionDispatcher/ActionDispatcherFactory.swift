@@ -1,9 +1,10 @@
 import Foundation
 
 class ActionDispatcherFactory {
-    static func createActionDispatcher() -> ActionDispatcher {
+    static func createActionDispatcher(stateStore: StateStore) -> ActionDispatcher {
         let actionHandlers: [AbstractActionHandler] = [
-            PrintActionHandler()
+            PrintActionHandler(),
+            ChangeIntegerStateActionHandler(stateStore: stateStore)
         ]
         return ActionDispatcher(actionHandlers: actionHandlers)
     }

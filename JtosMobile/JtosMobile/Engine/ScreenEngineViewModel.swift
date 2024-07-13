@@ -4,16 +4,20 @@ class ScreenEngineViewModel: ObservableObject {
     
     let query: ScreenQuery
     let actionDispatcher: ActionDispatcher
+    let stateStore: StateStore
+
     @Published var loading: Bool = false
     @Published var error: Error? = nil
     @Published var screenResponse: ScreenResponse? = nil
     
     init(
         query: ScreenQuery,
-        actionDispatcher: ActionDispatcher
+        actionDispatcher: ActionDispatcher,
+        stateStore: StateStore
     ) {
         self.query = query
         self.actionDispatcher = actionDispatcher
+        self.stateStore = stateStore
     }
     
     func fetchData() {

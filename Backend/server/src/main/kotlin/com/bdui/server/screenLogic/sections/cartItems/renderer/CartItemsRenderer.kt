@@ -1,14 +1,19 @@
 package com.bdui.server.screenLogic.sections.cartItems.renderer
 
 import color
+import com.bdui.server.actions.ChangeIntegerStateAction
 import com.bdui.server.jto.Div
 import com.bdui.server.jto.UiNamespace
 import com.bdui.server.jto.View
+import com.bdui.server.jto.action
 import com.bdui.server.jto.container
 import com.bdui.server.jto.image
+import com.bdui.server.jto.model.Variable.TextVariable
 import com.bdui.server.jto.model.cornerRadius.cornerRadius
+import com.bdui.server.jto.model.fromExisting
 import com.bdui.server.jto.model.horizontal
 import com.bdui.server.jto.model.insets.edgeInsets
+import com.bdui.server.jto.model.integer
 import com.bdui.server.jto.model.left
 import com.bdui.server.jto.model.size.fixedSize
 import com.bdui.server.jto.model.size.matchParentSize
@@ -141,10 +146,22 @@ object CartItemsRenderer {
                         bottom = 4
                     ),
                     width = wrapContentSize(),
-                    fontSize = 18
+                    fontSize = 18,
+                    action = action(
+                        actionId = "decreaseButtonAction",
+                        action = ChangeIntegerStateAction(
+                            variableName = "cartItemCounter",
+                            newValue = -1,
+                            type = fromExisting
+                        )
+                    )
                 ),
                 text(
-                    text = "1",
+                    // text = "1",
+                    textVariable = TextVariable(
+                        name = "cartItemCounter",
+                        type = integer(1)
+                    ),
                     backgroundColor = color(Color.lightGray),
                     width = matchParentSize(),
                     padding = edgeInsets(
@@ -164,7 +181,15 @@ object CartItemsRenderer {
                         top = 4,
                         bottom = 4
                     ),
-                    fontSize = 18
+                    fontSize = 18,
+                    action = action(
+                        actionId = "increaseButtonAction",
+                        action = ChangeIntegerStateAction(
+                            variableName = "cartItemCounter",
+                            newValue = 1,
+                            type = fromExisting
+                        )
+                    )
                 )
             )
         )

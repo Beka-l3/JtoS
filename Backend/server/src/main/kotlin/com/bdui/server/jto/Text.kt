@@ -3,6 +3,7 @@ package com.bdui.server.jto
 import ColorRGB
 import color
 import com.bdui.server.jto.model.HorizontalAlignment
+import com.bdui.server.jto.model.Variable.TextVariable
 import com.bdui.server.jto.model.center
 import com.bdui.server.jto.model.insets.EdgeInsets
 import com.bdui.server.jto.model.insets.edgeInsets
@@ -22,7 +23,8 @@ class Text internal constructor(
     override val id: String
         get() = UUID.randomUUID().toString()
     class Properties internal constructor(
-        val text: String,
+        val text: String?,
+        val textVariable: TextVariable?,
         val width: Size,
         val height: Size,
         val padding: EdgeInsets,
@@ -34,7 +36,8 @@ class Text internal constructor(
 }
 
 fun UiNamespace.text(
-    text: String,
+    text: String? = null,
+    textVariable: TextVariable? = null,
     width: Size = wrapContentSize(),
     height: Size = wrapContentSize(),
     padding: EdgeInsets = edgeInsets(),
@@ -45,6 +48,7 @@ fun UiNamespace.text(
 ): Text = Text(
     Text.Properties(
         text = text,
+        textVariable = textVariable,
         width = width,
         height = height,
         padding = padding,
@@ -58,6 +62,7 @@ fun UiNamespace.text(
 fun UiNamespace.spacer(): Text = Text(
     Text.Properties(
         text = "",
+        textVariable = null,
         width = matchParentSize(),
         height = wrapContentSize(),
         padding = edgeInsets(),

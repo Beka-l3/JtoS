@@ -11,9 +11,8 @@ class ActionDispatcher {
     
     func dispatchAction(action: Action?) {
         guard let action else { return }
-        switch action {
-        case .printAction(let action):
-            PrintActionHandler().handle(action: .printAction(action))
+        for handler in handlers {
+            handler.handle(action: action)
         }
     }
 }

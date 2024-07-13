@@ -52,6 +52,11 @@
 		8EEAE7B42C41BF2800CA9C07 /* ActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7B32C41BF2800CA9C07 /* ActionDispatcher.swift */; };
 		8EEAE7B62C41BF7B00CA9C07 /* AbstractActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7B52C41BF7B00CA9C07 /* AbstractActionHandler.swift */; };
 		8EEAE7B92C42633400CA9C07 /* ActionDispatcherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7B82C42633400CA9C07 /* ActionDispatcherFactory.swift */; };
+		8EEAE7BD2C426A2300CA9C07 /* TextVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7BC2C426A2300CA9C07 /* TextVariable.swift */; };
+		8EEAE7BF2C426A4F00CA9C07 /* VariableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7BE2C426A4F00CA9C07 /* VariableType.swift */; };
+		8EEAE7C12C42712A00CA9C07 /* StateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C02C42712A00CA9C07 /* StateStore.swift */; };
+		8EEAE7C32C42759700CA9C07 /* ChangeIntegerStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */; };
+		8EEAE7C52C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +125,11 @@
 		8EEAE7B32C41BF2800CA9C07 /* ActionDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDispatcher.swift; sourceTree = "<group>"; };
 		8EEAE7B52C41BF7B00CA9C07 /* AbstractActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractActionHandler.swift; sourceTree = "<group>"; };
 		8EEAE7B82C42633400CA9C07 /* ActionDispatcherFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDispatcherFactory.swift; sourceTree = "<group>"; };
+		8EEAE7BC2C426A2300CA9C07 /* TextVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextVariable.swift; sourceTree = "<group>"; };
+		8EEAE7BE2C426A4F00CA9C07 /* VariableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableType.swift; sourceTree = "<group>"; };
+		8EEAE7C02C42712A00CA9C07 /* StateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateStore.swift; sourceTree = "<group>"; };
+		8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIntegerStateAction.swift; sourceTree = "<group>"; };
+		8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIntegerStateActionHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +180,7 @@
 		8E7EF1932C275EB90020DB72 /* JtosMobile */ = {
 			isa = PBXGroup;
 			children = (
+				8EEAE7BB2C426A0200CA9C07 /* State */,
 				8EEAE7AA2C3C43FA00CA9C07 /* Actions */,
 				8EEAE7A32C3B4A9900CA9C07 /* CachedImage */,
 				8E7EF1E12C2827270020DB72 /* Engine */,
@@ -354,6 +365,7 @@
 				8EEAE7A82C3C43BA00CA9C07 /* ActionWrapper.swift */,
 				8EEAE7B12C41BCA900CA9C07 /* Action.swift */,
 				8EEAE7AD2C3C444500CA9C07 /* PrintAction.swift */,
+				8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */,
 				8EEAE7BA2C42636400CA9C07 /* ActionHandler */,
 			);
 			path = Actions;
@@ -373,8 +385,19 @@
 			children = (
 				8EEAE7B52C41BF7B00CA9C07 /* AbstractActionHandler.swift */,
 				8EEAE7AF2C3C445E00CA9C07 /* PrintActionHandler.swift */,
+				8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */,
 			);
 			path = ActionHandler;
+			sourceTree = "<group>";
+		};
+		8EEAE7BB2C426A0200CA9C07 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE7BC2C426A2300CA9C07 /* TextVariable.swift */,
+				8EEAE7BE2C426A4F00CA9C07 /* VariableType.swift */,
+				8EEAE7C02C42712A00CA9C07 /* StateStore.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +533,7 @@
 			files = (
 				8E7EF1F72C2870070020DB72 /* DivOrientation.swift in Sources */,
 				8EEAE7A92C3C43BA00CA9C07 /* ActionWrapper.swift in Sources */,
+				8EEAE7BF2C426A4F00CA9C07 /* VariableType.swift in Sources */,
 				8EEAE7AE2C3C444500CA9C07 /* PrintAction.swift in Sources */,
 				8EEAE7A22C3B4A6600CA9C07 /* ImageServiceImp.swift in Sources */,
 				8E7EF1DE2C2825F90020DB72 /* JsonReader.swift in Sources */,
@@ -524,6 +548,7 @@
 				8E7EF1C02C275F040020DB72 /* ScreenResponse.swift in Sources */,
 				8E7EF1EF2C2836F80020DB72 /* DivImageView.swift in Sources */,
 				8E7EF1E52C282B200020DB72 /* ScreenEngineViewModel.swift in Sources */,
+				8EEAE7C12C42712A00CA9C07 /* StateStore.swift in Sources */,
 				8E7EF1FC2C287C0F0020DB72 /* ColorRGB.swift in Sources */,
 				8E7EF1C92C2774FC0020DB72 /* State.swift in Sources */,
 				8E7EF1C72C275FE20020DB72 /* Tagged.swift in Sources */,
@@ -531,7 +556,9 @@
 				8E7EF1D02C2779040020DB72 /* DivImage.swift in Sources */,
 				8E7EF1F42C286FD20020DB72 /* DivContainer.swift in Sources */,
 				8E7EF1EA2C2830DA0020DB72 /* Size.swift in Sources */,
+				8EEAE7C52C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift in Sources */,
 				8EEAE7A52C3B4AA900CA9C07 /* HTTPError.swift in Sources */,
+				8EEAE7BD2C426A2300CA9C07 /* TextVariable.swift in Sources */,
 				8E7EF1DA2C2811470020DB72 /* SectionView.swift in Sources */,
 				8EEAE7A02C3B4A3700CA9C07 /* CachedImageView.swift in Sources */,
 				8E7EF1E32C282A550020DB72 /* ScreenQuery.swift in Sources */,
@@ -544,6 +571,7 @@
 				8EEAE7B02C3C445E00CA9C07 /* PrintActionHandler.swift in Sources */,
 				8EEAE7B42C41BF2800CA9C07 /* ActionDispatcher.swift in Sources */,
 				8E7EF1CB2C2775190020DB72 /* Div.swift in Sources */,
+				8EEAE7C32C42759700CA9C07 /* ChangeIntegerStateAction.swift in Sources */,
 				8EEAE78E2C3B22C200CA9C07 /* DivCornerRadius.swift in Sources */,
 				8EEAE7B22C41BCA900CA9C07 /* Action.swift in Sources */,
 				8EEAE7912C3B2AA800CA9C07 /* DivHorizontalAlignment.swift in Sources */,
