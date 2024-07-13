@@ -3,8 +3,9 @@ import SwiftUI
 struct SectionView: View {
 
     // MARK: - Properties
-    
+
     var section: Section
+    let actionDispatcher: ActionDispatcher
 
     var body: some View {
         buildView(from: section)
@@ -17,7 +18,7 @@ struct SectionView: View {
         VStack(spacing: 0) {
             ForEach(section.views, id: \.self.id) { view in
                 if let div = view.states.first?.div {
-                    DivView(div: div)
+                    DivView(div: div, actionDispatcher: actionDispatcher)
                 } else {
                     EmptyView()
                 }

@@ -3,7 +3,8 @@ import SwiftUI
 struct DivContainerView: View {
     
     let divContainer: DivContainer
-    
+    let actionDispatcher: ActionDispatcher
+
     var body: some View {
         buildContainerView(divContainer)
     }
@@ -14,7 +15,7 @@ struct DivContainerView: View {
         if containerData.orientation == .horizontal {
             HStack(alignment: containerData.verticalAlignment.toSwiftUIVertical(), spacing: 0) {
                 ForEach(containerData.items, id: \.id) { item in
-                    DivView(div: item)
+                    DivView(div: item, actionDispatcher: actionDispatcher)
                 }
             }
             .frame(
@@ -38,7 +39,7 @@ struct DivContainerView: View {
         } else {
             VStack(spacing: 0) {
                 ForEach(containerData.items, id: \.id) { item in
-                    DivView(div: item)
+                    DivView(div: item, actionDispatcher: actionDispatcher)
                 }
             }
             .frame(

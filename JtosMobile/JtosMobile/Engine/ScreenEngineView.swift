@@ -34,7 +34,7 @@ struct ScreenEngineView: View {
         
         var body: some View {
             ForEach(screenResponse.ui, id: \.self.id) { section in
-               SectionView(section: section)
+                SectionView(section: section, actionDispatcher: viewModel.actionDispatcher)
                     .frame(width: UIScreen.main.bounds.width, alignment: .center)
            }
         }

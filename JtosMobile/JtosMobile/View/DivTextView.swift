@@ -3,7 +3,8 @@ import SwiftUI
 struct DivTextView: View {
     
     let divText: DivText
-    
+    let actionDispatcher: ActionDispatcher
+
     var body: some View {
         buildTextView(divText)
     }
@@ -25,5 +26,8 @@ struct DivTextView: View {
             )
             .padding(textData.padding.toSwiftUI())
             .background(Color(uiColor: textData.backgroundColor.toUIColor()))
+            .onTapGesture {
+                actionDispatcher.dispatchAction(action: textData.action?.action)
+            }
     }
 }

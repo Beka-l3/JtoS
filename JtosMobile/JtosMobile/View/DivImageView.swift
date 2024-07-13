@@ -3,7 +3,8 @@ import SwiftUI
 struct DivImageView: View {
     
     let divImage: DivImage
-    
+    let actionDispatcher: ActionDispatcher
+
     var body: some View {
         buildImageView(divImage)
     }

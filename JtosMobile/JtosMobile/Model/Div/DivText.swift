@@ -8,4 +8,5 @@ struct DivText: Decodable {
     let fontSize: Int
     let backgroundColor: ColorRGB
     let horizontalAlignment: DivHorizontalAlignment
+    let action: ActionWrapper?
 }

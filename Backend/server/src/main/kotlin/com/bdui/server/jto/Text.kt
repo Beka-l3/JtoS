@@ -2,7 +2,6 @@ package com.bdui.server.jto
 
 import ColorRGB
 import color
-import com.bdui.server.jto.model.ContentMode
 import com.bdui.server.jto.model.HorizontalAlignment
 import com.bdui.server.jto.model.center
 import com.bdui.server.jto.model.insets.EdgeInsets
@@ -30,6 +29,7 @@ class Text internal constructor(
         val fontSize: Int,
         val horizontalAlignment: HorizontalAlignment,
         val backgroundColor: ColorRGB,
+        val action: Action?
     )
 }
 
@@ -40,7 +40,8 @@ fun UiNamespace.text(
     padding: EdgeInsets = edgeInsets(),
     horizontalAlignment: HorizontalAlignment = center,
     backgroundColor: ColorRGB = color(Color.white),
-    fontSize: Int = 14
+    fontSize: Int = 14,
+    action: Action? = null
 ): Text = Text(
     Text.Properties(
         text = text,
@@ -49,7 +50,8 @@ fun UiNamespace.text(
         padding = padding,
         horizontalAlignment = horizontalAlignment,
         backgroundColor = backgroundColor,
-        fontSize = fontSize
+        fontSize = fontSize,
+        action = action
     )
 )
 
@@ -61,6 +63,7 @@ fun UiNamespace.spacer(): Text = Text(
         padding = edgeInsets(),
         fontSize = 1,
         backgroundColor = color(Color.white),
-        horizontalAlignment = center
+        horizontalAlignment = center,
+        action = null
     )
 )

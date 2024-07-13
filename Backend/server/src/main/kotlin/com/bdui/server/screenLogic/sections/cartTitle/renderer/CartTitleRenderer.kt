@@ -1,9 +1,11 @@
 package com.bdui.server.screenLogic.sections.cartTitle.renderer
 
 import color
+import com.bdui.server.actions.PrintAction
 import com.bdui.server.jto.Div
 import com.bdui.server.jto.UiNamespace
 import com.bdui.server.jto.View
+import com.bdui.server.jto.action
 import com.bdui.server.jto.container
 import com.bdui.server.jto.model.cornerRadius.cornerRadius
 import com.bdui.server.jto.model.firstTextBaseline
@@ -52,7 +54,11 @@ object CartTitleRenderer {
                 text(
                     text = "Cart",
                     fontSize = 24,
-                    padding = edgeInsets(left = 16)
+                    padding = edgeInsets(left = 16),
+                    action = action(
+                        actionId = "qerty123",
+                        action = PrintAction()
+                    )
                 ),
                 text(
                     text = "2 available",

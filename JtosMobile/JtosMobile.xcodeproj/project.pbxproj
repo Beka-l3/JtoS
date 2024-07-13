@@ -45,6 +45,13 @@
 		8EEAE7A02C3B4A3700CA9C07 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE79F2C3B4A3700CA9C07 /* CachedImageView.swift */; };
 		8EEAE7A22C3B4A6600CA9C07 /* ImageServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7A12C3B4A6600CA9C07 /* ImageServiceImp.swift */; };
 		8EEAE7A52C3B4AA900CA9C07 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7A42C3B4AA900CA9C07 /* HTTPError.swift */; };
+		8EEAE7A92C3C43BA00CA9C07 /* ActionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7A82C3C43BA00CA9C07 /* ActionWrapper.swift */; };
+		8EEAE7AE2C3C444500CA9C07 /* PrintAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7AD2C3C444500CA9C07 /* PrintAction.swift */; };
+		8EEAE7B02C3C445E00CA9C07 /* PrintActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7AF2C3C445E00CA9C07 /* PrintActionHandler.swift */; };
+		8EEAE7B22C41BCA900CA9C07 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7B12C41BCA900CA9C07 /* Action.swift */; };
+		8EEAE7B42C41BF2800CA9C07 /* ActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7B32C41BF2800CA9C07 /* ActionDispatcher.swift */; };
+		8EEAE7B62C41BF7B00CA9C07 /* AbstractActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7B52C41BF7B00CA9C07 /* AbstractActionHandler.swift */; };
+		8EEAE7B92C42633400CA9C07 /* ActionDispatcherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7B82C42633400CA9C07 /* ActionDispatcherFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +113,13 @@
 		8EEAE79F2C3B4A3700CA9C07 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 		8EEAE7A12C3B4A6600CA9C07 /* ImageServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceImp.swift; sourceTree = "<group>"; };
 		8EEAE7A42C3B4AA900CA9C07 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		8EEAE7A82C3C43BA00CA9C07 /* ActionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionWrapper.swift; sourceTree = "<group>"; };
+		8EEAE7AD2C3C444500CA9C07 /* PrintAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintAction.swift; sourceTree = "<group>"; };
+		8EEAE7AF2C3C445E00CA9C07 /* PrintActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintActionHandler.swift; sourceTree = "<group>"; };
+		8EEAE7B12C41BCA900CA9C07 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		8EEAE7B32C41BF2800CA9C07 /* ActionDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDispatcher.swift; sourceTree = "<group>"; };
+		8EEAE7B52C41BF7B00CA9C07 /* AbstractActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractActionHandler.swift; sourceTree = "<group>"; };
+		8EEAE7B82C42633400CA9C07 /* ActionDispatcherFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDispatcherFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +170,7 @@
 		8E7EF1932C275EB90020DB72 /* JtosMobile */ = {
 			isa = PBXGroup;
 			children = (
+				8EEAE7AA2C3C43FA00CA9C07 /* Actions */,
 				8EEAE7A32C3B4A9900CA9C07 /* CachedImage */,
 				8E7EF1E12C2827270020DB72 /* Engine */,
 				8E7EF1D62C280FDD0020DB72 /* View */,
@@ -332,6 +347,36 @@
 			path = CachedImage;
 			sourceTree = "<group>";
 		};
+		8EEAE7AA2C3C43FA00CA9C07 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE7B72C42632600CA9C07 /* ActionDispatcher */,
+				8EEAE7A82C3C43BA00CA9C07 /* ActionWrapper.swift */,
+				8EEAE7B12C41BCA900CA9C07 /* Action.swift */,
+				8EEAE7AD2C3C444500CA9C07 /* PrintAction.swift */,
+				8EEAE7BA2C42636400CA9C07 /* ActionHandler */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		8EEAE7B72C42632600CA9C07 /* ActionDispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE7B32C41BF2800CA9C07 /* ActionDispatcher.swift */,
+				8EEAE7B82C42633400CA9C07 /* ActionDispatcherFactory.swift */,
+			);
+			path = ActionDispatcher;
+			sourceTree = "<group>";
+		};
+		8EEAE7BA2C42636400CA9C07 /* ActionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE7B52C41BF7B00CA9C07 /* AbstractActionHandler.swift */,
+				8EEAE7AF2C3C445E00CA9C07 /* PrintActionHandler.swift */,
+			);
+			path = ActionHandler;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -464,11 +509,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7EF1F72C2870070020DB72 /* DivOrientation.swift in Sources */,
+				8EEAE7A92C3C43BA00CA9C07 /* ActionWrapper.swift in Sources */,
+				8EEAE7AE2C3C444500CA9C07 /* PrintAction.swift in Sources */,
 				8EEAE7A22C3B4A6600CA9C07 /* ImageServiceImp.swift in Sources */,
 				8E7EF1DE2C2825F90020DB72 /* JsonReader.swift in Sources */,
 				8E7EF1C22C275F570020DB72 /* Section.swift in Sources */,
 				8E7EF1F22C2861CE0020DB72 /* DivEdgeInsets.swift in Sources */,
 				8E7EF1F92C2870470020DB72 /* DivContainerView.swift in Sources */,
+				8EEAE7B62C41BF7B00CA9C07 /* AbstractActionHandler.swift in Sources */,
 				8E7EF1ED2C2836890020DB72 /* DivContentMode.swift in Sources */,
 				8EEAE7932C3B2BD100CA9C07 /* DivVerticalAlignment.swift in Sources */,
 				8E7EF1C42C275F920020DB72 /* JtoView.swift in Sources */,
@@ -492,8 +540,12 @@
 				8E7EF1E02C28271F0020DB72 /* ScreenEngineView.swift in Sources */,
 				8E7EF2002C287F510020DB72 /* DivTextView.swift in Sources */,
 				8E7EF1D22C27791E0020DB72 /* DivBase.swift in Sources */,
+				8EEAE7B92C42633400CA9C07 /* ActionDispatcherFactory.swift in Sources */,
+				8EEAE7B02C3C445E00CA9C07 /* PrintActionHandler.swift in Sources */,
+				8EEAE7B42C41BF2800CA9C07 /* ActionDispatcher.swift in Sources */,
 				8E7EF1CB2C2775190020DB72 /* Div.swift in Sources */,
 				8EEAE78E2C3B22C200CA9C07 /* DivCornerRadius.swift in Sources */,
+				8EEAE7B22C41BCA900CA9C07 /* Action.swift in Sources */,
 				8EEAE7912C3B2AA800CA9C07 /* DivHorizontalAlignment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
