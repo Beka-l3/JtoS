@@ -16,12 +16,11 @@ struct Backdrop: UIViewRepresentable {
 }
 
 struct Blur: View {
+
     var radius: CGFloat = 3
     var opaque: Bool = false
 
-
     var body: some View {
-        Backdrop()
-            .blur(radius: radius, opaque: opaque)
+        Backdrop().blur(radius: radius, opaque: opaque)
     }
 }

@@ -9,6 +9,7 @@ struct ParamsCommon {
     let cornerRadius: CGFloat
     let ignoresSafeArea: Bool
     let bgColorHex: String?
+    let blurRadius: CGFloat
 
     let actionType: ActionType?
     let state: JtoSState?
@@ -26,6 +27,8 @@ struct ParamsCommon {
 
         self.actionType = Self.convert(onTapAction: params.onTapAction)
         self.state      = Self.convert(state: params.state)
+
+        self.blurRadius = params.blurRadius?.value ?? 0
     }
 }
 
