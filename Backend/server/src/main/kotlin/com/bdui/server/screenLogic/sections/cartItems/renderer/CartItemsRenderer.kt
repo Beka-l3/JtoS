@@ -26,12 +26,12 @@ import com.bdui.server.jto.spacer
 import com.bdui.server.jto.text
 import com.bdui.server.jto.ui
 import com.bdui.server.jto.view
-import com.bdui.server.screenLogic.sections.cartItems.context.CartItemsRenderContext
+import com.bdui.server.screenLogic.sections.cartItems.context.CartItemsRenderContext.CartItemRenderContext
 import java.awt.Color
 import java.util.UUID
 
 object CartItemsRenderer {
-    fun render(renderContext: CartItemsRenderContext): View {
+    fun render(renderContext: CartItemRenderContext): View {
         return ui {
             view(
                 id = "cart-title-snippet-id-${UUID.randomUUID()}",
@@ -46,8 +46,8 @@ object CartItemsRenderer {
                         ),
                         verticalAlignment = top,
                         items = listOf(
-                            renderImage(),
-                            renderItemInfoContainer()
+                            renderImage(url = renderContext.imageUrl),
+                            renderItemInfoContainer(renderContext = renderContext)
                         )
                     )
                 )
@@ -55,15 +55,15 @@ object CartItemsRenderer {
         }
     }
 
-    private fun UiNamespace.renderImage() : Div {
+    private fun UiNamespace.renderImage(url: String) : Div {
         return image(
-            url(url = "https://ru-apple.com.ru/image/cache/catalog/products_images/apple_store/MLN63RU-A_8-1000x1000.jpg"),
+            url(url = url),
             width = fixedSize(96),
             height = fixedSize(96)
         )
     }
 
-    private fun UiNamespace.renderItemInfoContainer() : Div {
+    private fun UiNamespace.renderItemInfoContainer(renderContext: CartItemRenderContext) : Div {
         return container(
             width = matchParentSize(),
             height = matchParentSize(),
@@ -72,23 +72,23 @@ object CartItemsRenderer {
             padding = edgeInsets(left = 12),
             items = listOf(
                 text(
-                    text = "Смартфон Apple IPhone 15 128 ГБ, Dual: nano SIM + eSIM голубой",
+                    text = renderContext.name,
                     width = matchParentSize(),
                     horizontalAlignment = left
                 ),
                 text(
-                    text = "ARTISTORE",
+                    text = renderContext.shopName,
                     width = matchParentSize(),
                     horizontalAlignment = left,
                     padding = edgeInsets(top = 12)
                 ),
-                renderPriceContainer(),
-                renderControls()
+                renderPriceContainer(renderContext.price),
+                renderControls(renderContext)
             )
         )
     }
 
-    private fun UiNamespace.renderPriceContainer() : Div {
+    private fun UiNamespace.renderPriceContainer(price: Double) : Div {
         return container(
             width = matchParentSize(),
             height = wrapContentSize(),
@@ -101,7 +101,7 @@ object CartItemsRenderer {
                     horizontalAlignment = left
                 ),
                 text(
-                    text = "73919 руб",
+                    text = "$price руб",
                     width = matchParentSize(),
                     horizontalAlignment = left,
                     padding = edgeInsets(top = 2),
@@ -111,7 +111,7 @@ object CartItemsRenderer {
         )
     }
 
-    private fun UiNamespace.renderControls() : Div {
+    private fun UiNamespace.renderControls(renderContext: CartItemRenderContext) : Div {
         return container(
             width = matchParentSize(),
             height = wrapContentSize(),
@@ -123,12 +123,12 @@ object CartItemsRenderer {
                     width = wrapContentSize(),
                 ),
                 spacer(),
-                renderCounterButton()
+                renderCounterButton(renderContext = renderContext)
             )
         )
     }
 
-    private fun UiNamespace.renderCounterButton(): Div {
+    private fun UiNamespace.renderCounterButton(renderContext: CartItemRenderContext): Div {
         return container(
             orientation = horizontal,
             width = fixedSize(96),
@@ -150,7 +150,7 @@ object CartItemsRenderer {
                     action = action(
                         actionId = "decreaseButtonAction",
                         action = ChangeIntegerStateAction(
-                            variableName = "cartItemCounter",
+                            variableName = "cartItemCounter-${renderContext.id}",
                             newValue = -1,
                             type = fromExisting
                         )
@@ -159,8 +159,8 @@ object CartItemsRenderer {
                 text(
                     // text = "1",
                     textVariable = TextVariable(
-                        name = "cartItemCounter",
-                        type = integer(1)
+                        name = "cartItemCounter-${renderContext.id}",
+                        type = integer(renderContext.count)
                     ),
                     backgroundColor = color(Color.lightGray),
                     width = matchParentSize(),
@@ -185,7 +185,7 @@ object CartItemsRenderer {
                     action = action(
                         actionId = "increaseButtonAction",
                         action = ChangeIntegerStateAction(
-                            variableName = "cartItemCounter",
+                            variableName = "cartItemCounter-${renderContext.id}",
                             newValue = 1,
                             type = fromExisting
                         )

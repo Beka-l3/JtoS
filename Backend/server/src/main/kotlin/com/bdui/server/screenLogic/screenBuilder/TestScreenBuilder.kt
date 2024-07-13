@@ -2,6 +2,7 @@ package com.bdui.server.screenLogic.screenBuilder
 
 import com.bdui.server.bdui.businessLogic.screen
 import com.bdui.server.bdui.core.abstract.AbstractScreenBuilder
+import com.bdui.server.screenLogic.api.RealBackendResolver
 import com.bdui.server.screenLogic.api.TestStubResolver
 import com.bdui.server.screenLogic.sections.cartAddress.TestSection
 import com.bdui.server.screenLogic.sections.cartControls.CartControlsSection
@@ -28,7 +29,7 @@ class TestScreenBuilder: AbstractScreenBuilder() {
             }
             section<CartItemsSection> {
                 id = "${CartItemsSection.NAME}-1"
-                resolver = TestStubResolver()
+                resolver = RealBackendResolver()
                 assemblerType = "CartItemsAssembler"
             }
         }

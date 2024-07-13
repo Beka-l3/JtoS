@@ -57,6 +57,7 @@
 		8EEAE7C12C42712A00CA9C07 /* StateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C02C42712A00CA9C07 /* StateStore.swift */; };
 		8EEAE7C32C42759700CA9C07 /* ChangeIntegerStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */; };
 		8EEAE7C52C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */; };
+		8EEAE7C82C42A13000CA9C07 /* ListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEAE7C72C42A13000CA9C07 /* ListAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		8EEAE7C02C42712A00CA9C07 /* StateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateStore.swift; sourceTree = "<group>"; };
 		8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIntegerStateAction.swift; sourceTree = "<group>"; };
 		8EEAE7C42C42780600CA9C07 /* ChangeIntegerStateActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIntegerStateActionHandler.swift; sourceTree = "<group>"; };
+		8EEAE7C72C42A13000CA9C07 /* ListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,12 +363,12 @@
 		8EEAE7AA2C3C43FA00CA9C07 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				8EEAE7BA2C42636400CA9C07 /* ActionHandler */,
+				8EEAE7C62C42A11B00CA9C07 /* Common */,
 				8EEAE7B72C42632600CA9C07 /* ActionDispatcher */,
-				8EEAE7A82C3C43BA00CA9C07 /* ActionWrapper.swift */,
-				8EEAE7B12C41BCA900CA9C07 /* Action.swift */,
 				8EEAE7AD2C3C444500CA9C07 /* PrintAction.swift */,
 				8EEAE7C22C42759700CA9C07 /* ChangeIntegerStateAction.swift */,
-				8EEAE7BA2C42636400CA9C07 /* ActionHandler */,
+				8EEAE7C72C42A13000CA9C07 /* ListAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -398,6 +400,15 @@
 				8EEAE7C02C42712A00CA9C07 /* StateStore.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		8EEAE7C62C42A11B00CA9C07 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8EEAE7A82C3C43BA00CA9C07 /* ActionWrapper.swift */,
+				8EEAE7B12C41BCA900CA9C07 /* Action.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +572,7 @@
 				8EEAE7BD2C426A2300CA9C07 /* TextVariable.swift in Sources */,
 				8E7EF1DA2C2811470020DB72 /* SectionView.swift in Sources */,
 				8EEAE7A02C3B4A3700CA9C07 /* CachedImageView.swift in Sources */,
+				8EEAE7C82C42A13000CA9C07 /* ListAction.swift in Sources */,
 				8E7EF1E32C282A550020DB72 /* ScreenQuery.swift in Sources */,
 				8E7EF1DC2C2814110020DB72 /* DivView.swift in Sources */,
 				8E7EF1CD2C27756A0020DB72 /* DivType.swift in Sources */,
